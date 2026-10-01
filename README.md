@@ -4,9 +4,9 @@ FleetPulse is a software-only connected-vehicle intelligence platform for fleet 
 
 No physical IoT hardware is required: vehicles, telemetry, faults, and maintenance outcomes will be simulated in software.
 
-## Phase 0 status
+## Current status
 
-This phase establishes the repository foundation, a Fastify API with `GET /health`, and local PostgreSQL, Redis, and Kafka infrastructure. Simulator, telemetry processing, ML, AI, authentication, business APIs, and cloud deployment are future phases.
+Phase 0 established the repository foundation and local PostgreSQL, Redis, and Kafka infrastructure. Phase 1 added the transactional PostgreSQL core and read-oriented domain APIs. Phase 2 adds a software-only simulator and shared telemetry contract. Kafka ingestion, stream processing, ML, AI, authentication, and frontend functionality remain future phases.
 
 ## Architecture
 
@@ -15,6 +15,8 @@ The API is the initial application boundary. PostgreSQL is reserved for transact
 ## Repository structure
 
 `apps/api` contains the Node.js/TypeScript API. `apps/web` and future services are reserved as boundaries, while shared configuration lives in `packages/config`. Infrastructure and documentation live under `infrastructure`, `docs`, and the root Compose file.
+
+`services/telemetry-simulator` contains the bounded in-memory simulator. `packages/schemas` contains the versioned telemetry event contract shared with future ingestion services.
 
 ## Prerequisites
 
@@ -60,6 +62,8 @@ npm run lint
 npm test
 npm run build
 npm run format:check
+npm run simulator -- --vehicles 1000 --duration 10 --rate 100
+npm run simulator -- --vehicles 1000 --duration 10 --rate 100 --output ./tmp/events.jsonl
 ```
 
 Stop local infrastructure with `docker compose down`; add `-v` when intentionally removing local database, Redis, and Kafka volumes.
@@ -71,3 +75,7 @@ The current foundation uses Node.js, TypeScript, Fastify, Zod, Pino, PostgreSQL,
 ## Codebase visualization
 
 A code-only Graphify visualization of the current repository is available at [docs/graphify/graphify-out/graph.html](docs/graphify/graphify-out/graph.html). The accompanying graph data and extraction manifest are stored beside it.
+
+## Phase 2 simulator
+
+The simulator represents virtual vehicles only; no physical IoT hardware is involved. It uses shared schema version `1.0`, correlated vehicle state, configurable regions, burst traffic, duplicate events, out-of-order delivery, bounded output buffering, and explainable fault scenarios. See [the simulator guide](services/telemetry-simulator/README.md). Kafka output is intentionally not implemented until Phase 3.

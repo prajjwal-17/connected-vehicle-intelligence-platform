@@ -3,6 +3,8 @@
   "references": [
     { "path": "packages/config" },
     { "path": "packages/database" },
+    { "path": "packages/schemas" },
+    { "path": "services/telemetry-simulator" },
     { "path": "apps/api" }
   ]
 }

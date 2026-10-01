@@ -1,0 +1,20 @@
+{
+  "name": "@fleetpulse/telemetry-simulator",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "simulator": "tsx src/index.ts"
+  },
+  "dependencies": {
+    "@fleetpulse/schemas": "0.1.0",
+    "pino": "^9.5.0",
+    "zod": "^3.24.1"
+  },
+  "devDependencies": {
+    "tsx": "^4.19.2"
+  }
+}
