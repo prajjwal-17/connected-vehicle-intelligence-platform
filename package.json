@@ -8,6 +8,7 @@
     "packages/*"
   ],
   "scripts": {
+    "postinstall": "npm run db:generate",
     "build": "npm run build --workspace=@fleetpulse/database && npm run build --workspace=@fleetpulse/api",
     "db:generate": "npm run generate --workspace=@fleetpulse/database",
     "db:migrate": "npm run migrate --workspace=@fleetpulse/database",

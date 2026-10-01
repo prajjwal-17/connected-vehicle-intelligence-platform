@@ -10,7 +10,7 @@
   },
   "scripts": {
     "build": "tsc -p tsconfig.json",
-    "generate": "prisma generate",
+    "generate": "prisma generate --schema=prisma/schema.prisma",
     "migrate": "prisma migrate deploy",
     "migrate:dev": "prisma migrate dev",
     "seed": "prisma db seed",
