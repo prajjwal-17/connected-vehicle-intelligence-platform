@@ -59,7 +59,29 @@ services:
       timeout: 10s
       retries: 12
 
+  clickhouse:
+    image: clickhouse/clickhouse-server:24.8-alpine
+    ports:
+      - '8123:8123'
+      - '9000:9000'
+    environment:
+      CLICKHOUSE_DB: ${CLICKHOUSE_DB:-fleetpulse}
+      CLICKHOUSE_USER: ${CLICKHOUSE_USER:-fleetpulse}
+      CLICKHOUSE_PASSWORD: ${CLICKHOUSE_PASSWORD:-fleetpulse}
+    volumes:
+      - clickhouse_data:/var/lib/clickhouse
+    healthcheck:
+      test:
+        [
+          'CMD-SHELL',
+          'clickhouse-client --user fleetpulse --password fleetpulse --query "SELECT 1" >/dev/null || exit 1',
+        ]
+      interval: 10s
+      timeout: 5s
+      retries: 12
+
 volumes:
   postgres_data:
   redis_data:
   kafka_data:
+  clickhouse_data:

@@ -4,9 +4,9 @@
 
 FleetPulse will help fleet managers understand which software-simulated vehicles show abnormal behavior or may need maintenance soon, why they are at risk, and what action to take.
 
-## Current Phase 4 flow
+## Current Block 1 flow
 
-The API and transactional PostgreSQL core coexist with a software-only telemetry simulator. The simulator initializes lightweight in-memory vehicle state, advances it in a shared loop, validates versioned events, and emits them through a bounded sink. The Kafka sink publishes JSON events to `vehicle.telemetry.v1`, where independent ingestion and stream-processor consumer groups validate and process the durable stream. The stream processor maintains bounded event-time state, evaluates explainable rules, and writes only detected alerts to PostgreSQL.
+The API and transactional PostgreSQL core coexist with a software-only telemetry simulator. The simulator initializes lightweight in-memory vehicle state, advances it in a shared loop, validates versioned events, and emits them through a bounded sink. The Kafka sink publishes JSON events to `vehicle.telemetry.v1`, where independent ingestion, stream-processing, and historical-analytics consumer groups process the durable stream. ClickHouse stores historical telemetry; the Python ML service derives leakage-safe features and serves maintenance-risk estimates. PostgreSQL remains transactional-only.
 
 ## Telemetry ingestion flow
 
@@ -50,9 +50,29 @@ The alert manager resolves an open alert type after three normal events. Cooldow
 
 Sliding-window operations maintain a bounded per-vehicle collection; insertion is sorted and capped, so memory is O(V × W) for V active vehicles and W retained events per vehicle. Detector evaluation scans only the bounded vehicle window, O(W) per event. Cooldown and idempotency lookups are O(1) Redis operations. Horizontal scale is achieved through Kafka partitions and additional stream-processor instances.
 
+## Historical analytics and predictive maintenance
+
+```text
+Kafka vehicle.telemetry.v1
+          ↓ group: fleetpulse-historical-analytics
+ClickHouse MergeTree historical telemetry
+          ↓ time-range queries / feature extraction
+Chronological ML dataset + synthetic maintenance ground truth
+          ↓
+Logistic Regression baseline → Random Forest improved model
+          ↓
+FastAPI maintenance-risk estimate
+```
+
+ClickHouse is partitioned by `toDate(event_timestamp)` and ordered by `(vehicle_id, event_timestamp, event_id)`, matching vehicle-history and time-range queries. Local retention is the warm analytical tier; recent data is hot within the same store, while production cold Parquet/object storage is deferred. PostgreSQL continues to own vehicles, fleets, maintenance, alerts, users, and audit records; it does not receive the raw telemetry firehose.
+
+The historical query layer provides telemetry volume by vehicle/day and hour, utilization proxies, temperature summaries, battery SOC/SOH summaries, and fault frequency. The analytical ordering key supplies primary pruning for vehicle/time queries; query latency and EXPLAIN evidence are measured only against a populated local ClickHouse instance and are not fabricated here.
+
+The ML label is `maintenance_required_within_7_days`, generated from a later synthetic `MAINTENANCE_DUE` event. Features use only events at or before the prediction timestamp. Chronological 60/20/20 splits prevent temporally correlated telemetry from leaking across train, validation, and test. Model output is an estimate, never an instruction to control a vehicle.
+
 ## Intended future flow
 
-Future stream-processing services will aggregate and detect anomalies before persisting appropriate results and publishing alerts. The API and future web application will read operational and fleet views. A future Python ML service will consume engineered historical data and return maintenance risk scores. A future controlled AI agent may use authorized fleet tools and curated documentation.
+Future AI assistance, frontend views, and production cold storage may consume the historical and prediction boundaries. A controlled AI agent may use authorized fleet tools and curated documentation in a later block.
 
 ## Component boundaries
 
@@ -63,8 +83,8 @@ Future stream-processing services will aggregate and detect anomalies before per
 - **Telemetry simulator:** Phase 2 software-only vehicle population and event generator. It uses shared state objects rather than one process, worker, or timer per vehicle, and selects Kafka through the existing sink abstraction.
 - **Ingestion:** Phase 3 shared Kafka producer boundary and consumer. It performs schema validation, Redis idempotency, controlled processing, and structured metrics/logging; it does not perform analytics or ML.
 - **Telemetry contract:** versioned Zod schema in `packages/schemas`, including event identity, event time, delivery time, sequence number, motion, engine, fuel, battery, and fault signals.
-- **Analytical storage:** future ClickHouse and/or object storage decision, justified when historical telemetry workloads are designed.
-- **ML service:** future Python service for leakage-safe predictive maintenance experiments and serving.
+- **Analytical storage:** ClickHouse warm historical telemetry with date partitions and vehicle/time ordering; cold object storage is future work.
+- **ML service:** Python FastAPI service with reproducible scikit-learn training and inference artifacts.
 - **AI agent:** future controlled tool-using fleet assistant with authorization and prompt-injection safeguards.
 
 ## Scalability principles

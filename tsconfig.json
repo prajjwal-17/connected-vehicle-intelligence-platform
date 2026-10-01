@@ -7,6 +7,7 @@
     { "path": "services/telemetry-simulator" },
     { "path": "services/ingestion" },
     { "path": "services/stream-processor" },
+    { "path": "services/historical-analytics" },
     { "path": "apps/api" }
   ]
 }

@@ -16,3 +16,7 @@ tmp/
 *.local
 *.jsonl
 /graphify-out/
+data/
+artifacts/
+__pycache__/
+.pytest_cache/

@@ -172,8 +172,8 @@
       "id": "ref_zod",
       "label": "zod",
       "file_type": "concept",
-      "source_file": "services/stream-processor/package.json",
-      "source_location": "L21",
+      "source_file": "services/historical-analytics/package.json",
+      "source_location": "L20",
       "_origin": "ast"
     },
     {
@@ -1810,7 +1810,7 @@
       "id": "ref_kafkajs",
       "label": "kafkajs",
       "file_type": "concept",
-      "source_file": "services/stream-processor/package.json",
+      "source_file": "services/historical-analytics/package.json",
       "source_location": "L18",
       "_origin": "ast"
     },
@@ -3384,350 +3384,6 @@
       "_origin": "ast"
     },
     {
-      "id": "package",
-      "label": "package.json",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L1",
-      "_origin": "ast"
-    },
-    {
-      "id": "package_name",
-      "label": "name",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L2",
-      "_origin": "ast"
-    },
-    {
-      "id": "package_private",
-      "label": "private",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L3",
-      "_origin": "ast"
-    },
-    {
-      "id": "package_version",
-      "label": "version",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L4",
-      "_origin": "ast"
-    },
-    {
-      "id": "package_packagemanager",
-      "label": "packageManager",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L5",
-      "_origin": "ast"
-    },
-    {
-      "id": "package_workspaces",
-      "label": "workspaces",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L6",
-      "_origin": "ast"
-    },
-    {
-      "id": "package_scripts",
-      "label": "scripts",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L11",
-      "_origin": "ast"
-    },
-    {
-      "id": "package_scripts_postinstall",
-      "label": "postinstall",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L12",
-      "_origin": "ast"
-    },
-    {
-      "id": "package_scripts_build",
-      "label": "build",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L13",
-      "_origin": "ast"
-    },
-    {
-      "id": "package_scripts_ingestion",
-      "label": "ingestion",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L14",
-      "_origin": "ast"
-    },
-    {
-      "id": "package_scripts_stream_processor",
-      "label": "stream-processor",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L15",
-      "_origin": "ast"
-    },
-    {
-      "id": "package_scripts_db_generate",
-      "label": "db:generate",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L16",
-      "_origin": "ast"
-    },
-    {
-      "id": "package_scripts_db_migrate",
-      "label": "db:migrate",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L17",
-      "_origin": "ast"
-    },
-    {
-      "id": "package_scripts_db_migrate_dev",
-      "label": "db:migrate:dev",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L18",
-      "_origin": "ast"
-    },
-    {
-      "id": "package_scripts_db_seed",
-      "label": "db:seed",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L19",
-      "_origin": "ast"
-    },
-    {
-      "id": "package_scripts_db_studio",
-      "label": "db:studio",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L20",
-      "_origin": "ast"
-    },
-    {
-      "id": "package_scripts_db_reset",
-      "label": "db:reset",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L21",
-      "_origin": "ast"
-    },
-    {
-      "id": "package_scripts_dev",
-      "label": "dev",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L22",
-      "_origin": "ast"
-    },
-    {
-      "id": "package_scripts_simulator",
-      "label": "simulator",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L23",
-      "_origin": "ast"
-    },
-    {
-      "id": "package_scripts_format",
-      "label": "format",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L24",
-      "_origin": "ast"
-    },
-    {
-      "id": "package_scripts_format_check",
-      "label": "format:check",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L25",
-      "_origin": "ast"
-    },
-    {
-      "id": "package_scripts_lint",
-      "label": "lint",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L26",
-      "_origin": "ast"
-    },
-    {
-      "id": "package_scripts_test",
-      "label": "test",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L27",
-      "_origin": "ast"
-    },
-    {
-      "id": "package_scripts_typecheck",
-      "label": "typecheck",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L28",
-      "_origin": "ast"
-    },
-    {
-      "id": "package_devdependencies",
-      "label": "devDependencies",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L30",
-      "_origin": "ast"
-    },
-    {
-      "id": "package_devdependencies_types_node",
-      "label": "@types/node",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L31",
-      "_origin": "ast"
-    },
-    {
-      "id": "ref_types_node",
-      "label": "@types/node",
-      "file_type": "concept",
-      "source_file": "package.json",
-      "source_location": "L31",
-      "_origin": "ast"
-    },
-    {
-      "id": "package_devdependencies_typescript_eslint_eslint_plugin",
-      "label": "@typescript-eslint/eslint-plugin",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L32",
-      "_origin": "ast"
-    },
-    {
-      "id": "ref_typescript_eslint_eslint_plugin",
-      "label": "@typescript-eslint/eslint-plugin",
-      "file_type": "concept",
-      "source_file": "package.json",
-      "source_location": "L32",
-      "_origin": "ast"
-    },
-    {
-      "id": "package_devdependencies_typescript_eslint_parser",
-      "label": "@typescript-eslint/parser",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L33",
-      "_origin": "ast"
-    },
-    {
-      "id": "ref_typescript_eslint_parser",
-      "label": "@typescript-eslint/parser",
-      "file_type": "concept",
-      "source_file": "package.json",
-      "source_location": "L33",
-      "_origin": "ast"
-    },
-    {
-      "id": "package_devdependencies_eslint",
-      "label": "eslint",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L34",
-      "_origin": "ast"
-    },
-    {
-      "id": "ref_eslint",
-      "label": "eslint",
-      "file_type": "concept",
-      "source_file": "package.json",
-      "source_location": "L34",
-      "_origin": "ast"
-    },
-    {
-      "id": "package_devdependencies_eslint_config_prettier",
-      "label": "eslint-config-prettier",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L35",
-      "_origin": "ast"
-    },
-    {
-      "id": "ref_eslint_config_prettier",
-      "label": "eslint-config-prettier",
-      "file_type": "concept",
-      "source_file": "package.json",
-      "source_location": "L35",
-      "_origin": "ast"
-    },
-    {
-      "id": "package_devdependencies_prettier",
-      "label": "prettier",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L36",
-      "_origin": "ast"
-    },
-    {
-      "id": "ref_prettier",
-      "label": "prettier",
-      "file_type": "concept",
-      "source_file": "package.json",
-      "source_location": "L36",
-      "_origin": "ast"
-    },
-    {
-      "id": "package_devdependencies_typescript_eslint",
-      "label": "typescript-eslint",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L37",
-      "_origin": "ast"
-    },
-    {
-      "id": "ref_typescript_eslint",
-      "label": "typescript-eslint",
-      "file_type": "concept",
-      "source_file": "package.json",
-      "source_location": "L37",
-      "_origin": "ast"
-    },
-    {
-      "id": "package_devdependencies_typescript",
-      "label": "typescript",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L38",
-      "_origin": "ast"
-    },
-    {
-      "id": "ref_typescript",
-      "label": "typescript",
-      "file_type": "concept",
-      "source_file": "package.json",
-      "source_location": "L38",
-      "_origin": "ast"
-    },
-    {
-      "id": "package_devdependencies_vitest",
-      "label": "vitest",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L39",
-      "_origin": "ast"
-    },
-    {
-      "id": "ref_vitest",
-      "label": "vitest",
-      "file_type": "concept",
-      "source_file": "package.json",
-      "source_location": "L39",
-      "_origin": "ast"
-    },
-    {
       "id": "services_stream_processor_package",
       "label": "stream-processor/package.json",
       "file_type": "code",
@@ -3843,7 +3499,7 @@
       "id": "ref_fleetpulse_schemas",
       "label": "@fleetpulse/schemas",
       "file_type": "concept",
-      "source_file": "services/stream-processor/package.json",
+      "source_file": "services/historical-analytics/package.json",
       "source_location": "L17",
       "_origin": "ast"
     },
@@ -3867,7 +3523,7 @@
       "id": "ref_pino",
       "label": "pino",
       "file_type": "concept",
-      "source_file": "services/stream-processor/package.json",
+      "source_file": "services/historical-analytics/package.json",
       "source_location": "L19",
       "_origin": "ast"
     },
@@ -3907,8 +3563,8 @@
       "id": "ref_tsx",
       "label": "tsx",
       "file_type": "concept",
-      "source_file": "services/stream-processor/package.json",
-      "source_location": "L24",
+      "source_file": "services/historical-analytics/package.json",
+      "source_location": "L23",
       "_origin": "ast"
     },
     {
@@ -4271,7 +3927,7 @@
       "id": "ref_tsconfig_base_json",
       "label": "../../tsconfig.base.json",
       "file_type": "concept",
-      "source_file": "services/stream-processor/tsconfig.json",
+      "source_file": "services/historical-analytics/tsconfig.json",
       "source_location": "L2",
       "_origin": "ast"
     },
@@ -4329,30 +3985,6 @@
       "file_type": "code",
       "source_file": "services/stream-processor/tsconfig.json",
       "source_location": "L5",
-      "_origin": "ast"
-    },
-    {
-      "id": "tsconfig",
-      "label": "tsconfig.json",
-      "file_type": "code",
-      "source_file": "tsconfig.json",
-      "source_location": "L1",
-      "_origin": "ast"
-    },
-    {
-      "id": "tsconfig_files",
-      "label": "files",
-      "file_type": "code",
-      "source_file": "tsconfig.json",
-      "source_location": "L2",
-      "_origin": "ast"
-    },
-    {
-      "id": "tsconfig_references",
-      "label": "references",
-      "file_type": "code",
-      "source_file": "tsconfig.json",
-      "source_location": "L3",
       "_origin": "ast"
     },
     {
@@ -4480,6 +4112,1189 @@
       "file_type": "code",
       "source_file": "services/stream-processor/test/performance.test.ts",
       "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "package",
+      "label": "package.json",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "package_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L2",
+      "_origin": "ast"
+    },
+    {
+      "id": "package_private",
+      "label": "private",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L3",
+      "_origin": "ast"
+    },
+    {
+      "id": "package_version",
+      "label": "version",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L4",
+      "_origin": "ast"
+    },
+    {
+      "id": "package_packagemanager",
+      "label": "packageManager",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L5",
+      "_origin": "ast"
+    },
+    {
+      "id": "package_workspaces",
+      "label": "workspaces",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L6",
+      "_origin": "ast"
+    },
+    {
+      "id": "package_scripts",
+      "label": "scripts",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L11",
+      "_origin": "ast"
+    },
+    {
+      "id": "package_scripts_postinstall",
+      "label": "postinstall",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L12",
+      "_origin": "ast"
+    },
+    {
+      "id": "package_scripts_build",
+      "label": "build",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L13",
+      "_origin": "ast"
+    },
+    {
+      "id": "package_scripts_ingestion",
+      "label": "ingestion",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L14",
+      "_origin": "ast"
+    },
+    {
+      "id": "package_scripts_stream_processor",
+      "label": "stream-processor",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L15",
+      "_origin": "ast"
+    },
+    {
+      "id": "package_scripts_historical_analytics",
+      "label": "historical-analytics",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L16",
+      "_origin": "ast"
+    },
+    {
+      "id": "package_scripts_historical_export",
+      "label": "historical-export",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L17",
+      "_origin": "ast"
+    },
+    {
+      "id": "package_scripts_db_generate",
+      "label": "db:generate",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L18",
+      "_origin": "ast"
+    },
+    {
+      "id": "package_scripts_db_migrate",
+      "label": "db:migrate",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L19",
+      "_origin": "ast"
+    },
+    {
+      "id": "package_scripts_db_migrate_dev",
+      "label": "db:migrate:dev",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L20",
+      "_origin": "ast"
+    },
+    {
+      "id": "package_scripts_db_seed",
+      "label": "db:seed",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L21",
+      "_origin": "ast"
+    },
+    {
+      "id": "package_scripts_db_studio",
+      "label": "db:studio",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L22",
+      "_origin": "ast"
+    },
+    {
+      "id": "package_scripts_db_reset",
+      "label": "db:reset",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L23",
+      "_origin": "ast"
+    },
+    {
+      "id": "package_scripts_dev",
+      "label": "dev",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L24",
+      "_origin": "ast"
+    },
+    {
+      "id": "package_scripts_simulator",
+      "label": "simulator",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L25",
+      "_origin": "ast"
+    },
+    {
+      "id": "package_scripts_format",
+      "label": "format",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L26",
+      "_origin": "ast"
+    },
+    {
+      "id": "package_scripts_format_check",
+      "label": "format:check",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L27",
+      "_origin": "ast"
+    },
+    {
+      "id": "package_scripts_lint",
+      "label": "lint",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L28",
+      "_origin": "ast"
+    },
+    {
+      "id": "package_scripts_test",
+      "label": "test",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L29",
+      "_origin": "ast"
+    },
+    {
+      "id": "package_scripts_typecheck",
+      "label": "typecheck",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L30",
+      "_origin": "ast"
+    },
+    {
+      "id": "package_devdependencies",
+      "label": "devDependencies",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L32",
+      "_origin": "ast"
+    },
+    {
+      "id": "package_devdependencies_types_node",
+      "label": "@types/node",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L33",
+      "_origin": "ast"
+    },
+    {
+      "id": "ref_types_node",
+      "label": "@types/node",
+      "file_type": "concept",
+      "source_file": "package.json",
+      "source_location": "L33",
+      "_origin": "ast"
+    },
+    {
+      "id": "package_devdependencies_typescript_eslint_eslint_plugin",
+      "label": "@typescript-eslint/eslint-plugin",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L34",
+      "_origin": "ast"
+    },
+    {
+      "id": "ref_typescript_eslint_eslint_plugin",
+      "label": "@typescript-eslint/eslint-plugin",
+      "file_type": "concept",
+      "source_file": "package.json",
+      "source_location": "L34",
+      "_origin": "ast"
+    },
+    {
+      "id": "package_devdependencies_typescript_eslint_parser",
+      "label": "@typescript-eslint/parser",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L35",
+      "_origin": "ast"
+    },
+    {
+      "id": "ref_typescript_eslint_parser",
+      "label": "@typescript-eslint/parser",
+      "file_type": "concept",
+      "source_file": "package.json",
+      "source_location": "L35",
+      "_origin": "ast"
+    },
+    {
+      "id": "package_devdependencies_eslint",
+      "label": "eslint",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L36",
+      "_origin": "ast"
+    },
+    {
+      "id": "ref_eslint",
+      "label": "eslint",
+      "file_type": "concept",
+      "source_file": "package.json",
+      "source_location": "L36",
+      "_origin": "ast"
+    },
+    {
+      "id": "package_devdependencies_eslint_config_prettier",
+      "label": "eslint-config-prettier",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L37",
+      "_origin": "ast"
+    },
+    {
+      "id": "ref_eslint_config_prettier",
+      "label": "eslint-config-prettier",
+      "file_type": "concept",
+      "source_file": "package.json",
+      "source_location": "L37",
+      "_origin": "ast"
+    },
+    {
+      "id": "package_devdependencies_prettier",
+      "label": "prettier",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L38",
+      "_origin": "ast"
+    },
+    {
+      "id": "ref_prettier",
+      "label": "prettier",
+      "file_type": "concept",
+      "source_file": "package.json",
+      "source_location": "L38",
+      "_origin": "ast"
+    },
+    {
+      "id": "package_devdependencies_typescript_eslint",
+      "label": "typescript-eslint",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L39",
+      "_origin": "ast"
+    },
+    {
+      "id": "ref_typescript_eslint",
+      "label": "typescript-eslint",
+      "file_type": "concept",
+      "source_file": "package.json",
+      "source_location": "L39",
+      "_origin": "ast"
+    },
+    {
+      "id": "package_devdependencies_typescript",
+      "label": "typescript",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L40",
+      "_origin": "ast"
+    },
+    {
+      "id": "ref_typescript",
+      "label": "typescript",
+      "file_type": "concept",
+      "source_file": "package.json",
+      "source_location": "L40",
+      "_origin": "ast"
+    },
+    {
+      "id": "package_devdependencies_vitest",
+      "label": "vitest",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L41",
+      "_origin": "ast"
+    },
+    {
+      "id": "ref_vitest",
+      "label": "vitest",
+      "file_type": "concept",
+      "source_file": "package.json",
+      "source_location": "L41",
+      "_origin": "ast"
+    },
+    {
+      "id": "services_historical_analytics_package",
+      "label": "historical-analytics/package.json",
+      "file_type": "code",
+      "source_file": "services/historical-analytics/package.json",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "services_historical_analytics_package_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "services/historical-analytics/package.json",
+      "source_location": "L2",
+      "_origin": "ast"
+    },
+    {
+      "id": "services_historical_analytics_package_version",
+      "label": "version",
+      "file_type": "code",
+      "source_file": "services/historical-analytics/package.json",
+      "source_location": "L3",
+      "_origin": "ast"
+    },
+    {
+      "id": "services_historical_analytics_package_private",
+      "label": "private",
+      "file_type": "code",
+      "source_file": "services/historical-analytics/package.json",
+      "source_location": "L4",
+      "_origin": "ast"
+    },
+    {
+      "id": "services_historical_analytics_package_type",
+      "label": "type",
+      "file_type": "code",
+      "source_file": "services/historical-analytics/package.json",
+      "source_location": "L5",
+      "_origin": "ast"
+    },
+    {
+      "id": "services_historical_analytics_package_main",
+      "label": "main",
+      "file_type": "code",
+      "source_file": "services/historical-analytics/package.json",
+      "source_location": "L6",
+      "_origin": "ast"
+    },
+    {
+      "id": "services_historical_analytics_package_types",
+      "label": "types",
+      "file_type": "code",
+      "source_file": "services/historical-analytics/package.json",
+      "source_location": "L7",
+      "_origin": "ast"
+    },
+    {
+      "id": "services_historical_analytics_package_exports",
+      "label": "exports",
+      "file_type": "code",
+      "source_file": "services/historical-analytics/package.json",
+      "source_location": "L8",
+      "_origin": "ast"
+    },
+    {
+      "id": "services_historical_analytics_package_scripts",
+      "label": "scripts",
+      "file_type": "code",
+      "source_file": "services/historical-analytics/package.json",
+      "source_location": "L11",
+      "_origin": "ast"
+    },
+    {
+      "id": "services_historical_analytics_package_scripts_build",
+      "label": "build",
+      "file_type": "code",
+      "source_file": "services/historical-analytics/package.json",
+      "source_location": "L12",
+      "_origin": "ast"
+    },
+    {
+      "id": "services_historical_analytics_package_scripts_start",
+      "label": "start",
+      "file_type": "code",
+      "source_file": "services/historical-analytics/package.json",
+      "source_location": "L13",
+      "_origin": "ast"
+    },
+    {
+      "id": "services_historical_analytics_package_scripts_export",
+      "label": "export",
+      "file_type": "code",
+      "source_file": "services/historical-analytics/package.json",
+      "source_location": "L14",
+      "_origin": "ast"
+    },
+    {
+      "id": "services_historical_analytics_package_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "services/historical-analytics/package.json",
+      "source_location": "L16",
+      "_origin": "ast"
+    },
+    {
+      "id": "services_historical_analytics_package_dependencies_fleetpulse_schemas",
+      "label": "@fleetpulse/schemas",
+      "file_type": "code",
+      "source_file": "services/historical-analytics/package.json",
+      "source_location": "L17",
+      "_origin": "ast"
+    },
+    {
+      "id": "services_historical_analytics_package_dependencies_kafkajs",
+      "label": "kafkajs",
+      "file_type": "code",
+      "source_file": "services/historical-analytics/package.json",
+      "source_location": "L18",
+      "_origin": "ast"
+    },
+    {
+      "id": "services_historical_analytics_package_dependencies_pino",
+      "label": "pino",
+      "file_type": "code",
+      "source_file": "services/historical-analytics/package.json",
+      "source_location": "L19",
+      "_origin": "ast"
+    },
+    {
+      "id": "services_historical_analytics_package_dependencies_zod",
+      "label": "zod",
+      "file_type": "code",
+      "source_file": "services/historical-analytics/package.json",
+      "source_location": "L20",
+      "_origin": "ast"
+    },
+    {
+      "id": "services_historical_analytics_package_devdependencies",
+      "label": "devDependencies",
+      "file_type": "code",
+      "source_file": "services/historical-analytics/package.json",
+      "source_location": "L22",
+      "_origin": "ast"
+    },
+    {
+      "id": "services_historical_analytics_package_devdependencies_tsx",
+      "label": "tsx",
+      "file_type": "code",
+      "source_file": "services/historical-analytics/package.json",
+      "source_location": "L23",
+      "_origin": "ast"
+    },
+    {
+      "id": "services_historical_analytics_src_config",
+      "label": "historical-analytics/src/config.ts",
+      "file_type": "code",
+      "source_file": "services/historical-analytics/src/config.ts",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "services_historical_analytics_src_config_schema",
+      "label": "schema",
+      "file_type": "code",
+      "source_file": "services/historical-analytics/src/config.ts",
+      "source_location": "L3",
+      "_origin": "ast"
+    },
+    {
+      "id": "services_historical_analytics_src_config_historicalconfig",
+      "label": "HistoricalConfig",
+      "file_type": "code",
+      "source_file": "services/historical-analytics/src/config.ts",
+      "source_location": "L14",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "services_historical_analytics_src_config_loadhistoricalconfig",
+      "label": "loadHistoricalConfig()",
+      "file_type": "code",
+      "source_file": "services/historical-analytics/src/config.ts",
+      "source_location": "L25",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "services_historical_analytics_src_consumer",
+      "label": "historical-analytics/src/consumer.ts",
+      "file_type": "code",
+      "source_file": "services/historical-analytics/src/consumer.ts",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "services_historical_analytics_src_consumer_historicalconsumer",
+      "label": "HistoricalConsumer",
+      "file_type": "code",
+      "source_file": "services/historical-analytics/src/consumer.ts",
+      "source_location": "L7",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "services_historical_analytics_src_consumer_historicalconsumer_constructor",
+      "label": ".constructor()",
+      "file_type": "code",
+      "source_file": "services/historical-analytics/src/consumer.ts",
+      "source_location": "L9",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "services_historical_analytics_src_consumer_historicalconsumer_start",
+      "label": ".start()",
+      "file_type": "code",
+      "source_file": "services/historical-analytics/src/consumer.ts",
+      "source_location": "L14",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "services_historical_analytics_src_consumer_historicalconsumer_stop",
+      "label": ".stop()",
+      "file_type": "code",
+      "source_file": "services/historical-analytics/src/consumer.ts",
+      "source_location": "L37",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "services_historical_analytics_src_export",
+      "label": "export.ts",
+      "file_type": "code",
+      "source_file": "services/historical-analytics/src/export.ts",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "services_historical_analytics_src_export_config",
+      "label": "config",
+      "file_type": "code",
+      "source_file": "services/historical-analytics/src/export.ts",
+      "source_location": "L5",
+      "_origin": "ast"
+    },
+    {
+      "id": "services_historical_analytics_src_export_store",
+      "label": "store",
+      "file_type": "code",
+      "source_file": "services/historical-analytics/src/export.ts",
+      "source_location": "L6",
+      "_origin": "ast"
+    },
+    {
+      "id": "services_historical_analytics_src_index",
+      "label": "historical-analytics/src/index.ts",
+      "file_type": "code",
+      "source_file": "services/historical-analytics/src/index.ts",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "services_historical_analytics_src_main",
+      "label": "historical-analytics/src/main.ts",
+      "file_type": "code",
+      "source_file": "services/historical-analytics/src/main.ts",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "services_historical_analytics_src_main_config",
+      "label": "config",
+      "file_type": "code",
+      "source_file": "services/historical-analytics/src/main.ts",
+      "source_location": "L5",
+      "_origin": "ast"
+    },
+    {
+      "id": "services_historical_analytics_src_main_logger",
+      "label": "logger",
+      "file_type": "code",
+      "source_file": "services/historical-analytics/src/main.ts",
+      "source_location": "L6",
+      "_origin": "ast"
+    },
+    {
+      "id": "services_historical_analytics_src_main_store",
+      "label": "store",
+      "file_type": "code",
+      "source_file": "services/historical-analytics/src/main.ts",
+      "source_location": "L10",
+      "_origin": "ast"
+    },
+    {
+      "id": "services_historical_analytics_src_queries",
+      "label": "queries.ts",
+      "file_type": "code",
+      "source_file": "services/historical-analytics/src/queries.ts",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "services_historical_analytics_src_queries_analyticsqueries",
+      "label": "analyticsQueries",
+      "file_type": "code",
+      "source_file": "services/historical-analytics/src/queries.ts",
+      "source_location": "L2",
+      "_origin": "ast"
+    },
+    {
+      "id": "services_historical_analytics_src_queries_runanalytics",
+      "label": "runAnalytics()",
+      "file_type": "code",
+      "source_file": "services/historical-analytics/src/queries.ts",
+      "source_location": "L16",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "services_historical_analytics_test_config_test",
+      "label": "historical-analytics/test/config.test.ts",
+      "file_type": "code",
+      "source_file": "services/historical-analytics/test/config.test.ts",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "services_historical_analytics_test_integration_test",
+      "label": "historical-analytics/test/integration.test.ts",
+      "file_type": "code",
+      "source_file": "services/historical-analytics/test/integration.test.ts",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "services_historical_analytics_tsconfig",
+      "label": "historical-analytics/tsconfig.json",
+      "file_type": "code",
+      "source_file": "services/historical-analytics/tsconfig.json",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "services_historical_analytics_tsconfig_extends",
+      "label": "extends",
+      "file_type": "code",
+      "source_file": "services/historical-analytics/tsconfig.json",
+      "source_location": "L2",
+      "_origin": "ast"
+    },
+    {
+      "id": "services_historical_analytics_tsconfig_compileroptions",
+      "label": "compilerOptions",
+      "file_type": "code",
+      "source_file": "services/historical-analytics/tsconfig.json",
+      "source_location": "L3",
+      "_origin": "ast"
+    },
+    {
+      "id": "services_historical_analytics_tsconfig_compileroptions_outdir",
+      "label": "outDir",
+      "file_type": "code",
+      "source_file": "services/historical-analytics/tsconfig.json",
+      "source_location": "L3",
+      "_origin": "ast"
+    },
+    {
+      "id": "services_historical_analytics_tsconfig_compileroptions_rootdir",
+      "label": "rootDir",
+      "file_type": "code",
+      "source_file": "services/historical-analytics/tsconfig.json",
+      "source_location": "L3",
+      "_origin": "ast"
+    },
+    {
+      "id": "services_historical_analytics_tsconfig_compileroptions_composite",
+      "label": "composite",
+      "file_type": "code",
+      "source_file": "services/historical-analytics/tsconfig.json",
+      "source_location": "L3",
+      "_origin": "ast"
+    },
+    {
+      "id": "services_historical_analytics_tsconfig_compileroptions_declaration",
+      "label": "declaration",
+      "file_type": "code",
+      "source_file": "services/historical-analytics/tsconfig.json",
+      "source_location": "L3",
+      "_origin": "ast"
+    },
+    {
+      "id": "services_historical_analytics_tsconfig_references",
+      "label": "references",
+      "file_type": "code",
+      "source_file": "services/historical-analytics/tsconfig.json",
+      "source_location": "L4",
+      "_origin": "ast"
+    },
+    {
+      "id": "services_historical_analytics_tsconfig_include",
+      "label": "include",
+      "file_type": "code",
+      "source_file": "services/historical-analytics/tsconfig.json",
+      "source_location": "L5",
+      "_origin": "ast"
+    },
+    {
+      "id": "services_ml_service_app_init",
+      "label": "app/__init__.py",
+      "file_type": "code",
+      "source_file": "services/ml-service/app/__init__.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "services_ml_service_app_init_rationale_1",
+      "label": "FleetPulse predictive-maintenance service.",
+      "file_type": "rationale",
+      "source_file": "services/ml-service/app/__init__.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "services_ml_service_app_api",
+      "label": "api.py",
+      "file_type": "code",
+      "source_file": "services/ml-service/app/api.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "get",
+      "label": "get",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast"
+    },
+    {
+      "id": "services_ml_service_app_api_health",
+      "label": "health()",
+      "file_type": "code",
+      "source_file": "services/ml-service/app/api.py",
+      "source_location": "L14",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "post",
+      "label": "post",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast"
+    },
+    {
+      "id": "services_ml_service_app_api_predict",
+      "label": "predict()",
+      "file_type": "code",
+      "source_file": "services/ml-service/app/api.py",
+      "source_location": "L17",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "services_ml_service_app_features_init",
+      "label": "features/__init__.py",
+      "file_type": "code",
+      "source_file": "services/ml-service/app/features/__init__.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "services_ml_service_app_features_init_rationale_1",
+      "label": "Leakage-safe historical feature engineering.",
+      "file_type": "rationale",
+      "source_file": "services/ml-service/app/features/__init__.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "services_ml_service_app_features_engineering",
+      "label": "engineering.py",
+      "file_type": "code",
+      "source_file": "services/ml-service/app/features/engineering.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "services_ml_service_app_features_engineering_load_events",
+      "label": "load_events()",
+      "file_type": "code",
+      "source_file": "services/ml-service/app/features/engineering.py",
+      "source_location": "L15",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "services_ml_service_app_features_engineering_py_path",
+      "label": "Path",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast"
+    },
+    {
+      "id": "services_ml_service_app_features_engineering_py_dataframe",
+      "label": "DataFrame",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast"
+    },
+    {
+      "id": "services_ml_service_app_features_engineering_build_features",
+      "label": "build_features()",
+      "file_type": "code",
+      "source_file": "services/ml-service/app/features/engineering.py",
+      "source_location": "L24",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "services_ml_service_app_features_engineering_chronological_split",
+      "label": "chronological_split()",
+      "file_type": "code",
+      "source_file": "services/ml-service/app/features/engineering.py",
+      "source_location": "L59",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "services_ml_service_app_inference",
+      "label": "inference.py",
+      "file_type": "code",
+      "source_file": "services/ml-service/app/inference.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "services_ml_service_app_inference_predictor",
+      "label": "Predictor",
+      "file_type": "code",
+      "source_file": "services/ml-service/app/inference.py",
+      "source_location": "L8",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "services_ml_service_app_inference_predictor_init",
+      "label": ".__init__()",
+      "file_type": "code",
+      "source_file": "services/ml-service/app/inference.py",
+      "source_location": "L9",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "services_ml_service_app_inference_predictor_predict",
+      "label": ".predict()",
+      "file_type": "code",
+      "source_file": "services/ml-service/app/inference.py",
+      "source_location": "L11",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "services_ml_service_app_schemas",
+      "label": "schemas.py",
+      "file_type": "code",
+      "source_file": "services/ml-service/app/schemas.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "services_ml_service_app_schemas_maintenancefeatures",
+      "label": "MaintenanceFeatures",
+      "file_type": "code",
+      "source_file": "services/ml-service/app/schemas.py",
+      "source_location": "L4",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "basemodel",
+      "label": "BaseModel",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast"
+    },
+    {
+      "id": "services_ml_service_app_schemas_predictionrequest",
+      "label": "PredictionRequest",
+      "file_type": "code",
+      "source_file": "services/ml-service/app/schemas.py",
+      "source_location": "L19",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "services_ml_service_app_schemas_predictionresponse",
+      "label": "PredictionResponse",
+      "file_type": "code",
+      "source_file": "services/ml-service/app/schemas.py",
+      "source_location": "L24",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "services_ml_service_app_training_init",
+      "label": "training/__init__.py",
+      "file_type": "code",
+      "source_file": "services/ml-service/app/training/__init__.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "services_ml_service_app_training_init_rationale_1",
+      "label": "Reproducible chronological training pipeline.",
+      "file_type": "rationale",
+      "source_file": "services/ml-service/app/training/__init__.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "services_ml_service_app_training_train",
+      "label": "train.py",
+      "file_type": "code",
+      "source_file": "services/ml-service/app/training/train.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "services_ml_service_app_training_train_metrics",
+      "label": "metrics()",
+      "file_type": "code",
+      "source_file": "services/ml-service/app/training/train.py",
+      "source_location": "L17",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "services_ml_service_app_training_train_py_dataframe",
+      "label": "DataFrame",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast"
+    },
+    {
+      "id": "series",
+      "label": "Series",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast"
+    },
+    {
+      "id": "services_ml_service_app_training_train_train",
+      "label": "train()",
+      "file_type": "code",
+      "source_file": "services/ml-service/app/training/train.py",
+      "source_location": "L23",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "services_ml_service_tests_test_ml",
+      "label": "test_ml.py",
+      "file_type": "code",
+      "source_file": "services/ml-service/tests/test_ml.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "services_ml_service_tests_test_ml_write_events",
+      "label": "write_events()",
+      "file_type": "code",
+      "source_file": "services/ml-service/tests/test_ml.py",
+      "source_location": "L10",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "services_ml_service_tests_test_ml_py_path",
+      "label": "Path",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast"
+    },
+    {
+      "id": "services_ml_service_tests_test_ml_test_features_are_bounded_and_labels_use_future_ground_truth",
+      "label": "test_features_are_bounded_and_labels_use_future_ground_truth()",
+      "file_type": "code",
+      "source_file": "services/ml-service/tests/test_ml.py",
+      "source_location": "L31",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "services_ml_service_tests_test_ml_test_training_and_prediction_metadata",
+      "label": "test_training_and_prediction_metadata()",
+      "file_type": "code",
+      "source_file": "services/ml-service/tests/test_ml.py",
+      "source_location": "L39",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "tsconfig",
+      "label": "tsconfig.json",
+      "file_type": "code",
+      "source_file": "tsconfig.json",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "tsconfig_files",
+      "label": "files",
+      "file_type": "code",
+      "source_file": "tsconfig.json",
+      "source_location": "L2",
+      "_origin": "ast"
+    },
+    {
+      "id": "tsconfig_references",
+      "label": "references",
+      "file_type": "code",
+      "source_file": "tsconfig.json",
+      "source_location": "L3",
+      "_origin": "ast"
+    },
+    {
+      "id": "services_historical_analytics_src_store",
+      "label": "store.ts",
+      "file_type": "code",
+      "source_file": "services/historical-analytics/src/store.ts",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "services_historical_analytics_src_store_historicalrow",
+      "label": "HistoricalRow",
+      "file_type": "code",
+      "source_file": "services/historical-analytics/src/store.ts",
+      "source_location": "L4",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "services_historical_analytics_src_store_tohistoricalrow",
+      "label": "toHistoricalRow()",
+      "file_type": "code",
+      "source_file": "services/historical-analytics/src/store.ts",
+      "source_location": "L25",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "services_historical_analytics_src_store_clickhousestore",
+      "label": "ClickHouseStore",
+      "file_type": "code",
+      "source_file": "services/historical-analytics/src/store.ts",
+      "source_location": "L49",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "services_historical_analytics_src_store_clickhousestore_constructor",
+      "label": ".constructor()",
+      "file_type": "code",
+      "source_file": "services/historical-analytics/src/store.ts",
+      "source_location": "L50",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "services_historical_analytics_src_store_clickhousestore_request",
+      "label": ".request()",
+      "file_type": "code",
+      "source_file": "services/historical-analytics/src/store.ts",
+      "source_location": "L51",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "services_historical_analytics_src_store_clickhousestore_initialize",
+      "label": ".initialize()",
+      "file_type": "code",
+      "source_file": "services/historical-analytics/src/store.ts",
+      "source_location": "L68",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "services_historical_analytics_src_store_clickhousestore_insert",
+      "label": ".insert()",
+      "file_type": "code",
+      "source_file": "services/historical-analytics/src/store.ts",
+      "source_location": "L76",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "services_historical_analytics_src_store_clickhousestore_query",
+      "label": ".query()",
+      "file_type": "code",
+      "source_file": "services/historical-analytics/src/store.ts",
+      "source_location": "L82",
+      "_callable": true,
       "_origin": "ast"
     }
   ],
@@ -11542,435 +12357,6 @@
       "_origin": "ast"
     },
     {
-      "source": "package",
-      "target": "package_name",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L2",
-      "weight": 1.0,
-      "_origin": "ast"
-    },
-    {
-      "source": "package",
-      "target": "package_private",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L3",
-      "weight": 1.0,
-      "_origin": "ast"
-    },
-    {
-      "source": "package",
-      "target": "package_version",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L4",
-      "weight": 1.0,
-      "_origin": "ast"
-    },
-    {
-      "source": "package",
-      "target": "package_packagemanager",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L5",
-      "weight": 1.0,
-      "_origin": "ast"
-    },
-    {
-      "source": "package",
-      "target": "package_workspaces",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L6",
-      "weight": 1.0,
-      "_origin": "ast"
-    },
-    {
-      "source": "package",
-      "target": "package_scripts",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L11",
-      "weight": 1.0,
-      "_origin": "ast"
-    },
-    {
-      "source": "package_scripts",
-      "target": "package_scripts_postinstall",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L12",
-      "weight": 1.0,
-      "_origin": "ast"
-    },
-    {
-      "source": "package_scripts",
-      "target": "package_scripts_build",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L13",
-      "weight": 1.0,
-      "_origin": "ast"
-    },
-    {
-      "source": "package_scripts",
-      "target": "package_scripts_ingestion",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L14",
-      "weight": 1.0,
-      "_origin": "ast"
-    },
-    {
-      "source": "package_scripts",
-      "target": "package_scripts_stream_processor",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L15",
-      "weight": 1.0,
-      "_origin": "ast"
-    },
-    {
-      "source": "package_scripts",
-      "target": "package_scripts_db_generate",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L16",
-      "weight": 1.0,
-      "_origin": "ast"
-    },
-    {
-      "source": "package_scripts",
-      "target": "package_scripts_db_migrate",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L17",
-      "weight": 1.0,
-      "_origin": "ast"
-    },
-    {
-      "source": "package_scripts",
-      "target": "package_scripts_db_migrate_dev",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L18",
-      "weight": 1.0,
-      "_origin": "ast"
-    },
-    {
-      "source": "package_scripts",
-      "target": "package_scripts_db_seed",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L19",
-      "weight": 1.0,
-      "_origin": "ast"
-    },
-    {
-      "source": "package_scripts",
-      "target": "package_scripts_db_studio",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L20",
-      "weight": 1.0,
-      "_origin": "ast"
-    },
-    {
-      "source": "package_scripts",
-      "target": "package_scripts_db_reset",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L21",
-      "weight": 1.0,
-      "_origin": "ast"
-    },
-    {
-      "source": "package_scripts",
-      "target": "package_scripts_dev",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L22",
-      "weight": 1.0,
-      "_origin": "ast"
-    },
-    {
-      "source": "package_scripts",
-      "target": "package_scripts_simulator",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L23",
-      "weight": 1.0,
-      "_origin": "ast"
-    },
-    {
-      "source": "package_scripts",
-      "target": "package_scripts_format",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L24",
-      "weight": 1.0,
-      "_origin": "ast"
-    },
-    {
-      "source": "package_scripts",
-      "target": "package_scripts_format_check",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L25",
-      "weight": 1.0,
-      "_origin": "ast"
-    },
-    {
-      "source": "package_scripts",
-      "target": "package_scripts_lint",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L26",
-      "weight": 1.0,
-      "_origin": "ast"
-    },
-    {
-      "source": "package_scripts",
-      "target": "package_scripts_test",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L27",
-      "weight": 1.0,
-      "_origin": "ast"
-    },
-    {
-      "source": "package_scripts",
-      "target": "package_scripts_typecheck",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L28",
-      "weight": 1.0,
-      "_origin": "ast"
-    },
-    {
-      "source": "package",
-      "target": "package_devdependencies",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L30",
-      "weight": 1.0,
-      "_origin": "ast"
-    },
-    {
-      "source": "package_devdependencies",
-      "target": "package_devdependencies_types_node",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L31",
-      "weight": 1.0,
-      "_origin": "ast"
-    },
-    {
-      "source": "package",
-      "target": "ref_types_node",
-      "relation": "imports",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L31",
-      "weight": 1.0,
-      "context": "import",
-      "_origin": "ast"
-    },
-    {
-      "source": "package_devdependencies",
-      "target": "package_devdependencies_typescript_eslint_eslint_plugin",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L32",
-      "weight": 1.0,
-      "_origin": "ast"
-    },
-    {
-      "source": "package",
-      "target": "ref_typescript_eslint_eslint_plugin",
-      "relation": "imports",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L32",
-      "weight": 1.0,
-      "context": "import",
-      "_origin": "ast"
-    },
-    {
-      "source": "package_devdependencies",
-      "target": "package_devdependencies_typescript_eslint_parser",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L33",
-      "weight": 1.0,
-      "_origin": "ast"
-    },
-    {
-      "source": "package",
-      "target": "ref_typescript_eslint_parser",
-      "relation": "imports",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L33",
-      "weight": 1.0,
-      "context": "import",
-      "_origin": "ast"
-    },
-    {
-      "source": "package_devdependencies",
-      "target": "package_devdependencies_eslint",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L34",
-      "weight": 1.0,
-      "_origin": "ast"
-    },
-    {
-      "source": "package",
-      "target": "ref_eslint",
-      "relation": "imports",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L34",
-      "weight": 1.0,
-      "context": "import",
-      "_origin": "ast"
-    },
-    {
-      "source": "package_devdependencies",
-      "target": "package_devdependencies_eslint_config_prettier",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L35",
-      "weight": 1.0,
-      "_origin": "ast"
-    },
-    {
-      "source": "package",
-      "target": "ref_eslint_config_prettier",
-      "relation": "imports",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L35",
-      "weight": 1.0,
-      "context": "import",
-      "_origin": "ast"
-    },
-    {
-      "source": "package_devdependencies",
-      "target": "package_devdependencies_prettier",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L36",
-      "weight": 1.0,
-      "_origin": "ast"
-    },
-    {
-      "source": "package",
-      "target": "ref_prettier",
-      "relation": "imports",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L36",
-      "weight": 1.0,
-      "context": "import",
-      "_origin": "ast"
-    },
-    {
-      "source": "package_devdependencies",
-      "target": "package_devdependencies_typescript_eslint",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L37",
-      "weight": 1.0,
-      "_origin": "ast"
-    },
-    {
-      "source": "package",
-      "target": "ref_typescript_eslint",
-      "relation": "imports",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L37",
-      "weight": 1.0,
-      "context": "import",
-      "_origin": "ast"
-    },
-    {
-      "source": "package_devdependencies",
-      "target": "package_devdependencies_typescript",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L38",
-      "weight": 1.0,
-      "_origin": "ast"
-    },
-    {
-      "source": "package",
-      "target": "ref_typescript",
-      "relation": "imports",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L38",
-      "weight": 1.0,
-      "context": "import",
-      "_origin": "ast"
-    },
-    {
-      "source": "package_devdependencies",
-      "target": "package_devdependencies_vitest",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L39",
-      "weight": 1.0,
-      "_origin": "ast"
-    },
-    {
-      "source": "package",
-      "target": "ref_vitest",
-      "relation": "imports",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L39",
-      "weight": 1.0,
-      "context": "import",
-      "_origin": "ast"
-    },
-    {
       "source": "services_stream_processor_package",
       "target": "services_stream_processor_package_name",
       "relation": "contains",
@@ -13562,26 +13948,6 @@
       "_origin": "ast"
     },
     {
-      "source": "tsconfig",
-      "target": "tsconfig_files",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "tsconfig.json",
-      "source_location": "L2",
-      "weight": 1.0,
-      "_origin": "ast"
-    },
-    {
-      "source": "tsconfig",
-      "target": "tsconfig_references",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "tsconfig.json",
-      "source_location": "L3",
-      "weight": 1.0,
-      "_origin": "ast"
-    },
-    {
       "source": "services_stream_processor_src_index",
       "target": "services_stream_processor_src_config",
       "relation": "re_exports",
@@ -14228,6 +14594,2734 @@
       "source_location": "L68",
       "weight": 1.0,
       "_origin": "ast"
+    },
+    {
+      "source": "package",
+      "target": "package_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "package",
+      "target": "package_private",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "package",
+      "target": "package_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "package",
+      "target": "package_packagemanager",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "package",
+      "target": "package_workspaces",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "package",
+      "target": "package_scripts",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L11",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "package_scripts",
+      "target": "package_scripts_postinstall",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L12",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "package_scripts",
+      "target": "package_scripts_build",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L13",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "package_scripts",
+      "target": "package_scripts_ingestion",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L14",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "package_scripts",
+      "target": "package_scripts_stream_processor",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L15",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "package_scripts",
+      "target": "package_scripts_historical_analytics",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "package_scripts",
+      "target": "package_scripts_historical_export",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L17",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "package_scripts",
+      "target": "package_scripts_db_generate",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L18",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "package_scripts",
+      "target": "package_scripts_db_migrate",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L19",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "package_scripts",
+      "target": "package_scripts_db_migrate_dev",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L20",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "package_scripts",
+      "target": "package_scripts_db_seed",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L21",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "package_scripts",
+      "target": "package_scripts_db_studio",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L22",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "package_scripts",
+      "target": "package_scripts_db_reset",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L23",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "package_scripts",
+      "target": "package_scripts_dev",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L24",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "package_scripts",
+      "target": "package_scripts_simulator",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L25",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "package_scripts",
+      "target": "package_scripts_format",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L26",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "package_scripts",
+      "target": "package_scripts_format_check",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L27",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "package_scripts",
+      "target": "package_scripts_lint",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L28",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "package_scripts",
+      "target": "package_scripts_test",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L29",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "package_scripts",
+      "target": "package_scripts_typecheck",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L30",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "package",
+      "target": "package_devdependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L32",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "package_devdependencies",
+      "target": "package_devdependencies_types_node",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L33",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "package",
+      "target": "ref_types_node",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L33",
+      "weight": 1.0,
+      "context": "import",
+      "_origin": "ast"
+    },
+    {
+      "source": "package_devdependencies",
+      "target": "package_devdependencies_typescript_eslint_eslint_plugin",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L34",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "package",
+      "target": "ref_typescript_eslint_eslint_plugin",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L34",
+      "weight": 1.0,
+      "context": "import",
+      "_origin": "ast"
+    },
+    {
+      "source": "package_devdependencies",
+      "target": "package_devdependencies_typescript_eslint_parser",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L35",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "package",
+      "target": "ref_typescript_eslint_parser",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L35",
+      "weight": 1.0,
+      "context": "import",
+      "_origin": "ast"
+    },
+    {
+      "source": "package_devdependencies",
+      "target": "package_devdependencies_eslint",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L36",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "package",
+      "target": "ref_eslint",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L36",
+      "weight": 1.0,
+      "context": "import",
+      "_origin": "ast"
+    },
+    {
+      "source": "package_devdependencies",
+      "target": "package_devdependencies_eslint_config_prettier",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L37",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "package",
+      "target": "ref_eslint_config_prettier",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L37",
+      "weight": 1.0,
+      "context": "import",
+      "_origin": "ast"
+    },
+    {
+      "source": "package_devdependencies",
+      "target": "package_devdependencies_prettier",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L38",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "package",
+      "target": "ref_prettier",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L38",
+      "weight": 1.0,
+      "context": "import",
+      "_origin": "ast"
+    },
+    {
+      "source": "package_devdependencies",
+      "target": "package_devdependencies_typescript_eslint",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L39",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "package",
+      "target": "ref_typescript_eslint",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L39",
+      "weight": 1.0,
+      "context": "import",
+      "_origin": "ast"
+    },
+    {
+      "source": "package_devdependencies",
+      "target": "package_devdependencies_typescript",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L40",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "package",
+      "target": "ref_typescript",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L40",
+      "weight": 1.0,
+      "context": "import",
+      "_origin": "ast"
+    },
+    {
+      "source": "package_devdependencies",
+      "target": "package_devdependencies_vitest",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L41",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "package",
+      "target": "ref_vitest",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L41",
+      "weight": 1.0,
+      "context": "import",
+      "_origin": "ast"
+    },
+    {
+      "source": "services_historical_analytics_package",
+      "target": "services_historical_analytics_package_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "services/historical-analytics/package.json",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_historical_analytics_package",
+      "target": "services_historical_analytics_package_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "services/historical-analytics/package.json",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_historical_analytics_package",
+      "target": "services_historical_analytics_package_private",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "services/historical-analytics/package.json",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_historical_analytics_package",
+      "target": "services_historical_analytics_package_type",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "services/historical-analytics/package.json",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_historical_analytics_package",
+      "target": "services_historical_analytics_package_main",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "services/historical-analytics/package.json",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_historical_analytics_package",
+      "target": "services_historical_analytics_package_types",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "services/historical-analytics/package.json",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_historical_analytics_package",
+      "target": "services_historical_analytics_package_exports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "services/historical-analytics/package.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_historical_analytics_package",
+      "target": "services_historical_analytics_package_scripts",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "services/historical-analytics/package.json",
+      "source_location": "L11",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_historical_analytics_package_scripts",
+      "target": "services_historical_analytics_package_scripts_build",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "services/historical-analytics/package.json",
+      "source_location": "L12",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_historical_analytics_package_scripts",
+      "target": "services_historical_analytics_package_scripts_start",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "services/historical-analytics/package.json",
+      "source_location": "L13",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_historical_analytics_package_scripts",
+      "target": "services_historical_analytics_package_scripts_export",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "services/historical-analytics/package.json",
+      "source_location": "L14",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_historical_analytics_package",
+      "target": "services_historical_analytics_package_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "services/historical-analytics/package.json",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_historical_analytics_package_dependencies",
+      "target": "services_historical_analytics_package_dependencies_fleetpulse_schemas",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "services/historical-analytics/package.json",
+      "source_location": "L17",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_historical_analytics_package",
+      "target": "ref_fleetpulse_schemas",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "services/historical-analytics/package.json",
+      "source_location": "L17",
+      "weight": 1.0,
+      "context": "import",
+      "_origin": "ast"
+    },
+    {
+      "source": "services_historical_analytics_package_dependencies",
+      "target": "services_historical_analytics_package_dependencies_kafkajs",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "services/historical-analytics/package.json",
+      "source_location": "L18",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_historical_analytics_package",
+      "target": "ref_kafkajs",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "services/historical-analytics/package.json",
+      "source_location": "L18",
+      "weight": 1.0,
+      "context": "import",
+      "_origin": "ast"
+    },
+    {
+      "source": "services_historical_analytics_package_dependencies",
+      "target": "services_historical_analytics_package_dependencies_pino",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "services/historical-analytics/package.json",
+      "source_location": "L19",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_historical_analytics_package",
+      "target": "ref_pino",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "services/historical-analytics/package.json",
+      "source_location": "L19",
+      "weight": 1.0,
+      "context": "import",
+      "_origin": "ast"
+    },
+    {
+      "source": "services_historical_analytics_package_dependencies",
+      "target": "services_historical_analytics_package_dependencies_zod",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "services/historical-analytics/package.json",
+      "source_location": "L20",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_historical_analytics_package",
+      "target": "ref_zod",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "services/historical-analytics/package.json",
+      "source_location": "L20",
+      "weight": 1.0,
+      "context": "import",
+      "_origin": "ast"
+    },
+    {
+      "source": "services_historical_analytics_package",
+      "target": "services_historical_analytics_package_devdependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "services/historical-analytics/package.json",
+      "source_location": "L22",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_historical_analytics_package_devdependencies",
+      "target": "services_historical_analytics_package_devdependencies_tsx",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "services/historical-analytics/package.json",
+      "source_location": "L23",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_historical_analytics_package",
+      "target": "ref_tsx",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "services/historical-analytics/package.json",
+      "source_location": "L23",
+      "weight": 1.0,
+      "context": "import",
+      "_origin": "ast"
+    },
+    {
+      "source": "services_historical_analytics_src_config",
+      "target": "ref_zod",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "services/historical-analytics/src/config.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_historical_analytics_src_config",
+      "target": "services_historical_analytics_src_config_schema",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "services/historical-analytics/src/config.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_historical_analytics_src_config",
+      "target": "services_historical_analytics_src_config_historicalconfig",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "services/historical-analytics/src/config.ts",
+      "source_location": "L14",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_historical_analytics_src_config",
+      "target": "services_historical_analytics_src_config_loadhistoricalconfig",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "services/historical-analytics/src/config.ts",
+      "source_location": "L25",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_historical_analytics_src_consumer",
+      "target": "ref_kafkajs",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "services/historical-analytics/src/consumer.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_historical_analytics_src_consumer",
+      "target": "ref_pino",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "services/historical-analytics/src/consumer.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "type_only": true,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_historical_analytics_src_consumer",
+      "target": "packages_schemas_dist_telemetry",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "services/historical-analytics/src/consumer.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_historical_analytics_src_consumer",
+      "target": "packages_schemas_dist_telemetry_parsetelemetryevent",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "services/historical-analytics/src/consumer.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_historical_analytics_src_consumer",
+      "target": "services_historical_analytics_src_config",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "services/historical-analytics/src/consumer.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "type_only": true,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_historical_analytics_src_consumer",
+      "target": "services_historical_analytics_src_config_historicalconfig",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "services/historical-analytics/src/consumer.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_historical_analytics_src_consumer",
+      "target": "services_historical_analytics_src_store",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "services/historical-analytics/src/consumer.ts",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_historical_analytics_src_consumer",
+      "target": "services_historical_analytics_src_store_clickhousestore",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "services/historical-analytics/src/consumer.ts",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_historical_analytics_src_consumer",
+      "target": "services_historical_analytics_src_consumer_historicalconsumer",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "services/historical-analytics/src/consumer.ts",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_historical_analytics_src_consumer_historicalconsumer",
+      "target": "services_historical_analytics_src_consumer_historicalconsumer_constructor",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "services/historical-analytics/src/consumer.ts",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_historical_analytics_src_consumer_historicalconsumer",
+      "target": "services_historical_analytics_src_consumer_historicalconsumer_start",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "services/historical-analytics/src/consumer.ts",
+      "source_location": "L14",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_historical_analytics_src_consumer_historicalconsumer",
+      "target": "services_historical_analytics_src_consumer_historicalconsumer_stop",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "services/historical-analytics/src/consumer.ts",
+      "source_location": "L37",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_historical_analytics_src_export",
+      "target": "ref_node_fs",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "services/historical-analytics/src/export.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_historical_analytics_src_export",
+      "target": "ref_node_path",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "services/historical-analytics/src/export.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_historical_analytics_src_export",
+      "target": "services_historical_analytics_src_config",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "services/historical-analytics/src/export.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_historical_analytics_src_export",
+      "target": "services_historical_analytics_src_config_loadhistoricalconfig",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "services/historical-analytics/src/export.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_historical_analytics_src_export",
+      "target": "services_historical_analytics_src_store",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "services/historical-analytics/src/export.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_historical_analytics_src_export",
+      "target": "services_historical_analytics_src_store_clickhousestore",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "services/historical-analytics/src/export.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_historical_analytics_src_export",
+      "target": "services_historical_analytics_src_export_config",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "services/historical-analytics/src/export.ts",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_historical_analytics_src_export",
+      "target": "services_historical_analytics_src_export_store",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "services/historical-analytics/src/export.ts",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_historical_analytics_src_index",
+      "target": "services_historical_analytics_src_config",
+      "relation": "imports_from",
+      "context": "re-export",
+      "confidence": "EXTRACTED",
+      "source_file": "services/historical-analytics/src/index.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_historical_analytics_src_index",
+      "target": "services_historical_analytics_src_config_loadhistoricalconfig",
+      "relation": "re_exports",
+      "context": "re-export",
+      "confidence": "EXTRACTED",
+      "source_file": "services/historical-analytics/src/index.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_historical_analytics_src_index",
+      "target": "services_historical_analytics_src_config_historicalconfig",
+      "relation": "re_exports",
+      "context": "re-export",
+      "confidence": "EXTRACTED",
+      "source_file": "services/historical-analytics/src/index.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_historical_analytics_src_index",
+      "target": "services_historical_analytics_src_store",
+      "relation": "imports_from",
+      "context": "re-export",
+      "confidence": "EXTRACTED",
+      "source_file": "services/historical-analytics/src/index.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_historical_analytics_src_index",
+      "target": "services_historical_analytics_src_store_clickhousestore",
+      "relation": "re_exports",
+      "context": "re-export",
+      "confidence": "EXTRACTED",
+      "source_file": "services/historical-analytics/src/index.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_historical_analytics_src_index",
+      "target": "services_historical_analytics_src_store_tohistoricalrow",
+      "relation": "re_exports",
+      "context": "re-export",
+      "confidence": "EXTRACTED",
+      "source_file": "services/historical-analytics/src/index.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_historical_analytics_src_index",
+      "target": "services_historical_analytics_src_store_historicalrow",
+      "relation": "re_exports",
+      "context": "re-export",
+      "confidence": "EXTRACTED",
+      "source_file": "services/historical-analytics/src/index.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_historical_analytics_src_index",
+      "target": "services_historical_analytics_src_consumer",
+      "relation": "imports_from",
+      "context": "re-export",
+      "confidence": "EXTRACTED",
+      "source_file": "services/historical-analytics/src/index.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_historical_analytics_src_index",
+      "target": "services_historical_analytics_src_consumer_historicalconsumer",
+      "relation": "re_exports",
+      "context": "re-export",
+      "confidence": "EXTRACTED",
+      "source_file": "services/historical-analytics/src/index.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_historical_analytics_src_index",
+      "target": "services_historical_analytics_src_queries",
+      "relation": "imports_from",
+      "context": "re-export",
+      "confidence": "EXTRACTED",
+      "source_file": "services/historical-analytics/src/index.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_historical_analytics_src_index",
+      "target": "services_historical_analytics_src_queries_analyticsqueries",
+      "relation": "re_exports",
+      "context": "re-export",
+      "confidence": "EXTRACTED",
+      "source_file": "services/historical-analytics/src/index.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_historical_analytics_src_index",
+      "target": "services_historical_analytics_src_queries_runanalytics",
+      "relation": "re_exports",
+      "context": "re-export",
+      "confidence": "EXTRACTED",
+      "source_file": "services/historical-analytics/src/index.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_historical_analytics_src_main",
+      "target": "ref_pino",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "services/historical-analytics/src/main.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_historical_analytics_src_main",
+      "target": "services_historical_analytics_src_config",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "services/historical-analytics/src/main.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_historical_analytics_src_main",
+      "target": "services_historical_analytics_src_config_loadhistoricalconfig",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "services/historical-analytics/src/main.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_historical_analytics_src_main",
+      "target": "services_historical_analytics_src_store",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "services/historical-analytics/src/main.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_historical_analytics_src_main",
+      "target": "services_historical_analytics_src_store_clickhousestore",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "services/historical-analytics/src/main.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_historical_analytics_src_main",
+      "target": "services_historical_analytics_src_consumer",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "services/historical-analytics/src/main.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_historical_analytics_src_main",
+      "target": "services_historical_analytics_src_consumer_historicalconsumer",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "services/historical-analytics/src/main.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_historical_analytics_src_main",
+      "target": "services_historical_analytics_src_main_config",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "services/historical-analytics/src/main.ts",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_historical_analytics_src_main",
+      "target": "services_historical_analytics_src_main_logger",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "services/historical-analytics/src/main.ts",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_historical_analytics_src_main",
+      "target": "services_historical_analytics_src_main_store",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "services/historical-analytics/src/main.ts",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_historical_analytics_src_queries",
+      "target": "services_historical_analytics_src_store",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "services/historical-analytics/src/queries.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "type_only": true,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_historical_analytics_src_queries",
+      "target": "services_historical_analytics_src_store_clickhousestore",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "services/historical-analytics/src/queries.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_historical_analytics_src_queries",
+      "target": "services_historical_analytics_src_queries_analyticsqueries",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "services/historical-analytics/src/queries.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_historical_analytics_src_queries",
+      "target": "services_historical_analytics_src_queries_runanalytics",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "services/historical-analytics/src/queries.ts",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_historical_analytics_test_config_test",
+      "target": "ref_vitest",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "services/historical-analytics/test/config.test.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_historical_analytics_test_config_test",
+      "target": "services_historical_analytics_src_config",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "services/historical-analytics/test/config.test.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_historical_analytics_test_config_test",
+      "target": "services_historical_analytics_src_config_loadhistoricalconfig",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "services/historical-analytics/test/config.test.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_historical_analytics_test_config_test",
+      "target": "services_historical_analytics_src_store",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "services/historical-analytics/test/config.test.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_historical_analytics_test_config_test",
+      "target": "services_historical_analytics_src_store_tohistoricalrow",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "services/historical-analytics/test/config.test.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_historical_analytics_test_integration_test",
+      "target": "ref_vitest",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "services/historical-analytics/test/integration.test.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_historical_analytics_test_integration_test",
+      "target": "ref_node_crypto",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "services/historical-analytics/test/integration.test.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_historical_analytics_test_integration_test",
+      "target": "ref_kafkajs",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "services/historical-analytics/test/integration.test.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_historical_analytics_test_integration_test",
+      "target": "ref_pino",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "services/historical-analytics/test/integration.test.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_historical_analytics_test_integration_test",
+      "target": "services_historical_analytics_src_config",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "services/historical-analytics/test/integration.test.ts",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_historical_analytics_test_integration_test",
+      "target": "services_historical_analytics_src_config_loadhistoricalconfig",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "services/historical-analytics/test/integration.test.ts",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_historical_analytics_test_integration_test",
+      "target": "services_historical_analytics_src_store",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "services/historical-analytics/test/integration.test.ts",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_historical_analytics_test_integration_test",
+      "target": "services_historical_analytics_src_store_clickhousestore",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "services/historical-analytics/test/integration.test.ts",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_historical_analytics_test_integration_test",
+      "target": "services_historical_analytics_src_consumer",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "services/historical-analytics/test/integration.test.ts",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_historical_analytics_test_integration_test",
+      "target": "services_historical_analytics_src_consumer_historicalconsumer",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "services/historical-analytics/test/integration.test.ts",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_historical_analytics_tsconfig",
+      "target": "services_historical_analytics_tsconfig_extends",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "services/historical-analytics/tsconfig.json",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_historical_analytics_tsconfig",
+      "target": "ref_tsconfig_base_json",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "services/historical-analytics/tsconfig.json",
+      "source_location": "L2",
+      "weight": 1.0,
+      "context": "import",
+      "_origin": "ast"
+    },
+    {
+      "source": "services_historical_analytics_tsconfig",
+      "target": "services_historical_analytics_tsconfig_compileroptions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "services/historical-analytics/tsconfig.json",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_historical_analytics_tsconfig_compileroptions",
+      "target": "services_historical_analytics_tsconfig_compileroptions_outdir",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "services/historical-analytics/tsconfig.json",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_historical_analytics_tsconfig_compileroptions",
+      "target": "services_historical_analytics_tsconfig_compileroptions_rootdir",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "services/historical-analytics/tsconfig.json",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_historical_analytics_tsconfig_compileroptions",
+      "target": "services_historical_analytics_tsconfig_compileroptions_composite",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "services/historical-analytics/tsconfig.json",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_historical_analytics_tsconfig_compileroptions",
+      "target": "services_historical_analytics_tsconfig_compileroptions_declaration",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "services/historical-analytics/tsconfig.json",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_historical_analytics_tsconfig",
+      "target": "services_historical_analytics_tsconfig_references",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "services/historical-analytics/tsconfig.json",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_historical_analytics_tsconfig",
+      "target": "services_historical_analytics_tsconfig_include",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "services/historical-analytics/tsconfig.json",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_ml_service_app_init_rationale_1",
+      "target": "services_ml_service_app_init",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "services/ml-service/app/__init__.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_ml_service_app_api",
+      "target": "os",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "services/ml-service/app/api.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_ml_service_app_api",
+      "target": "fastapi",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "services/ml-service/app/api.py",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_ml_service_app_api",
+      "target": "services_ml_service_app_inference",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "services/ml-service/app/api.py",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_ml_service_app_api",
+      "target": "services_ml_service_app_schemas",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "services/ml-service/app/api.py",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_ml_service_app_api_health",
+      "target": "get",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "services/ml-service/app/api.py",
+      "source_location": "L13",
+      "weight": 1.0,
+      "context": "decorator",
+      "_origin": "ast"
+    },
+    {
+      "source": "services_ml_service_app_api",
+      "target": "services_ml_service_app_api_health",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "services/ml-service/app/api.py",
+      "source_location": "L14",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_ml_service_app_api_predict",
+      "target": "post",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "services/ml-service/app/api.py",
+      "source_location": "L16",
+      "weight": 1.0,
+      "context": "decorator",
+      "_origin": "ast"
+    },
+    {
+      "source": "services_ml_service_app_api",
+      "target": "services_ml_service_app_api_predict",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "services/ml-service/app/api.py",
+      "source_location": "L17",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_ml_service_app_api_predict",
+      "target": "services_ml_service_app_schemas_predictionrequest",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "services/ml-service/app/api.py",
+      "source_location": "L17",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_ml_service_app_features_init_rationale_1",
+      "target": "services_ml_service_app_features_init",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "services/ml-service/app/features/__init__.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_ml_service_app_features_engineering",
+      "target": "datetime",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "services/ml-service/app/features/engineering.py",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_ml_service_app_features_engineering",
+      "target": "pathlib",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "services/ml-service/app/features/engineering.py",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_ml_service_app_features_engineering",
+      "target": "json",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "services/ml-service/app/features/engineering.py",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_ml_service_app_features_engineering",
+      "target": "pandas",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "services/ml-service/app/features/engineering.py",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_ml_service_app_features_engineering",
+      "target": "services_ml_service_app_features_engineering_load_events",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "services/ml-service/app/features/engineering.py",
+      "source_location": "L15",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_ml_service_app_features_engineering_load_events",
+      "target": "services_ml_service_app_features_engineering_py_path",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "services/ml-service/app/features/engineering.py",
+      "source_location": "L15",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_ml_service_app_features_engineering_load_events",
+      "target": "services_ml_service_app_features_engineering_py_dataframe",
+      "relation": "references",
+      "context": "return_type",
+      "confidence": "EXTRACTED",
+      "source_file": "services/ml-service/app/features/engineering.py",
+      "source_location": "L15",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_ml_service_app_features_engineering",
+      "target": "services_ml_service_app_features_engineering_build_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "services/ml-service/app/features/engineering.py",
+      "source_location": "L24",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_ml_service_app_features_engineering_build_features",
+      "target": "services_ml_service_app_features_engineering_py_dataframe",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "services/ml-service/app/features/engineering.py",
+      "source_location": "L24",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_ml_service_app_features_engineering",
+      "target": "services_ml_service_app_features_engineering_chronological_split",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "services/ml-service/app/features/engineering.py",
+      "source_location": "L59",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_ml_service_app_features_engineering_chronological_split",
+      "target": "services_ml_service_app_features_engineering_py_dataframe",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "services/ml-service/app/features/engineering.py",
+      "source_location": "L59",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_ml_service_app_inference",
+      "target": "pathlib",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "services/ml-service/app/inference.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_ml_service_app_inference",
+      "target": "json",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "services/ml-service/app/inference.py",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_ml_service_app_inference",
+      "target": "joblib",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "services/ml-service/app/inference.py",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_ml_service_app_inference",
+      "target": "pandas",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "services/ml-service/app/inference.py",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_ml_service_app_inference",
+      "target": "services_ml_service_app_features_engineering",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "services/ml-service/app/inference.py",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_ml_service_app_inference",
+      "target": "services_ml_service_app_inference_predictor",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "services/ml-service/app/inference.py",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_ml_service_app_inference_predictor",
+      "target": "services_ml_service_app_inference_predictor_init",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "services/ml-service/app/inference.py",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_ml_service_app_inference_predictor",
+      "target": "services_ml_service_app_inference_predictor_predict",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "services/ml-service/app/inference.py",
+      "source_location": "L11",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_ml_service_app_schemas",
+      "target": "pydantic",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "services/ml-service/app/schemas.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_ml_service_app_schemas",
+      "target": "services_ml_service_app_schemas_maintenancefeatures",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "services/ml-service/app/schemas.py",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_ml_service_app_schemas_maintenancefeatures",
+      "target": "basemodel",
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "services/ml-service/app/schemas.py",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_ml_service_app_schemas",
+      "target": "services_ml_service_app_schemas_predictionrequest",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "services/ml-service/app/schemas.py",
+      "source_location": "L19",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_ml_service_app_schemas_predictionrequest",
+      "target": "basemodel",
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "services/ml-service/app/schemas.py",
+      "source_location": "L19",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_ml_service_app_schemas",
+      "target": "services_ml_service_app_schemas_predictionresponse",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "services/ml-service/app/schemas.py",
+      "source_location": "L24",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_ml_service_app_schemas_predictionresponse",
+      "target": "basemodel",
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "services/ml-service/app/schemas.py",
+      "source_location": "L24",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_ml_service_app_training_init_rationale_1",
+      "target": "services_ml_service_app_training_init",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "services/ml-service/app/training/__init__.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_ml_service_app_training_train",
+      "target": "argparse",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "services/ml-service/app/training/train.py",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_ml_service_app_training_train",
+      "target": "datetime",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "services/ml-service/app/training/train.py",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_ml_service_app_training_train",
+      "target": "json",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "services/ml-service/app/training/train.py",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_ml_service_app_training_train",
+      "target": "pathlib",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "services/ml-service/app/training/train.py",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_ml_service_app_training_train",
+      "target": "joblib",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "services/ml-service/app/training/train.py",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_ml_service_app_training_train",
+      "target": "pandas",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "services/ml-service/app/training/train.py",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_ml_service_app_training_train",
+      "target": "sklearn_ensemble",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "services/ml-service/app/training/train.py",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_ml_service_app_training_train",
+      "target": "sklearn_impute",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "services/ml-service/app/training/train.py",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_ml_service_app_training_train",
+      "target": "sklearn_linear_model",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "services/ml-service/app/training/train.py",
+      "source_location": "L11",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_ml_service_app_training_train",
+      "target": "sklearn_metrics",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "services/ml-service/app/training/train.py",
+      "source_location": "L12",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_ml_service_app_training_train",
+      "target": "sklearn_pipeline",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "services/ml-service/app/training/train.py",
+      "source_location": "L13",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_ml_service_app_training_train",
+      "target": "services_ml_service_app_features_engineering",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "services/ml-service/app/training/train.py",
+      "source_location": "L14",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_ml_service_app_training_train",
+      "target": "services_ml_service_app_training_train_metrics",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "services/ml-service/app/training/train.py",
+      "source_location": "L17",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_ml_service_app_training_train_metrics",
+      "target": "services_ml_service_app_training_train_py_dataframe",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "services/ml-service/app/training/train.py",
+      "source_location": "L17",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_ml_service_app_training_train_metrics",
+      "target": "series",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "services/ml-service/app/training/train.py",
+      "source_location": "L17",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_ml_service_app_training_train",
+      "target": "services_ml_service_app_training_train_train",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "services/ml-service/app/training/train.py",
+      "source_location": "L23",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_ml_service_app_training_train_train",
+      "target": "services_ml_service_app_training_train_metrics",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "services/ml-service/app/training/train.py",
+      "source_location": "L30",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_ml_service_tests_test_ml",
+      "target": "json",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "services/ml-service/tests/test_ml.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_ml_service_tests_test_ml",
+      "target": "datetime",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "services/ml-service/tests/test_ml.py",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_ml_service_tests_test_ml",
+      "target": "pathlib",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "services/ml-service/tests/test_ml.py",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_ml_service_tests_test_ml",
+      "target": "services_ml_service_app_features_engineering",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "services/ml-service/tests/test_ml.py",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_ml_service_tests_test_ml",
+      "target": "services_ml_service_app_training_train",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "services/ml-service/tests/test_ml.py",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_ml_service_tests_test_ml",
+      "target": "services_ml_service_app_inference",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "services/ml-service/tests/test_ml.py",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_ml_service_tests_test_ml",
+      "target": "services_ml_service_tests_test_ml_write_events",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "services/ml-service/tests/test_ml.py",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_ml_service_tests_test_ml_write_events",
+      "target": "services_ml_service_tests_test_ml_py_path",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "services/ml-service/tests/test_ml.py",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_ml_service_tests_test_ml",
+      "target": "services_ml_service_tests_test_ml_test_features_are_bounded_and_labels_use_future_ground_truth",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "services/ml-service/tests/test_ml.py",
+      "source_location": "L31",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_ml_service_tests_test_ml_test_features_are_bounded_and_labels_use_future_ground_truth",
+      "target": "services_ml_service_tests_test_ml_py_path",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "services/ml-service/tests/test_ml.py",
+      "source_location": "L31",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_ml_service_tests_test_ml",
+      "target": "services_ml_service_tests_test_ml_test_training_and_prediction_metadata",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "services/ml-service/tests/test_ml.py",
+      "source_location": "L39",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_ml_service_tests_test_ml_test_training_and_prediction_metadata",
+      "target": "services_ml_service_tests_test_ml_py_path",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "services/ml-service/tests/test_ml.py",
+      "source_location": "L39",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_ml_service_tests_test_ml_test_features_are_bounded_and_labels_use_future_ground_truth",
+      "target": "services_ml_service_tests_test_ml_write_events",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "services/ml-service/tests/test_ml.py",
+      "source_location": "L32",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_ml_service_tests_test_ml_test_training_and_prediction_metadata",
+      "target": "services_ml_service_tests_test_ml_write_events",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "services/ml-service/tests/test_ml.py",
+      "source_location": "L40",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tsconfig",
+      "target": "tsconfig_files",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tsconfig.json",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tsconfig",
+      "target": "tsconfig_references",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tsconfig.json",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_historical_analytics_src_index",
+      "target": "services_historical_analytics_src_config",
+      "relation": "re_exports",
+      "context": "export",
+      "confidence": "EXTRACTED",
+      "source_file": "services/historical-analytics/src/index.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_historical_analytics_src_index",
+      "target": "services_historical_analytics_src_store",
+      "relation": "re_exports",
+      "context": "export",
+      "confidence": "EXTRACTED",
+      "source_file": "services/historical-analytics/src/index.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_historical_analytics_src_index",
+      "target": "services_historical_analytics_src_consumer",
+      "relation": "re_exports",
+      "context": "export",
+      "confidence": "EXTRACTED",
+      "source_file": "services/historical-analytics/src/index.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_historical_analytics_src_index",
+      "target": "services_historical_analytics_src_queries",
+      "relation": "re_exports",
+      "context": "export",
+      "confidence": "EXTRACTED",
+      "source_file": "services/historical-analytics/src/index.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_ml_service_app_api",
+      "target": "services_ml_service_app_inference_predictor",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "services/ml-service/app/api.py",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_ml_service_app_api",
+      "target": "services_ml_service_app_schemas_predictionrequest",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "services/ml-service/app/api.py",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_ml_service_app_api",
+      "target": "services_ml_service_app_schemas_predictionresponse",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "services/ml-service/app/api.py",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_ml_service_app_training_train",
+      "target": "services_ml_service_app_features_engineering_build_features",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "services/ml-service/app/training/train.py",
+      "source_location": "L14",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_ml_service_app_training_train",
+      "target": "services_ml_service_app_features_engineering_chronological_split",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "services/ml-service/app/training/train.py",
+      "source_location": "L14",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_ml_service_app_training_train",
+      "target": "services_ml_service_app_features_engineering_load_events",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "services/ml-service/app/training/train.py",
+      "source_location": "L14",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_ml_service_tests_test_ml",
+      "target": "services_ml_service_app_features_engineering_build_features",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "services/ml-service/tests/test_ml.py",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_ml_service_tests_test_ml",
+      "target": "services_ml_service_app_features_engineering_load_events",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "services/ml-service/tests/test_ml.py",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_ml_service_tests_test_ml",
+      "target": "services_ml_service_app_training_train_train",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "services/ml-service/tests/test_ml.py",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_ml_service_tests_test_ml",
+      "target": "services_ml_service_app_inference_predictor",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "services/ml-service/tests/test_ml.py",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_historical_analytics_src_consumer_historicalconsumer_constructor",
+      "target": "services_historical_analytics_src_config_historicalconfig",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "services/historical-analytics/src/consumer.ts",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_historical_analytics_src_consumer_historicalconsumer_constructor",
+      "target": "services_historical_analytics_src_store_clickhousestore",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "services/historical-analytics/src/consumer.ts",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_ml_service_app_training_train_train",
+      "target": "services_ml_service_app_features_engineering_build_features",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "services/ml-service/app/training/train.py",
+      "source_location": "L24",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_ml_service_app_training_train_train",
+      "target": "services_ml_service_app_features_engineering_load_events",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "services/ml-service/app/training/train.py",
+      "source_location": "L24",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_ml_service_app_training_train_train",
+      "target": "services_ml_service_app_features_engineering_chronological_split",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "services/ml-service/app/training/train.py",
+      "source_location": "L24",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_ml_service_tests_test_ml_test_features_are_bounded_and_labels_use_future_ground_truth",
+      "target": "services_ml_service_app_features_engineering_build_features",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "services/ml-service/tests/test_ml.py",
+      "source_location": "L33",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_ml_service_tests_test_ml_test_features_are_bounded_and_labels_use_future_ground_truth",
+      "target": "services_ml_service_app_features_engineering_load_events",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "services/ml-service/tests/test_ml.py",
+      "source_location": "L33",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_ml_service_tests_test_ml_test_training_and_prediction_metadata",
+      "target": "services_ml_service_app_training_train_train",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "services/ml-service/tests/test_ml.py",
+      "source_location": "L41",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_ml_service_tests_test_ml_test_training_and_prediction_metadata",
+      "target": "services_ml_service_app_inference_predictor",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "services/ml-service/tests/test_ml.py",
+      "source_location": "L44",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_ml_service_app_api_predict",
+      "target": "services_ml_service_app_schemas_predictionrequest",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "services/ml-service/app/api.py",
+      "source_location": "L17",
+      "weight": 0.8,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_ml_service_tests_test_ml_test_training_and_prediction_metadata",
+      "target": "services_ml_service_app_inference_predictor",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "services/ml-service/tests/test_ml.py",
+      "source_location": "L44",
+      "weight": 0.8,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_historical_analytics_src_consumer_historicalconsumer_start",
+      "target": "services_historical_analytics_src_store_clickhousestore_initialize",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "services/historical-analytics/src/consumer.ts",
+      "source_location": "L15",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_historical_analytics_src_consumer_historicalconsumer_start",
+      "target": "services_historical_analytics_src_store_clickhousestore_insert",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "services/historical-analytics/src/consumer.ts",
+      "source_location": "L30",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_historical_analytics_src_queries_runanalytics",
+      "target": "services_historical_analytics_src_store_clickhousestore_query",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "services/historical-analytics/src/queries.ts",
+      "source_location": "L18",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_historical_analytics_src_store",
+      "target": "packages_schemas_dist_telemetry",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "services/historical-analytics/src/store.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "type_only": true,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_historical_analytics_src_store",
+      "target": "packages_schemas_dist_telemetry_telemetryevent",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "services/historical-analytics/src/store.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_historical_analytics_src_store",
+      "target": "services_historical_analytics_src_config",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "services/historical-analytics/src/store.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "type_only": true,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_historical_analytics_src_store",
+      "target": "services_historical_analytics_src_config_historicalconfig",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "services/historical-analytics/src/store.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_historical_analytics_src_store",
+      "target": "services_historical_analytics_src_store_historicalrow",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "services/historical-analytics/src/store.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_historical_analytics_src_store",
+      "target": "services_historical_analytics_src_store_tohistoricalrow",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "services/historical-analytics/src/store.ts",
+      "source_location": "L25",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_historical_analytics_src_store",
+      "target": "services_historical_analytics_src_store_clickhousestore",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "services/historical-analytics/src/store.ts",
+      "source_location": "L49",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_historical_analytics_src_store_clickhousestore",
+      "target": "services_historical_analytics_src_store_clickhousestore_constructor",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "services/historical-analytics/src/store.ts",
+      "source_location": "L50",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_historical_analytics_src_store_clickhousestore",
+      "target": "services_historical_analytics_src_store_clickhousestore_request",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "services/historical-analytics/src/store.ts",
+      "source_location": "L51",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_historical_analytics_src_store_clickhousestore",
+      "target": "services_historical_analytics_src_store_clickhousestore_initialize",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "services/historical-analytics/src/store.ts",
+      "source_location": "L68",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_historical_analytics_src_store_clickhousestore",
+      "target": "services_historical_analytics_src_store_clickhousestore_insert",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "services/historical-analytics/src/store.ts",
+      "source_location": "L76",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_historical_analytics_src_store_clickhousestore",
+      "target": "services_historical_analytics_src_store_clickhousestore_query",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "services/historical-analytics/src/store.ts",
+      "source_location": "L82",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_historical_analytics_src_store_clickhousestore_initialize",
+      "target": "services_historical_analytics_src_store_clickhousestore_request",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "services/historical-analytics/src/store.ts",
+      "source_location": "L71",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_historical_analytics_src_store_clickhousestore_insert",
+      "target": "services_historical_analytics_src_store_clickhousestore_request",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "services/historical-analytics/src/store.ts",
+      "source_location": "L77",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_historical_analytics_src_store_clickhousestore_insert",
+      "target": "services_historical_analytics_src_store_tohistoricalrow",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "services/historical-analytics/src/store.ts",
+      "source_location": "L79",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_historical_analytics_src_store_clickhousestore_query",
+      "target": "services_historical_analytics_src_store_clickhousestore_request",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "services/historical-analytics/src/store.ts",
+      "source_location": "L83",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_historical_analytics_src_store_clickhousestore_constructor",
+      "target": "services_historical_analytics_src_config_historicalconfig",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "services/historical-analytics/src/store.ts",
+      "source_location": "L50",
+      "weight": 1.0,
+      "_origin": "ast"
     }
   ],
   "hyperedges": [],
@@ -14235,8 +17329,6 @@
   "output_tokens": 0,
   "extracted_sources": [
     "C:\\Users\\prajj\\Desktop\\motorq\\packages\\database\\prisma\\migrations\\20261001130000_init\\migration.sql",
-    "C:\\Users\\prajj\\Desktop\\motorq\\services\\stream-processor\\src\\processor.ts",
-    "C:\\Users\\prajj\\Desktop\\motorq\\services\\stream-processor\\src\\state.ts",
-    "C:\\Users\\prajj\\Desktop\\motorq\\services\\stream-processor\\test\\performance.test.ts"
+    "C:\\Users\\prajj\\Desktop\\motorq\\services\\historical-analytics\\src\\store.ts"
   ]
 }
