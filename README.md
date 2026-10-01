@@ -98,6 +98,10 @@ Kafka retains messages for replay. Start a new configurable consumer group with 
 
 Run `npm run stream-processor` after PostgreSQL is migrated/seeded and Kafka/Redis are running. The dedicated `fleetpulse-stream-processor` group validates events, keeps bounded event-time windows, and evaluates overheating, rapid temperature rise, harsh braking, excessive idling, low SOC, low SoH, and critical-fault rules. Only detections are written to the existing `Alert` model. Redis provides event idempotency and alert cooldown TTLs; repeated anomaly readings are suppressed and alerts resolve after normal telemetry. See [the stream processor guide](services/stream-processor/README.md) and [ADR-005](docs/adr/ADR-005-real-time-rule-stream-processing.md).
 
+## Block 2 product APIs and dashboard
+
+The API exposes dashboard, filtered vehicle/alert, telemetry-summary, analytics, and maintenance-risk routes. Start the web dashboard with `npm run dev --workspace=@fleetpulse/web`; set `NEXT_PUBLIC_API_BASE_URL` when the API is not on `http://localhost:3000`. The controlled assistant is available at `POST /api/v1/agent/query` and uses only registered product tools; its deterministic fallback keeps the core product independent of an external model or vector store.
+
 ## Block 1 historical analytics and ML
 
 Start ClickHouse with `docker compose up -d clickhouse`, then run `npm run historical-analytics` with Kafka available. It uses the separate `fleetpulse-historical-analytics` group and stores typed telemetry in a date-partitioned ClickHouse MergeTree table ordered by vehicle and event time. Export raw historical rows with `npm run historical-export` before running the Python training command in [services/ml-service](services/ml-service/README.md). The ML service predicts a seven-day maintenance-risk estimate only; it does not control vehicles or claim certainty. ClickHouse is the analytical store; PostgreSQL remains transactional and does not receive the telemetry firehose.

@@ -11,11 +11,16 @@ export const fleetListQuerySchema = z.object(pagination);
 export const vehicleListQuerySchema = z.object({
   ...pagination,
   fleetId: z.string().uuid().optional(),
+  powertrain: z.enum(['ICE', 'HYBRID', 'EV', 'PHEV']).optional(),
+  status: z.enum(['ACTIVE', 'INACTIVE', 'MAINTENANCE', 'RETIRED']).optional(),
+  oem: z.string().min(1).optional(),
 });
 export const alertListQuerySchema = z.object({
   ...pagination,
   vehicleId: z.string().uuid().optional(),
   status: z.enum(['OPEN', 'ACKNOWLEDGED', 'RESOLVED']).optional(),
+  severity: z.enum(['INFO', 'WARNING', 'CRITICAL']).optional(),
+  alertType: z.string().min(1).optional(),
 });
 export const maintenanceListQuerySchema = z.object({
   ...pagination,

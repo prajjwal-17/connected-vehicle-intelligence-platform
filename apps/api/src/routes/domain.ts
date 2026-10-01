@@ -21,7 +21,14 @@ export function registerDomainRoutes(app: FastifyInstance, service: DomainServic
 
   app.get('/api/v1/vehicles', async (request) => {
     const query = vehicleListQuerySchema.parse(request.query);
-    return service.listVehicles(query.fleetId, query.cursor, query.limit);
+    return service.listVehicles(
+      query.fleetId,
+      query.powertrain,
+      query.status,
+      query.oem,
+      query.cursor,
+      query.limit,
+    );
   });
 
   app.get('/api/v1/vehicles/:id', async (request) => {
@@ -31,7 +38,14 @@ export function registerDomainRoutes(app: FastifyInstance, service: DomainServic
 
   app.get('/api/v1/alerts', async (request) => {
     const query = alertListQuerySchema.parse(request.query);
-    return service.listAlerts(query.vehicleId, query.status, query.cursor, query.limit);
+    return service.listAlerts(
+      query.vehicleId,
+      query.status,
+      query.severity,
+      query.alertType,
+      query.cursor,
+      query.limit,
+    );
   });
 
   app.get('/api/v1/maintenance', async (request) => {

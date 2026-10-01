@@ -7,6 +7,11 @@ export const envSchema = z.object({
   DATABASE_URL: z.string().url(),
   REDIS_URL: z.string().url(),
   KAFKA_BROKERS: z.string().min(1),
+  CLICKHOUSE_URL: z.string().url().default('http://localhost:8123'),
+  CLICKHOUSE_DB: z.string().min(1).default('fleetpulse'),
+  CLICKHOUSE_USER: z.string().min(1).default('fleetpulse'),
+  CLICKHOUSE_PASSWORD: z.string().default('fleetpulse'),
+  ML_SERVICE_URL: z.string().url().default('http://localhost:8000'),
 });
 
 export type AppConfig = z.infer<typeof envSchema>;

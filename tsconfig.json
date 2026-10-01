@@ -8,6 +8,7 @@
     { "path": "services/ingestion" },
     { "path": "services/stream-processor" },
     { "path": "services/historical-analytics" },
-    { "path": "apps/api" }
+    { "path": "apps/api" },
+    { "path": "apps/web" }
   ]
 }

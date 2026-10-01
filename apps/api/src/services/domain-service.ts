@@ -1,4 +1,4 @@
-import type { AlertStatus } from '@prisma/client';
+import type { AlertSeverity, AlertStatus, PowertrainType, VehicleStatus } from '@prisma/client';
 import { DomainRepository } from '../repositories/domain-repository.js';
 import { NotFoundError } from '../utils/errors.js';
 import { pageResult } from '../utils/pagination.js';
@@ -17,8 +17,22 @@ export class DomainService {
     return fleet;
   }
 
-  async listVehicles(fleetId: string | undefined, cursor: string | undefined, limit: number) {
-    const vehicles = await this.repository.listVehicles(fleetId, cursor, limit);
+  async listVehicles(
+    fleetId: string | undefined,
+    powertrain: PowertrainType | undefined,
+    status: VehicleStatus | undefined,
+    oem: string | undefined,
+    cursor: string | undefined,
+    limit: number,
+  ) {
+    const vehicles = await this.repository.listVehicles(
+      fleetId,
+      powertrain,
+      status,
+      oem,
+      cursor,
+      limit,
+    );
     return pageResult(vehicles, limit, (vehicle) => vehicle.id);
   }
 
@@ -31,10 +45,19 @@ export class DomainService {
   async listAlerts(
     vehicleId: string | undefined,
     status: AlertStatus | undefined,
+    severity: AlertSeverity | undefined,
+    alertType: string | undefined,
     cursor: string | undefined,
     limit: number,
   ) {
-    const alerts = await this.repository.listAlerts(vehicleId, status, cursor, limit);
+    const alerts = await this.repository.listAlerts(
+      vehicleId,
+      status,
+      severity,
+      alertType,
+      cursor,
+      limit,
+    );
     return pageResult(alerts, limit, (alert) => alert.id);
   }
 

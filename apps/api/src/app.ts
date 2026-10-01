@@ -6,6 +6,11 @@ import { prisma } from '@fleetpulse/database';
 import { registerDomainRoutes } from './routes/domain.js';
 import { DomainRepository } from './repositories/domain-repository.js';
 import { DomainService } from './services/domain-service.js';
+import { ClickHouseClient } from './services/clickhouse-client.js';
+import { MlClient } from './services/ml-client.js';
+import { ProductService } from './services/product-service.js';
+import { AgentService } from './agent/agent-service.js';
+import { registerProductRoutes } from './routes/product.js';
 
 export function buildApp(config: AppConfig, database: DatabaseClient = prisma): FastifyInstance {
   const app = Fastify({
@@ -53,6 +58,17 @@ export function buildApp(config: AppConfig, database: DatabaseClient = prisma): 
 
   const service = new DomainService(new DomainRepository(database));
   registerDomainRoutes(app, service);
+  const product = new ProductService(
+    database,
+    new ClickHouseClient({
+      url: config.CLICKHOUSE_URL,
+      database: config.CLICKHOUSE_DB,
+      user: config.CLICKHOUSE_USER,
+      password: config.CLICKHOUSE_PASSWORD,
+    }),
+    new MlClient(config.ML_SERVICE_URL),
+  );
+  registerProductRoutes(app, product, new AgentService(service, product));
 
   return app;
 }
