@@ -6,6 +6,7 @@
     { "path": "packages/schemas" },
     { "path": "services/telemetry-simulator" },
     { "path": "services/ingestion" },
+    { "path": "services/stream-processor" },
     { "path": "apps/api" }
   ]
 }

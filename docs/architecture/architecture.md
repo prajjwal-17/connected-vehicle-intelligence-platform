@@ -4,9 +4,9 @@
 
 FleetPulse will help fleet managers understand which software-simulated vehicles show abnormal behavior or may need maintenance soon, why they are at risk, and what action to take.
 
-## Current Phase 3 flow
+## Current Phase 4 flow
 
-The API and transactional PostgreSQL core coexist with a software-only telemetry simulator. The simulator initializes lightweight in-memory vehicle state, advances it in a shared loop, validates versioned events, and emits them through a bounded sink. The Kafka sink publishes JSON events to `vehicle.telemetry.v1`, where a named ingestion consumer validates, deduplicates through Redis, and processes them.
+The API and transactional PostgreSQL core coexist with a software-only telemetry simulator. The simulator initializes lightweight in-memory vehicle state, advances it in a shared loop, validates versioned events, and emits them through a bounded sink. The Kafka sink publishes JSON events to `vehicle.telemetry.v1`, where independent ingestion and stream-processor consumer groups validate and process the durable stream. The stream processor maintains bounded event-time state, evaluates explainable rules, and writes only detected alerts to PostgreSQL.
 
 ## Telemetry ingestion flow
 
@@ -27,6 +27,28 @@ Virtual Vehicles -> Telemetry Simulator -> Kafka Producer -> Kafka
 - Invalid messages are rejected and counted. Transient processing failures are rethrown so KafkaJS does not acknowledge the message. No DLQ is added yet because there is no permanent-error policy or operator workflow in this phase.
 - Distinct event IDs with out-of-order timestamps are preserved as distinct events. Event-time reordering belongs to a later stream-processing phase.
 - KafkaJS processes messages per partition without an unbounded application queue; Kafka retains backlog when processing cannot keep up.
+
+## Stream processing and anomaly detection
+
+```text
+Kafka vehicle.telemetry.v1
+          ↓ group: fleetpulse-stream-processor
+Schema validation → event-time bounded window state
+          ↓
+Independent rule detectors
+          ↓
+Redis event idempotency + alert cooldown
+          ↓
+Existing PostgreSQL Alert model
+```
+
+The processor keeps at most 120 recent events per vehicle in memory and retains them for the configured state TTL. Events are sorted by their original `timestamp`; bounded out-of-order data is admitted to the window, while older data remains validated and counted as late without mutating active state. Redis stores only TTL-scoped event IDs and cooldown keys, not raw telemetry history.
+
+The synthetic rules cover sustained engine overheating, rapid temperature rise, harsh braking derived from consecutive speeds, excessive idling, low battery SOC, low battery SOH, and critical simulator faults. Existing database severity values are used: INFO for idle, WARNING for trend/battery signals, and CRITICAL for overheating/critical faults. These are explainable demo rules, not universal safety classifications.
+
+The alert manager resolves an open alert type after three normal events. Cooldown keys of `alert:{vehicleId}:{alertType}` suppress repeated writes while the condition is sustained. PostgreSQL writes retry three times with short backoff; failure is surfaced for Kafka redelivery. Event IDs are claimed before processing, and claims are released on processing failure. Detection latency is calculated from event timestamp to alert handling time and is reported only when measured.
+
+Sliding-window operations maintain a bounded per-vehicle collection; insertion is sorted and capped, so memory is O(V × W) for V active vehicles and W retained events per vehicle. Detector evaluation scans only the bounded vehicle window, O(W) per event. Cooldown and idempotency lookups are O(1) Redis operations. Horizontal scale is achieved through Kafka partitions and additional stream-processor instances.
 
 ## Intended future flow
 

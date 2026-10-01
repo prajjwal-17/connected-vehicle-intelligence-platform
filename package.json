@@ -10,8 +10,9 @@
   ],
   "scripts": {
     "postinstall": "npm run db:generate",
-    "build": "npm run build --workspace=@fleetpulse/database && npm run build --workspace=@fleetpulse/schemas && npm run build --workspace=@fleetpulse/ingestion && npm run build --workspace=@fleetpulse/telemetry-simulator && npm run build --workspace=@fleetpulse/api",
+    "build": "npm run build --workspace=@fleetpulse/database && npm run build --workspace=@fleetpulse/schemas && npm run build --workspace=@fleetpulse/ingestion && npm run build --workspace=@fleetpulse/telemetry-simulator && npm run build --workspace=@fleetpulse/stream-processor && npm run build --workspace=@fleetpulse/api",
     "ingestion": "npm run start --workspace=@fleetpulse/ingestion",
+    "stream-processor": "npm run start --workspace=@fleetpulse/stream-processor",
     "db:generate": "npm run generate --workspace=@fleetpulse/database",
     "db:migrate": "npm run migrate --workspace=@fleetpulse/database",
     "db:migrate:dev": "npm run migrate:dev --workspace=@fleetpulse/database",

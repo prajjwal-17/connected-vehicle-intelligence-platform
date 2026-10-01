@@ -42,10 +42,10 @@
     "semantic_hash": "166c717d1616cf24ab8b5292cccf4f87"
   },
   "package.json": {
-    "mtime": 1790865080.2984288,
-    "seen": 1790865151.1435516,
-    "ast_hash": "0345c4e80a6013b7d9a2ba11fd6039ea",
-    "semantic_hash": "0345c4e80a6013b7d9a2ba11fd6039ea"
+    "mtime": 1790865849.583841,
+    "seen": 1790866476.222926,
+    "ast_hash": "14a46d06daf8284283611e3dcd410086",
+    "semantic_hash": "14a46d06daf8284283611e3dcd410086"
   },
   "packages/config/package.json": {
     "mtime": 1790859701.7456439,
@@ -78,10 +78,10 @@
     "semantic_hash": "5ab926f2e31e4e0162f4971c63a7dcde"
   },
   "tsconfig.json": {
-    "mtime": 1790864793.7453394,
-    "seen": 1790865151.1445503,
-    "ast_hash": "7221a3d72da4f0bf895b3bf6b64323ee",
-    "semantic_hash": "7221a3d72da4f0bf895b3bf6b64323ee"
+    "mtime": 1790865850.373567,
+    "seen": 1790866476.2350032,
+    "ast_hash": "3c03dad9fe45ea37fc2e2170a9d2a1de",
+    "semantic_hash": "3c03dad9fe45ea37fc2e2170a9d2a1de"
   },
   "apps/api/src/repositories/domain-repository.ts": {
     "mtime": 1790861373.304766,
@@ -310,5 +310,89 @@
     "seen": 1790865478.9294617,
     "ast_hash": "bd5b46d0be0e6508804fc681a4dd6c7f",
     "semantic_hash": "bd5b46d0be0e6508804fc681a4dd6c7f"
+  },
+  "services/stream-processor/package.json": {
+    "mtime": 1790866153.674544,
+    "seen": 1790866476.2304935,
+    "ast_hash": "e79dd25e989bf21e7ed699e849e67d17",
+    "semantic_hash": "e79dd25e989bf21e7ed699e849e67d17"
+  },
+  "services/stream-processor/src/alerts.ts": {
+    "mtime": 1790866153.9196055,
+    "seen": 1790866476.2304935,
+    "ast_hash": "5cb441dc40cc136c47eb32ef71af2722",
+    "semantic_hash": "5cb441dc40cc136c47eb32ef71af2722"
+  },
+  "services/stream-processor/src/config.ts": {
+    "mtime": 1790866153.951403,
+    "seen": 1790866476.2304935,
+    "ast_hash": "4f7a5e55ebcc90851a466e937d0e51a6",
+    "semantic_hash": "4f7a5e55ebcc90851a466e937d0e51a6"
+  },
+  "services/stream-processor/src/consumer.ts": {
+    "mtime": 1790866153.9744902,
+    "seen": 1790866476.2304935,
+    "ast_hash": "48ae44590e01fd610fda9e2a12307eb6",
+    "semantic_hash": "48ae44590e01fd610fda9e2a12307eb6"
+  },
+  "services/stream-processor/src/index.ts": {
+    "mtime": 1790865944.7445366,
+    "seen": 1790866476.2304935,
+    "ast_hash": "1ed7461ae92a4b8aa603b356fa4fb427",
+    "semantic_hash": "1ed7461ae92a4b8aa603b356fa4fb427"
+  },
+  "services/stream-processor/src/main.ts": {
+    "mtime": 1790866153.990106,
+    "seen": 1790866476.2304935,
+    "ast_hash": "28e68e2ef34138368187315c1cdbab8b",
+    "semantic_hash": "28e68e2ef34138368187315c1cdbab8b"
+  },
+  "services/stream-processor/src/processor.ts": {
+    "mtime": 1790866605.9625583,
+    "seen": 1790866703.495285,
+    "ast_hash": "1f14011da44069dabc0bf2e523d1a7f9",
+    "semantic_hash": "1f14011da44069dabc0bf2e523d1a7f9"
+  },
+  "services/stream-processor/src/rules.ts": {
+    "mtime": 1790866154.0313907,
+    "seen": 1790866476.2304935,
+    "ast_hash": "75ca64166c4d2461e916615ea7a739fc",
+    "semantic_hash": "75ca64166c4d2461e916615ea7a739fc"
+  },
+  "services/stream-processor/src/state.ts": {
+    "mtime": 1790866605.1800427,
+    "seen": 1790866703.496286,
+    "ast_hash": "d76ad6466c15cc6fc1519c21e3a2c0dc",
+    "semantic_hash": "d76ad6466c15cc6fc1519c21e3a2c0dc"
+  },
+  "services/stream-processor/test/config.test.ts": {
+    "mtime": 1790865979.2077086,
+    "seen": 1790866476.2304935,
+    "ast_hash": "b10bfa0d5052b21fb04eee0365b64c90",
+    "semantic_hash": "b10bfa0d5052b21fb04eee0365b64c90"
+  },
+  "services/stream-processor/test/integration.test.ts": {
+    "mtime": 1790866352.3261561,
+    "seen": 1790866476.2304935,
+    "ast_hash": "210fd7eb08f2c794b808ab6432eccbdf",
+    "semantic_hash": "210fd7eb08f2c794b808ab6432eccbdf"
+  },
+  "services/stream-processor/test/rules.test.ts": {
+    "mtime": 1790866154.0664651,
+    "seen": 1790866476.2304935,
+    "ast_hash": "fd51d33aa7cd3562ef7c15f25d51197a",
+    "semantic_hash": "fd51d33aa7cd3562ef7c15f25d51197a"
+  },
+  "services/stream-processor/tsconfig.json": {
+    "mtime": 1790865852.730725,
+    "seen": 1790866476.2304935,
+    "ast_hash": "bc7de98c30516477f91a47cc8be0963c",
+    "semantic_hash": "bc7de98c30516477f91a47cc8be0963c"
+  },
+  "services/stream-processor/test/performance.test.ts": {
+    "mtime": 1790866557.6098378,
+    "seen": 1790866703.496286,
+    "ast_hash": "a147e3bc9c431aaad59922532aa04a25",
+    "semantic_hash": "a147e3bc9c431aaad59922532aa04a25"
   }
 }

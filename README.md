@@ -6,7 +6,7 @@ No physical IoT hardware is required: vehicles, telemetry, faults, and maintenan
 
 ## Current status
 
-Phase 0 established the repository foundation and local PostgreSQL, Redis, and Kafka infrastructure. Phase 1 added the transactional PostgreSQL core and read-oriented domain APIs. Phase 2 adds a software-only simulator and shared telemetry contract. Phase 3 adds durable Kafka ingestion with Redis-backed application idempotency. Stream processing, ML, AI, authentication, and frontend functionality remain future phases.
+Phase 0 established the repository foundation and local PostgreSQL, Redis, and Kafka infrastructure. Phase 1 added the transactional PostgreSQL core and read-oriented domain APIs. Phase 2 adds a software-only simulator and shared telemetry contract. Phase 3 adds durable Kafka ingestion with Redis-backed application idempotency. Phase 4 adds real-time rule-based stream processing and PostgreSQL-backed anomaly alerts. Predictive ML, AI, authentication, and frontend functionality remain future phases.
 
 ## Architecture
 
@@ -16,7 +16,7 @@ The API is the initial application boundary. PostgreSQL is reserved for transact
 
 `apps/api` contains the Node.js/TypeScript API. `apps/web` and future services are reserved as boundaries, while shared configuration lives in `packages/config`. Infrastructure and documentation live under `infrastructure`, `docs`, and the root Compose file.
 
-`services/telemetry-simulator` contains the bounded in-memory simulator. `services/ingestion` contains the shared Kafka producer boundary and ingestion consumer. `packages/schemas` contains the versioned telemetry event contract shared by both.
+`services/telemetry-simulator` contains the bounded in-memory simulator. `services/ingestion` contains the shared Kafka producer boundary and ingestion consumer. `services/stream-processor` contains bounded event-time state, explainable anomaly detectors, cooldowns, and alert persistence. `packages/schemas` contains the versioned telemetry event contract shared by all services.
 
 ## Prerequisites
 
@@ -65,6 +65,7 @@ npm run format:check
 npm run simulator -- --vehicles 1000 --duration 10 --rate 100
 npm run simulator -- --vehicles 1000 --duration 10 --rate 100 --output ./tmp/events.jsonl
 npm run ingestion
+npm run stream-processor
 npm run simulator -- --vehicles 10 --duration 10 --rate 10 --output-mode kafka
 ```
 
@@ -89,3 +90,7 @@ Start the existing Kafka and Redis services with `docker compose up -d kafka red
 Telemetry is published as JSON to `vehicle.telemetry.v1`, keyed by canonical `vehicleId`, with `schema-version` and `event-type` headers. The topic defaults to six partitions and seven-day development retention. The ingestion consumer uses group `fleetpulse-ingestion`, validates messages, and applies Redis `SET NX EX` under `telemetry:idempotency:{eventId}`. Kafka remains an at-least-once delivery log; application processing is idempotent, not globally exactly-once.
 
 Kafka retains messages for replay. Start a new configurable consumer group with `KAFKA_GROUP_ID` and `KAFKA_FROM_BEGINNING=true` to independently replay retained events. Out-of-order timestamps with distinct event IDs remain distinct and are not reordered in this phase. Consumer processing is bounded by KafkaJS per-partition handling, so Kafka retains backlog instead of an unbounded application queue or silent drops.
+
+## Phase 4 stream processing
+
+Run `npm run stream-processor` after PostgreSQL is migrated/seeded and Kafka/Redis are running. The dedicated `fleetpulse-stream-processor` group validates events, keeps bounded event-time windows, and evaluates overheating, rapid temperature rise, harsh braking, excessive idling, low SOC, low SoH, and critical-fault rules. Only detections are written to the existing `Alert` model. Redis provides event idempotency and alert cooldown TTLs; repeated anomaly readings are suppressed and alerts resolve after normal telemetry. See [the stream processor guide](services/stream-processor/README.md) and [ADR-005](docs/adr/ADR-005-real-time-rule-stream-processing.md).
