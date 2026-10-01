@@ -16,13 +16,19 @@ const envSchema = z.object({
   DUPLICATE_EVENT_RATE: z.coerce.number().min(0).max(1).default(0),
   OUT_OF_ORDER_RATE: z.coerce.number().min(0).max(1).default(0),
   MAX_EVENT_DELAY_MS: z.coerce.number().int().nonnegative().default(5_000),
-  OUTPUT_MODE: z.enum(['stdout', 'jsonl', 'memory']).default('stdout'),
+  OUTPUT_MODE: z.enum(['stdout', 'jsonl', 'memory', 'kafka']).default('stdout'),
   OUTPUT_FILE: z.string().min(1).default('./tmp/telemetry.jsonl'),
   REGION: z.enum(['north-india', 'us-west', 'europe']).default('north-india'),
   SIMULATION_DURATION_SECONDS: z.coerce.number().nonnegative().default(10),
   SEED: z.coerce.number().int().default(42),
   MAX_BUFFER_SIZE: z.coerce.number().int().positive().max(100_000).default(1_000),
   LOG_LEVEL: z.enum(['fatal', 'error', 'warn', 'info', 'debug', 'trace', 'silent']).default('info'),
+  KAFKA_BROKERS: z.string().min(1).default('localhost:9092'),
+  KAFKA_TOPIC: z.string().min(1).default('vehicle.telemetry.v1'),
+  KAFKA_CLIENT_ID: z.string().min(1).default('fleetpulse-simulator'),
+  KAFKA_PARTITIONS: z.coerce.number().int().positive().default(6),
+  KAFKA_REPLICATION_FACTOR: z.coerce.number().int().positive().default(1),
+  KAFKA_RETENTION_MS: z.coerce.number().int().positive().default(604_800_000),
 });
 
 export type SimulatorConfig = {
@@ -36,13 +42,19 @@ export type SimulatorConfig = {
   duplicateEventRate: number;
   outOfOrderRate: number;
   maxEventDelayMs: number;
-  outputMode: 'stdout' | 'jsonl' | 'memory';
+  outputMode: 'stdout' | 'jsonl' | 'memory' | 'kafka';
   outputFile: string;
   region: 'north-india' | 'us-west' | 'europe';
   durationSeconds: number;
   seed: number;
   maxBufferSize: number;
   logLevel: SimulatorLogLevel;
+  kafkaBrokers: string[];
+  kafkaTopic: string;
+  kafkaClientId: string;
+  kafkaPartitions: number;
+  kafkaReplicationFactor: number;
+  kafkaRetentionMs: number;
 };
 
 export type SimulatorLogLevel = z.infer<typeof envSchema>['LOG_LEVEL'];
@@ -67,5 +79,11 @@ export function loadSimulatorConfig(env: NodeJS.ProcessEnv = process.env): Simul
     seed: parsed.SEED,
     maxBufferSize: parsed.MAX_BUFFER_SIZE,
     logLevel: parsed.LOG_LEVEL,
+    kafkaBrokers: parsed.KAFKA_BROKERS.split(',').map((broker) => broker.trim()),
+    kafkaTopic: parsed.KAFKA_TOPIC,
+    kafkaClientId: parsed.KAFKA_CLIENT_ID,
+    kafkaPartitions: parsed.KAFKA_PARTITIONS,
+    kafkaReplicationFactor: parsed.KAFKA_REPLICATION_FACTOR,
+    kafkaRetentionMs: parsed.KAFKA_RETENTION_MS,
   };
 }

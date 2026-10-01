@@ -1,18 +1,22 @@
 {
-  "name": "@fleetpulse/telemetry-simulator",
+  "name": "@fleetpulse/ingestion",
   "version": "0.1.0",
   "private": true,
   "type": "module",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
+  "exports": {
+    ".": "./dist/index.js"
+  },
   "scripts": {
     "build": "tsc -p tsconfig.json",
-    "simulator": "tsx src/index.ts"
+    "start": "tsx src/main.ts"
   },
   "dependencies": {
     "@fleetpulse/schemas": "0.1.0",
-    "@fleetpulse/ingestion": "0.1.0",
+    "kafkajs": "^2.2.4",
     "pino": "^9.5.0",
+    "redis": "^4.7.0",
     "zod": "^3.24.1"
   },
   "devDependencies": {

@@ -6,6 +6,6 @@
     "composite": true,
     "declaration": true
   },
-  "references": [{ "path": "../../packages/schemas" }, { "path": "../ingestion" }],
+  "references": [{ "path": "../../packages/schemas" }],
   "include": ["src/**/*.ts"]
 }

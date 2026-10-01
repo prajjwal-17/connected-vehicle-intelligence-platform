@@ -5,6 +5,7 @@
     { "path": "packages/database" },
     { "path": "packages/schemas" },
     { "path": "services/telemetry-simulator" },
+    { "path": "services/ingestion" },
     { "path": "apps/api" }
   ]
 }

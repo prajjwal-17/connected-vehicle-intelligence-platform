@@ -6,17 +6,17 @@ No physical IoT hardware is required: vehicles, telemetry, faults, and maintenan
 
 ## Current status
 
-Phase 0 established the repository foundation and local PostgreSQL, Redis, and Kafka infrastructure. Phase 1 added the transactional PostgreSQL core and read-oriented domain APIs. Phase 2 adds a software-only simulator and shared telemetry contract. Kafka ingestion, stream processing, ML, AI, authentication, and frontend functionality remain future phases.
+Phase 0 established the repository foundation and local PostgreSQL, Redis, and Kafka infrastructure. Phase 1 added the transactional PostgreSQL core and read-oriented domain APIs. Phase 2 adds a software-only simulator and shared telemetry contract. Phase 3 adds durable Kafka ingestion with Redis-backed application idempotency. Stream processing, ML, AI, authentication, and frontend functionality remain future phases.
 
 ## Architecture
 
-The API is the initial application boundary. PostgreSQL is reserved for transactional domain data, Redis for ephemeral state and caching, and Kafka for the future high-volume telemetry stream. See [the architecture document](docs/architecture/architecture.md) and [ADRs](docs/adr).
+The API is the initial application boundary. PostgreSQL is reserved for transactional domain data, Redis provides idempotency state, and Kafka is the durable high-volume telemetry stream. See [the architecture document](docs/architecture/architecture.md) and [ADRs](docs/adr).
 
 ## Repository structure
 
 `apps/api` contains the Node.js/TypeScript API. `apps/web` and future services are reserved as boundaries, while shared configuration lives in `packages/config`. Infrastructure and documentation live under `infrastructure`, `docs`, and the root Compose file.
 
-`services/telemetry-simulator` contains the bounded in-memory simulator. `packages/schemas` contains the versioned telemetry event contract shared with future ingestion services.
+`services/telemetry-simulator` contains the bounded in-memory simulator. `services/ingestion` contains the shared Kafka producer boundary and ingestion consumer. `packages/schemas` contains the versioned telemetry event contract shared by both.
 
 ## Prerequisites
 
@@ -64,6 +64,8 @@ npm run build
 npm run format:check
 npm run simulator -- --vehicles 1000 --duration 10 --rate 100
 npm run simulator -- --vehicles 1000 --duration 10 --rate 100 --output ./tmp/events.jsonl
+npm run ingestion
+npm run simulator -- --vehicles 10 --duration 10 --rate 10 --output-mode kafka
 ```
 
 Stop local infrastructure with `docker compose down`; add `-v` when intentionally removing local database, Redis, and Kafka volumes.
@@ -78,4 +80,12 @@ A code-only Graphify visualization of the current repository is available at [do
 
 ## Phase 2 simulator
 
-The simulator represents virtual vehicles only; no physical IoT hardware is involved. It uses shared schema version `1.0`, correlated vehicle state, configurable regions, burst traffic, duplicate events, out-of-order delivery, bounded output buffering, and explainable fault scenarios. See [the simulator guide](services/telemetry-simulator/README.md). Kafka output is intentionally not implemented until Phase 3.
+The simulator represents virtual vehicles only; no physical IoT hardware is involved. It uses shared schema version `1.0`, correlated vehicle state, configurable regions, burst traffic, duplicate events, out-of-order delivery, bounded output buffering, and explainable fault scenarios. See [the simulator guide](services/telemetry-simulator/README.md).
+
+## Phase 3 Kafka ingestion
+
+Start the existing Kafka and Redis services with `docker compose up -d kafka redis`, then run `npm run ingestion` in one terminal. In another, run `npm run simulator -- --vehicles 10 --duration 10 --rate 10 --output-mode kafka`.
+
+Telemetry is published as JSON to `vehicle.telemetry.v1`, keyed by canonical `vehicleId`, with `schema-version` and `event-type` headers. The topic defaults to six partitions and seven-day development retention. The ingestion consumer uses group `fleetpulse-ingestion`, validates messages, and applies Redis `SET NX EX` under `telemetry:idempotency:{eventId}`. Kafka remains an at-least-once delivery log; application processing is idempotent, not globally exactly-once.
+
+Kafka retains messages for replay. Start a new configurable consumer group with `KAFKA_GROUP_ID` and `KAFKA_FROM_BEGINNING=true` to independently replay retained events. Out-of-order timestamps with distinct event IDs remain distinct and are not reordered in this phase. Consumer processing is bounded by KafkaJS per-partition handling, so Kafka retains backlog instead of an unbounded application queue or silent drops.
