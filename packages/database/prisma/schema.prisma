@@ -1,0 +1,173 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum UserRole {
+  ADMIN
+  FLEET_MANAGER
+  OPERATOR
+  VIEWER
+}
+
+enum PowertrainType {
+  ICE
+  HYBRID
+  EV
+  PHEV
+}
+
+enum VehicleStatus {
+  ACTIVE
+  INACTIVE
+  MAINTENANCE
+  RETIRED
+}
+
+enum AlertSeverity {
+  INFO
+  WARNING
+  CRITICAL
+}
+
+enum AlertStatus {
+  OPEN
+  ACKNOWLEDGED
+  RESOLVED
+}
+
+model Tenant {
+  id        String     @id @default(uuid()) @db.Uuid
+  name      String     @unique
+  createdAt DateTime   @default(now())
+  updatedAt DateTime   @updatedAt
+  users     User[]
+  fleets    Fleet[]
+  auditLogs AuditLog[]
+}
+
+model User {
+  id        String      @id @default(uuid()) @db.Uuid
+  tenantId  String      @db.Uuid
+  email     String
+  name      String
+  role      UserRole    @default(VIEWER)
+  createdAt DateTime    @default(now())
+  updatedAt DateTime    @updatedAt
+  tenant    Tenant      @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+  auditLogs AuditLog[]
+
+  @@unique([tenantId, email])
+  @@index([tenantId])
+}
+
+model Fleet {
+  id          String    @id @default(uuid()) @db.Uuid
+  tenantId    String    @db.Uuid
+  name        String
+  description String?
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+  tenant      Tenant    @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+  vehicles    Vehicle[]
+  drivers     Driver[]
+
+  @@unique([tenantId, name])
+  @@index([tenantId])
+}
+
+model Vehicle {
+  id             String                       @id @default(uuid()) @db.Uuid
+  fleetId        String                       @db.Uuid
+  vin            String                       @unique
+  oem            String
+  model          String
+  modelYear      Int
+  powertrainType PowertrainType
+  status         VehicleStatus                @default(ACTIVE)
+  createdAt      DateTime                     @default(now())
+  updatedAt      DateTime                     @updatedAt
+  fleet          Fleet                        @relation(fields: [fleetId], references: [id], onDelete: Cascade)
+  assignments    VehicleDriverAssignment[]
+  maintenance    MaintenanceRecord[]
+  alerts         Alert[]
+
+  @@index([fleetId])
+}
+
+model Driver {
+  id          String                       @id @default(uuid()) @db.Uuid
+  fleetId     String                       @db.Uuid
+  name        String
+  createdAt   DateTime                     @default(now())
+  updatedAt   DateTime                     @updatedAt
+  fleet       Fleet                        @relation(fields: [fleetId], references: [id], onDelete: Cascade)
+  assignments VehicleDriverAssignment[]
+
+  @@unique([fleetId, name])
+  @@index([fleetId])
+}
+
+model VehicleDriverAssignment {
+  id           String    @id @default(uuid()) @db.Uuid
+  vehicleId    String    @db.Uuid
+  driverId     String    @db.Uuid
+  assignedAt   DateTime
+  unassignedAt DateTime?
+  vehicle      Vehicle   @relation(fields: [vehicleId], references: [id], onDelete: Cascade)
+  driver       Driver    @relation(fields: [driverId], references: [id], onDelete: Cascade)
+
+  @@unique([vehicleId, driverId, assignedAt])
+  @@index([vehicleId, assignedAt])
+  @@index([driverId, assignedAt])
+}
+
+model MaintenanceRecord {
+  id              String   @id @default(uuid()) @db.Uuid
+  vehicleId       String   @db.Uuid
+  maintenanceType String
+  description     String
+  performedAt     DateTime
+  cost            Decimal  @db.Decimal(12, 2)
+  odometer        Int
+  createdAt       DateTime @default(now())
+  vehicle         Vehicle  @relation(fields: [vehicleId], references: [id], onDelete: Cascade)
+
+  @@index([vehicleId, performedAt])
+}
+
+model Alert {
+  id         String        @id @default(uuid()) @db.Uuid
+  vehicleId  String        @db.Uuid
+  alertType  String
+  severity   AlertSeverity
+  status     AlertStatus   @default(OPEN)
+  detectedAt DateTime
+  resolvedAt DateTime?
+  metadata   Json
+  createdAt  DateTime      @default(now())
+  vehicle    Vehicle       @relation(fields: [vehicleId], references: [id], onDelete: Cascade)
+
+  @@index([vehicleId, detectedAt])
+  @@index([status])
+}
+
+model AuditLog {
+  id           String   @id @default(uuid()) @db.Uuid
+  tenantId     String   @db.Uuid
+  actorId      String?  @db.Uuid
+  action       String
+  resourceType String
+  resourceId   String
+  metadata     Json
+  createdAt    DateTime @default(now())
+  tenant       Tenant   @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+  actor        User?    @relation(fields: [actorId], references: [id], onDelete: SetNull)
+
+  @@index([tenantId, createdAt])
+  @@index([resourceType, resourceId])
+}

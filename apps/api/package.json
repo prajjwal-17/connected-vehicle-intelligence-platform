@@ -10,8 +10,10 @@
   },
   "dependencies": {
     "@fleetpulse/config": "0.1.0",
+    "@fleetpulse/database": "0.1.0",
     "fastify": "^5.2.1",
-    "pino": "^9.5.0"
+    "pino": "^9.5.0",
+    "zod": "^3.24.1"
   },
   "devDependencies": {
     "tsx": "^4.19.2"

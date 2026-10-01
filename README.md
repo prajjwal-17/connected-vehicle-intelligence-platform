@@ -30,7 +30,7 @@ npm install
 docker compose up -d
 ```
 
-The Compose services communicate by service name inside Docker. The host-facing development endpoints are PostgreSQL on `localhost:5432`, Redis on `localhost:6379`, and Kafka on `localhost:9092`.
+The Compose services communicate by service name inside Docker. The host-facing development endpoints are PostgreSQL on `localhost:55432`, Redis on `localhost:6379`, and Kafka on `localhost:9092`. Inside Docker, PostgreSQL remains available as `postgres:5432`.
 
 ## API
 
@@ -67,3 +67,7 @@ Stop local infrastructure with `docker compose down`; add `-v` when intentionall
 ## Technology direction
 
 The current foundation uses Node.js, TypeScript, Fastify, Zod, Pino, PostgreSQL, Redis, Kafka, Docker Compose, ESLint, Prettier, and Vitest. Future analytical storage, ML, AI, observability, and orchestration choices will be introduced only in their corresponding phases.
+
+## Codebase visualization
+
+A code-only Graphify visualization of the current repository is available at [docs/graphify/graphify-out/graph.html](docs/graphify/graphify-out/graph.html). The accompanying graph data and extraction manifest are stored beside it.

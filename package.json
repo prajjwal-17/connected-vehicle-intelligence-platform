@@ -8,7 +8,13 @@
     "packages/*"
   ],
   "scripts": {
-    "build": "npm run build --workspace=@fleetpulse/api",
+    "build": "npm run build --workspace=@fleetpulse/database && npm run build --workspace=@fleetpulse/api",
+    "db:generate": "npm run generate --workspace=@fleetpulse/database",
+    "db:migrate": "npm run migrate --workspace=@fleetpulse/database",
+    "db:migrate:dev": "npm run migrate:dev --workspace=@fleetpulse/database",
+    "db:seed": "npm run seed --workspace=@fleetpulse/database",
+    "db:studio": "npm run studio --workspace=@fleetpulse/database",
+    "db:reset": "npm run reset --workspace=@fleetpulse/database",
     "dev": "npm run dev --workspace=@fleetpulse/api",
     "format": "prettier --write .",
     "format:check": "prettier --check .",

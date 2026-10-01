@@ -5,7 +5,7 @@ const validEnv = {
   NODE_ENV: 'test',
   PORT: '3000',
   LOG_LEVEL: 'info',
-  DATABASE_URL: 'postgresql://fleetpulse:fleetpulse@localhost:5432/fleetpulse',
+  DATABASE_URL: 'postgresql://fleetpulse:fleetpulse@localhost:55432/fleetpulse',
   REDIS_URL: 'redis://localhost:6379',
   KAFKA_BROKERS: 'localhost:9092',
 };
