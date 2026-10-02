@@ -10,16 +10,32 @@ export class ProductService {
     private readonly ml: MlClient,
   ) {}
 
-  async overview() {
-    const [vehicles, openAlerts, criticalAlerts, analytics] = await Promise.all([
-      this.db.vehicle.count(),
-      this.db.alert.count({ where: { status: 'OPEN' } }),
-      this.db.alert.count({ where: { status: 'OPEN', severity: 'CRITICAL' } }),
+  async overview(tenantId?: string) {
+    const vehicleWhere = tenantId ? { fleet: { tenantId } } : undefined;
+    const vehiclesForAnalytics = tenantId
+      ? await this.db.vehicle.findMany({ where: vehicleWhere, select: { id: true, vin: true } })
+      : undefined;
+    const vehicleIds = vehiclesForAnalytics?.map((vehicle) => vehicle.id);
+    const vins = vehiclesForAnalytics?.map((vehicle) => vehicle.vin);
+    const [vehicles, activeVehicles, openAlerts, criticalAlerts, analytics] = await Promise.all([
+      this.db.vehicle.count({ where: vehicleWhere }),
+      this.db.vehicle.count({
+        where: { status: 'ACTIVE', ...(tenantId ? { fleet: { tenantId } } : {}) },
+      }),
+      this.db.alert.count({
+        where: { status: 'OPEN', ...(tenantId ? { vehicle: { fleet: { tenantId } } } : {}) },
+      }),
+      this.db.alert.count({
+        where: {
+          status: 'OPEN',
+          severity: 'CRITICAL',
+          ...(tenantId ? { vehicle: { fleet: { tenantId } } } : {}),
+        },
+      }),
       this.clickhouse
-        .fleetAnalytics()
+        .fleetAnalytics(7, vehicleIds, vins)
         .catch(() => ({ events: 0, vehicles: 0, averageSpeedKph: null })),
     ]);
-    const activeVehicles = await this.db.vehicle.count({ where: { status: 'ACTIVE' } });
     return {
       totalVehicles: vehicles,
       activeVehicles,
@@ -30,9 +46,9 @@ export class ProductService {
     };
   }
 
-  async vehicleDetails(id: string) {
-    const vehicle = await this.db.vehicle.findUnique({
-      where: { id },
+  async vehicleDetails(id: string, tenantId?: string) {
+    const vehicle = await this.db.vehicle.findFirst({
+      where: { id, ...(tenantId ? { fleet: { tenantId } } : {}) },
       include: {
         fleet: true,
         alerts: { orderBy: { detectedAt: 'desc' }, take: 20 },
@@ -40,19 +56,40 @@ export class ProductService {
       },
     });
     if (!vehicle) throw new NotFoundError('Vehicle', id);
-    const telemetry = await this.clickhouse.vehicleSummary(id);
+    const telemetry = await this.clickhouse.vehicleSummary(id, vehicle.vin);
     return { ...vehicle, telemetrySummary: telemetry };
   }
 
-  telemetrySummary(id: string) {
-    return this.clickhouse.vehicleSummary(id);
+  async telemetrySummary(id: string, tenantId?: string) {
+    const vehicle = await this.requireVehicle(id, tenantId);
+    return this.clickhouse.vehicleSummary(id, vehicle.vin);
   }
-  maintenanceRisk(id: string) {
+  async maintenanceRisk(id: string, tenantId?: string) {
+    const vehicle = await this.requireVehicle(id, tenantId);
     return this.clickhouse
-      .vehicleSummary(id)
+      .vehicleSummary(id, vehicle.vin)
       .then((summary) => this.ml.maintenanceRisk(id, summary));
   }
-  fleetAnalytics() {
-    return this.clickhouse.fleetAnalytics();
+  async fleetAnalytics(tenantId?: string) {
+    const vehicles = tenantId
+      ? await this.db.vehicle.findMany({
+          where: { fleet: { tenantId } },
+          select: { id: true, vin: true },
+        })
+      : undefined;
+    return this.clickhouse.fleetAnalytics(
+      7,
+      vehicles?.map((vehicle) => vehicle.id),
+      vehicles?.map((vehicle) => vehicle.vin),
+    );
+  }
+
+  private async requireVehicle(id: string, tenantId?: string) {
+    const vehicle = await this.db.vehicle.findFirst({
+      where: { id, ...(tenantId ? { fleet: { tenantId } } : {}) },
+      select: { id: true, vin: true },
+    });
+    if (!vehicle) throw new NotFoundError('Vehicle', id);
+    return vehicle;
   }
 }

@@ -1,6 +1,6 @@
 import { Kafka } from 'kafkajs';
 import type { Logger } from 'pino';
-import { parseTelemetryEvent } from '@fleetpulse/schemas';
+import { parseTelemetryEvent, type TelemetryEvent } from '@fleetpulse/schemas';
 import type { HistoricalConfig } from './config.js';
 import { ClickHouseStore } from './store.js';
 
@@ -24,13 +24,20 @@ export class HistoricalConsumer {
       fromBeginning: this.config.fromBeginning,
     });
     await this.consumer.run({
-      eachMessage: async ({ message }) => {
-        try {
-          const event = parseTelemetryEvent(JSON.parse(message.value?.toString() ?? ''));
-          await this.store.insert(event);
-        } catch (error) {
-          this.logger.warn({ err: error }, 'historical telemetry rejected or storage failed');
+      eachBatchAutoResolve: false,
+      eachBatch: async ({ batch, resolveOffset, heartbeat }) => {
+        const events: TelemetryEvent[] = [];
+        for (const message of batch.messages) {
+          try {
+            events.push(parseTelemetryEvent(JSON.parse(message.value?.toString() ?? '')));
+          } catch (error) {
+            this.logger.warn({ err: error }, 'historical telemetry rejected');
+            resolveOffset(message.offset);
+          }
         }
+        await this.store.insertBatch(events);
+        for (const message of batch.messages) resolveOffset(message.offset);
+        await heartbeat();
       },
     });
   }

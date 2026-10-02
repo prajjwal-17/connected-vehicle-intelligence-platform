@@ -1,0 +1,53 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: "{{ include \"fleetpulse.fullname\" . }}-config"
+type: Opaque
+stringData:
+  DATABASE_URL: {{ .Values.api.databaseUrl | quote }}
+  REDIS_URL: {{ .Values.api.redisUrl | quote }}
+  KAFKA_BROKERS: {{ .Values.api.kafkaBrokers | quote }}
+  CLICKHOUSE_URL: {{ .Values.api.clickhouseUrl | quote }}
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: "{{ include \"fleetpulse.fullname\" . }}-api"
+spec:
+  replicas: {{ .Values.api.replicas }}
+  selector:
+    matchLabels:
+      app: "{{ include \"fleetpulse.fullname\" . }}-api"
+  template:
+    metadata:
+      labels:
+        app: "{{ include \"fleetpulse.fullname\" . }}-api"
+    spec:
+      containers:
+        - name: api
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          ports:
+            - containerPort: {{ .Values.api.port }}
+          envFrom:
+            - secretRef:
+                name: "{{ include \"fleetpulse.fullname\" . }}-config"
+          env:
+            - name: AUTH_MODE
+              value: {{ .Values.api.authMode | quote }}
+          readinessProbe:
+            httpGet: { path: /ready, port: {{ .Values.api.port }} }
+            initialDelaySeconds: 5
+          livenessProbe:
+            httpGet: { path: /health, port: {{ .Values.api.port }} }
+            initialDelaySeconds: 5
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: "{{ include \"fleetpulse.fullname\" . }}-api"
+spec:
+  selector:
+    app: "{{ include \"fleetpulse.fullname\" . }}-api"
+  ports:
+    - port: {{ .Values.service.apiPort }}
+      targetPort: {{ .Values.api.port }}

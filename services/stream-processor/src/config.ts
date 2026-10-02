@@ -21,6 +21,7 @@ const schema = z.object({
   ALERT_COOLDOWN_SECONDS: z.coerce.number().positive().default(300),
   STATE_TTL_SECONDS: z.coerce.number().positive().default(900),
   ALERT_RESOLUTION_NORMAL_EVENTS: z.coerce.number().int().positive().default(3),
+  VEHICLE_LOOKUP_BATCH_SIZE: z.coerce.number().int().positive().max(1_000).default(250),
   LOG_LEVEL: z.enum(['fatal', 'error', 'warn', 'info', 'debug', 'trace', 'silent']).default('info'),
 });
 
@@ -42,6 +43,7 @@ export type StreamProcessorConfig = {
   alertCooldownSeconds: number;
   stateTtlSeconds: number;
   normalEventsForResolution: number;
+  vehicleLookupBatchSize: number;
   logLevel: z.infer<typeof schema>['LOG_LEVEL'];
 };
 
@@ -67,6 +69,7 @@ export function loadStreamProcessorConfig(
     alertCooldownSeconds: p.ALERT_COOLDOWN_SECONDS,
     stateTtlSeconds: p.STATE_TTL_SECONDS,
     normalEventsForResolution: p.ALERT_RESOLUTION_NORMAL_EVENTS,
+    vehicleLookupBatchSize: p.VEHICLE_LOOKUP_BATCH_SIZE,
     logLevel: p.LOG_LEVEL,
   };
 }

@@ -9,11 +9,27 @@ export type KafkaRuntimeConfig = {
   kafkaPartitions: number;
   kafkaReplicationFactor: number;
   kafkaRetentionMs: number;
+  kafkaBatchSize?: number;
+  kafkaBatchMaxBytes?: number;
+  kafkaMaxInFlightRequests?: number;
+  kafkaBatchConcurrency?: number;
+  kafkaCompression?: boolean;
 };
 
 export type KafkaMetrics = {
   telemetryEventsProduced: number;
   kafkaProducerErrors: number;
+  schemaValidationMs: number;
+  serializationMs: number;
+  kafkaSendWaitMs: number;
+  batchesSent: number;
+  successfulSends: number;
+  failedSends: number;
+  sendLatencyMs: number[];
+  batchSizes: number[];
+  inFlightPeak: number;
+  activeSendRequests: number;
+  queueDepthPeak: number;
 };
 
 export type KafkaTelemetryMessage = {
@@ -23,7 +39,10 @@ export type KafkaTelemetryMessage = {
 };
 
 export function buildKafkaMessage(event: TelemetryEvent): KafkaTelemetryMessage {
-  const validated = telemetryEventSchema.parse(event);
+  return buildKafkaMessageFromValidated(telemetryEventSchema.parse(event));
+}
+
+function buildKafkaMessageFromValidated(validated: TelemetryEvent): KafkaTelemetryMessage {
   return {
     key: validated.vehicleId,
     value: JSON.stringify(validated),
@@ -79,10 +98,25 @@ export async function ensureTelemetryTopic(
 }
 
 export class KafkaTelemetryProducer {
-  readonly metrics: KafkaMetrics = { telemetryEventsProduced: 0, kafkaProducerErrors: 0 };
+  readonly metrics: KafkaMetrics = {
+    telemetryEventsProduced: 0,
+    kafkaProducerErrors: 0,
+    schemaValidationMs: 0,
+    serializationMs: 0,
+    kafkaSendWaitMs: 0,
+    batchesSent: 0,
+    successfulSends: 0,
+    failedSends: 0,
+    sendLatencyMs: [],
+    batchSizes: [],
+    inFlightPeak: 0,
+    activeSendRequests: 0,
+    queueDepthPeak: 0,
+  };
   private readonly kafka: Kafka;
   private readonly producer: Producer;
   private connected = false;
+  private connectPromise?: Promise<void>;
 
   constructor(
     private readonly config: KafkaRuntimeConfig,
@@ -91,37 +125,71 @@ export class KafkaTelemetryProducer {
     this.kafka = createKafka(config);
     this.producer = this.kafka.producer({
       allowAutoTopicCreation: false,
-      maxInFlightRequests: 5,
+      maxInFlightRequests: config.kafkaMaxInFlightRequests ?? 1,
     });
   }
 
   async connect(): Promise<void> {
     if (this.connected) return;
-    const admin = this.kafka.admin();
-    await ensureTelemetryTopic(admin, this.config, this.logger);
-    await admin.disconnect();
-    await this.producer.connect();
-    this.connected = true;
+    if (this.connectPromise) return this.connectPromise;
+    this.connectPromise = (async () => {
+      const admin = this.kafka.admin();
+      await ensureTelemetryTopic(admin, this.config, this.logger);
+      await admin.disconnect();
+      await this.producer.connect();
+      this.connected = true;
+    })();
+    try {
+      await this.connectPromise;
+    } finally {
+      this.connectPromise = undefined;
+    }
   }
 
   async send(event: TelemetryEvent): Promise<void> {
-    const validated = telemetryEventSchema.parse(event);
+    await this.sendBatch([event]);
+  }
+
+  async sendBatch(events: TelemetryEvent[]): Promise<void> {
+    if (events.length === 0) return;
+    const validationStarted = performance.now();
+    const validated = events.map((event) => telemetryEventSchema.parse(event));
+    this.metrics.schemaValidationMs += performance.now() - validationStarted;
     await this.connect();
+    const serializationStarted = performance.now();
+    const messages = validated.map(buildKafkaMessageFromValidated);
+    this.metrics.serializationMs += performance.now() - serializationStarted;
+    this.metrics.batchSizes.push(validated.length);
+    this.metrics.activeSendRequests += 1;
+    this.metrics.inFlightPeak = Math.max(
+      this.metrics.inFlightPeak,
+      this.metrics.activeSendRequests,
+    );
+    const sendStarted = performance.now();
     try {
       await this.producer.send({
         topic: this.config.kafkaTopic,
         acks: -1,
-        compression: 1,
-        messages: [buildKafkaMessage(validated)],
+        compression: this.config.kafkaCompression === false ? 0 : 1,
+        messages,
       });
-      this.metrics.telemetryEventsProduced += 1;
+      const sendLatency = performance.now() - sendStarted;
+      this.metrics.kafkaSendWaitMs += sendLatency;
+      this.metrics.sendLatencyMs.push(sendLatency);
+      this.metrics.batchesSent += 1;
+      this.metrics.successfulSends += 1;
+      this.metrics.telemetryEventsProduced += validated.length;
     } catch (error) {
-      this.metrics.kafkaProducerErrors += 1;
+      this.metrics.failedSends += 1;
+      this.metrics.kafkaSendWaitMs += performance.now() - sendStarted;
+      this.metrics.kafkaProducerErrors += validated.length;
       this.logger.error(
-        { err: error, eventId: validated.eventId },
+        { err: error, eventCount: validated.length },
         'kafka telemetry publish failed',
       );
       throw error;
+    } finally {
+      this.metrics.activeSendRequests -= 1;
     }
   }
 

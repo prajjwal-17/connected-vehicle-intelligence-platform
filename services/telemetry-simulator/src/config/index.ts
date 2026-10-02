@@ -7,6 +7,7 @@ const booleanFromEnv = z.preprocess((value) => {
 
 const envSchema = z.object({
   VEHICLE_COUNT: z.coerce.number().int().min(1).max(1_000_000).default(100),
+  VEHICLE_INDEX_OFFSET: z.coerce.number().int().nonnegative().default(0),
   SIMULATION_INTERVAL_MS: z.coerce.number().int().positive().default(100),
   EVENTS_PER_SECOND: z.coerce.number().positive().default(100),
   TIME_ACCELERATION: z.coerce.number().positive().default(1),
@@ -29,10 +30,16 @@ const envSchema = z.object({
   KAFKA_PARTITIONS: z.coerce.number().int().positive().default(6),
   KAFKA_REPLICATION_FACTOR: z.coerce.number().int().positive().default(1),
   KAFKA_RETENTION_MS: z.coerce.number().int().positive().default(604_800_000),
+  KAFKA_BATCH_SIZE: z.coerce.number().int().positive().max(1_000).default(500),
+  KAFKA_BATCH_MAX_BYTES: z.coerce.number().int().positive().default(1_000_000),
+  KAFKA_BATCH_CONCURRENCY: z.coerce.number().int().positive().max(10).default(1),
+  KAFKA_MAX_IN_FLIGHT_REQUESTS: z.coerce.number().int().positive().max(10).default(5),
+  KAFKA_COMPRESSION: booleanFromEnv.default(true),
 });
 
 export type SimulatorConfig = {
   vehicleCount: number;
+  vehicleIndexOffset: number;
   simulationIntervalMs: number;
   eventsPerSecond: number;
   timeAcceleration: number;
@@ -55,6 +62,11 @@ export type SimulatorConfig = {
   kafkaPartitions: number;
   kafkaReplicationFactor: number;
   kafkaRetentionMs: number;
+  kafkaBatchSize: number;
+  kafkaBatchMaxBytes: number;
+  kafkaMaxInFlightRequests: number;
+  kafkaBatchConcurrency: number;
+  kafkaCompression: boolean;
 };
 
 export type SimulatorLogLevel = z.infer<typeof envSchema>['LOG_LEVEL'];
@@ -63,6 +75,7 @@ export function loadSimulatorConfig(env: NodeJS.ProcessEnv = process.env): Simul
   const parsed = envSchema.parse(env);
   return {
     vehicleCount: parsed.VEHICLE_COUNT,
+    vehicleIndexOffset: parsed.VEHICLE_INDEX_OFFSET,
     simulationIntervalMs: parsed.SIMULATION_INTERVAL_MS,
     eventsPerSecond: parsed.EVENTS_PER_SECOND,
     timeAcceleration: parsed.TIME_ACCELERATION,
@@ -85,5 +98,10 @@ export function loadSimulatorConfig(env: NodeJS.ProcessEnv = process.env): Simul
     kafkaPartitions: parsed.KAFKA_PARTITIONS,
     kafkaReplicationFactor: parsed.KAFKA_REPLICATION_FACTOR,
     kafkaRetentionMs: parsed.KAFKA_RETENTION_MS,
+    kafkaBatchSize: parsed.KAFKA_BATCH_SIZE,
+    kafkaBatchMaxBytes: parsed.KAFKA_BATCH_MAX_BYTES,
+    kafkaMaxInFlightRequests: parsed.KAFKA_MAX_IN_FLIGHT_REQUESTS,
+    kafkaBatchConcurrency: parsed.KAFKA_BATCH_CONCURRENCY,
+    kafkaCompression: parsed.KAFKA_COMPRESSION,
   };
 }

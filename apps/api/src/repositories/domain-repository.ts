@@ -10,19 +10,20 @@ import type {
 export class DomainRepository {
   constructor(private readonly db: DatabaseClient) {}
 
-  listFleets(cursor: string | undefined, limit: number) {
+  listFleets(tenantId: string | undefined, cursor: string | undefined, limit: number) {
     return this.db.fleet.findMany({
-      where: cursor ? { id: { gt: cursor } } : undefined,
+      where: { ...(tenantId ? { tenantId } : {}), ...(cursor ? { id: { gt: cursor } } : {}) },
       orderBy: { id: 'asc' },
       take: limit + 1,
     });
   }
 
-  getFleet(id: string) {
-    return this.db.fleet.findUnique({ where: { id } });
+  getFleet(id: string, tenantId: string | undefined) {
+    return this.db.fleet.findFirst({ where: { id, ...(tenantId ? { tenantId } : {}) } });
   }
 
   listVehicles(
+    tenantId: string | undefined,
     fleetId: string | undefined,
     powertrain: PowertrainType | undefined,
     status: VehicleStatus | undefined,
@@ -31,6 +32,7 @@ export class DomainRepository {
     limit: number,
   ) {
     const where: Prisma.VehicleWhereInput = {
+      ...(tenantId ? { fleet: { tenantId } } : {}),
       ...(fleetId ? { fleetId } : {}),
       ...(powertrain ? { powertrainType: powertrain } : {}),
       ...(status ? { status } : {}),
@@ -40,11 +42,14 @@ export class DomainRepository {
     return this.db.vehicle.findMany({ where, orderBy: { id: 'asc' }, take: limit + 1 });
   }
 
-  getVehicle(id: string) {
-    return this.db.vehicle.findUnique({ where: { id } });
+  getVehicle(id: string, tenantId: string | undefined) {
+    return this.db.vehicle.findFirst({
+      where: { id, ...(tenantId ? { fleet: { tenantId } } : {}) },
+    });
   }
 
   listAlerts(
+    tenantId: string | undefined,
     vehicleId: string | undefined,
     status: AlertStatus | undefined,
     severity: AlertSeverity | undefined,
@@ -53,6 +58,7 @@ export class DomainRepository {
     limit: number,
   ) {
     const where: Prisma.AlertWhereInput = {
+      ...(tenantId ? { vehicle: { fleet: { tenantId } } } : {}),
       ...(vehicleId ? { vehicleId } : {}),
       ...(status ? { status } : {}),
       ...(severity ? { severity } : {}),
@@ -62,8 +68,14 @@ export class DomainRepository {
     return this.db.alert.findMany({ where, orderBy: { id: 'asc' }, take: limit + 1 });
   }
 
-  listMaintenance(vehicleId: string | undefined, cursor: string | undefined, limit: number) {
+  listMaintenance(
+    tenantId: string | undefined,
+    vehicleId: string | undefined,
+    cursor: string | undefined,
+    limit: number,
+  ) {
     const where: Prisma.MaintenanceRecordWhereInput = {
+      ...(tenantId ? { vehicle: { fleet: { tenantId } } } : {}),
       ...(vehicleId ? { vehicleId } : {}),
       ...(cursor ? { id: { gt: cursor } } : {}),
     };

@@ -65,6 +65,7 @@ describe('vehicle model and telemetry', () => {
     expect(event.eventType).toBe('FAULT');
     expect(event.fault?.scenario).toBe('ENGINE_OVERHEATING');
     expect(event.engine?.temperatureC).toBeGreaterThan(90);
+    expect(event.engine?.temperatureC).toBeLessThanOrEqual(180);
   });
 });
 

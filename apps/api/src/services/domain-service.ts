@@ -6,18 +6,19 @@ import { pageResult } from '../utils/pagination.js';
 export class DomainService {
   constructor(private readonly repository: DomainRepository) {}
 
-  async listFleets(cursor: string | undefined, limit: number) {
-    const fleets = await this.repository.listFleets(cursor, limit);
+  async listFleets(tenantId: string | undefined, cursor: string | undefined, limit: number) {
+    const fleets = await this.repository.listFleets(tenantId, cursor, limit);
     return pageResult(fleets, limit, (fleet) => fleet.id);
   }
 
-  async getFleet(id: string) {
-    const fleet = await this.repository.getFleet(id);
+  async getFleet(id: string, tenantId: string | undefined) {
+    const fleet = await this.repository.getFleet(id, tenantId);
     if (!fleet) throw new NotFoundError('Fleet', id);
     return fleet;
   }
 
   async listVehicles(
+    tenantId: string | undefined,
     fleetId: string | undefined,
     powertrain: PowertrainType | undefined,
     status: VehicleStatus | undefined,
@@ -26,6 +27,7 @@ export class DomainService {
     limit: number,
   ) {
     const vehicles = await this.repository.listVehicles(
+      tenantId,
       fleetId,
       powertrain,
       status,
@@ -36,13 +38,14 @@ export class DomainService {
     return pageResult(vehicles, limit, (vehicle) => vehicle.id);
   }
 
-  async getVehicle(id: string) {
-    const vehicle = await this.repository.getVehicle(id);
+  async getVehicle(id: string, tenantId: string | undefined) {
+    const vehicle = await this.repository.getVehicle(id, tenantId);
     if (!vehicle) throw new NotFoundError('Vehicle', id);
     return vehicle;
   }
 
   async listAlerts(
+    tenantId: string | undefined,
     vehicleId: string | undefined,
     status: AlertStatus | undefined,
     severity: AlertSeverity | undefined,
@@ -51,6 +54,7 @@ export class DomainService {
     limit: number,
   ) {
     const alerts = await this.repository.listAlerts(
+      tenantId,
       vehicleId,
       status,
       severity,
@@ -61,8 +65,13 @@ export class DomainService {
     return pageResult(alerts, limit, (alert) => alert.id);
   }
 
-  async listMaintenance(vehicleId: string | undefined, cursor: string | undefined, limit: number) {
-    const records = await this.repository.listMaintenance(vehicleId, cursor, limit);
+  async listMaintenance(
+    tenantId: string | undefined,
+    vehicleId: string | undefined,
+    cursor: string | undefined,
+    limit: number,
+  ) {
+    const records = await this.repository.listMaintenance(tenantId, vehicleId, cursor, limit);
     return pageResult(records, limit, (record) => record.id);
   }
 }

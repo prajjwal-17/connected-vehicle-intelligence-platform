@@ -7,6 +7,10 @@ function normalizeHeading(value: number): number {
   return (value + 360) % 360;
 }
 
+function clampTemperature(value: number): number {
+  return Math.min(180, Math.max(-40, value));
+}
+
 function moveVehicle(vehicle: VirtualVehicle, deltaSeconds: number) {
   const distanceKm = vehicle.speedKph * (deltaSeconds / 3_600);
   const latitudeDelta = (distanceKm * Math.cos((vehicle.heading * Math.PI) / 180)) / 111;
@@ -137,10 +141,17 @@ function faultPayload(vehicle: VirtualVehicle): TelemetryEvent['fault'] {
   };
 }
 
+export type TelemetryGenerationTimings = {
+  generationMs: number;
+  schemaValidationMs: number;
+};
+
 export function generateTelemetryEvent(
   vehicle: VirtualVehicle,
   timestamp = new Date(vehicle.lastEventTimestamp),
+  timings?: TelemetryGenerationTimings,
 ): TelemetryEvent {
+  const generationStarted = performance.now();
   vehicle.sequenceNumber += 1;
   const eventType = vehicle.pendingEventType ?? 'TELEMETRY';
   vehicle.pendingEventType = null;
@@ -160,7 +171,7 @@ export function generateTelemetryEvent(
     engine:
       vehicle.powertrainType === 'EV'
         ? undefined
-        : { rpm: vehicle.engineRpm, temperatureC: vehicle.engineTemperatureC },
+        : { rpm: vehicle.engineRpm, temperatureC: clampTemperature(vehicle.engineTemperatureC) },
     fuel:
       vehicle.fuelLevelPercent === null ? undefined : { levelPercent: vehicle.fuelLevelPercent },
     battery:
@@ -170,5 +181,9 @@ export function generateTelemetryEvent(
     fault:
       eventType === 'FAULT' || eventType === 'MAINTENANCE_DUE' ? faultPayload(vehicle) : undefined,
   };
-  return telemetryEventSchema.parse(event);
+  if (timings) timings.generationMs += performance.now() - generationStarted;
+  const validationStarted = performance.now();
+  const validated = telemetryEventSchema.parse(event);
+  if (timings) timings.schemaValidationMs += performance.now() - validationStarted;
+  return validated;
 }

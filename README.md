@@ -98,6 +98,12 @@ Kafka retains messages for replay. Start a new configurable consumer group with 
 
 Run `npm run stream-processor` after PostgreSQL is migrated/seeded and Kafka/Redis are running. The dedicated `fleetpulse-stream-processor` group validates events, keeps bounded event-time windows, and evaluates overheating, rapid temperature rise, harsh braking, excessive idling, low SOC, low SoH, and critical-fault rules. Only detections are written to the existing `Alert` model. Redis provides event idempotency and alert cooldown TTLs; repeated anomaly readings are suppressed and alerts resolve after normal telemetry. See [the stream processor guide](services/stream-processor/README.md) and [ADR-005](docs/adr/ADR-005-real-time-rule-stream-processing.md).
 
+## Block 3 hardening and deployment
+
+The API provides `/health` for liveness, `/ready` for PostgreSQL readiness, `/metrics` for Prometheus-compatible HTTP counters, bounded request bodies, per-IP development rate limiting, CORS allowlisting, security headers, and an optional upstream-auth boundary via `AUTH_MODE=header`. Production authentication requires a trusted OAuth2/OIDC proxy to provide verified identity and tenant headers; local `AUTH_MODE=disabled` is for development only. See [the threat model](docs/security/threat-model.md), [performance report](docs/performance/performance-report.md), and [algorithms write-up](docs/algorithms.md).
+
+Helm manifests are under `infrastructure/helm/fleetpulse` and treat PostgreSQL, Redis, Kafka, ClickHouse, and secret management as managed/external dependencies. Terraform is a provider-neutral infrastructure skeleton under `infrastructure/terraform`; it does not provision cloud resources or contain credentials.
+
 ## Block 2 product APIs and dashboard
 
 The API exposes dashboard, filtered vehicle/alert, telemetry-summary, analytics, and maintenance-risk routes. Start the web dashboard with `npm run dev --workspace=@fleetpulse/web`; set `NEXT_PUBLIC_API_BASE_URL` when the API is not on `http://localhost:3000`. The controlled assistant is available at `POST /api/v1/agent/query` and uses only registered product tools; its deterministic fallback keeps the core product independent of an external model or vector store.

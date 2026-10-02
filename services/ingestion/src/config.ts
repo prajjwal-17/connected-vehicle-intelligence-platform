@@ -22,6 +22,11 @@ export type IngestionConfig = {
   kafkaPartitions: number;
   kafkaReplicationFactor: number;
   kafkaRetentionMs: number;
+  kafkaBatchSize?: number;
+  kafkaBatchMaxBytes?: number;
+  kafkaMaxInFlightRequests?: number;
+  kafkaBatchConcurrency?: number;
+  kafkaCompression?: boolean;
   kafkaFromBeginning: boolean;
   redisUrl: string;
   idempotencyTtlSeconds: number;
@@ -52,6 +57,11 @@ export function kafkaConfigFromSimulator(config: {
   kafkaPartitions: number;
   kafkaReplicationFactor: number;
   kafkaRetentionMs: number;
+  kafkaBatchSize?: number;
+  kafkaBatchMaxBytes?: number;
+  kafkaMaxInFlightRequests?: number;
+  kafkaBatchConcurrency?: number;
+  kafkaCompression?: boolean;
 }) {
   return {
     kafkaBrokers: config.kafkaBrokers,
@@ -60,5 +70,10 @@ export function kafkaConfigFromSimulator(config: {
     kafkaPartitions: config.kafkaPartitions,
     kafkaReplicationFactor: config.kafkaReplicationFactor,
     kafkaRetentionMs: config.kafkaRetentionMs,
+    kafkaBatchSize: config.kafkaBatchSize,
+    kafkaBatchMaxBytes: config.kafkaBatchMaxBytes,
+    kafkaMaxInFlightRequests: config.kafkaMaxInFlightRequests,
+    kafkaBatchConcurrency: config.kafkaBatchConcurrency,
+    kafkaCompression: config.kafkaCompression,
   };
 }

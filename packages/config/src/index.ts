@@ -12,6 +12,9 @@ export const envSchema = z.object({
   CLICKHOUSE_USER: z.string().min(1).default('fleetpulse'),
   CLICKHOUSE_PASSWORD: z.string().default('fleetpulse'),
   ML_SERVICE_URL: z.string().url().default('http://localhost:8000'),
+  AUTH_MODE: z.enum(['disabled', 'header']).default('disabled'),
+  CORS_ORIGINS: z.string().default('http://localhost:3001'),
+  RATE_LIMIT_PER_MINUTE: z.coerce.number().int().positive().default(120),
 });
 
 export type AppConfig = z.infer<typeof envSchema>;

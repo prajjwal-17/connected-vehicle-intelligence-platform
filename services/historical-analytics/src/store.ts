@@ -74,9 +74,13 @@ export class ClickHouseStore {
     );
   }
   async insert(event: TelemetryEvent): Promise<void> {
+    await this.insertBatch([event]);
+  }
+  async insertBatch(events: TelemetryEvent[]): Promise<void> {
+    if (events.length === 0) return;
     await this.request(
       'INSERT INTO telemetry_events FORMAT JSONEachRow',
-      `${JSON.stringify(toHistoricalRow(event))}\n`,
+      `${events.map((event) => JSON.stringify(toHistoricalRow(event))).join('\n')}\n`,
     );
   }
   async query<T = Record<string, unknown>>(sql: string): Promise<T[]> {

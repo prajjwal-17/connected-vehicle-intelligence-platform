@@ -6,20 +6,32 @@ import { createDetectors } from './rules.js';
 import { BoundedVehicleStateStore } from './state.js';
 
 export type ProcessorMetrics = {
+  eventsProcessed: number;
   streamEventsConsumed: number;
   streamEventsValid: number;
   streamEventsInvalid: number;
   streamEventsTooLate: number;
   streamProcessingErrors: number;
+  schemaValidationMs: number;
+  stateLookupMs: number;
+  detectorEvaluationMs: number;
+  detectorMs: Record<string, number>;
+  totalProcessingMs: number;
 };
 
 export class StreamEventProcessor {
   readonly metrics: ProcessorMetrics = {
+    eventsProcessed: 0,
     streamEventsConsumed: 0,
     streamEventsValid: 0,
     streamEventsInvalid: 0,
     streamEventsTooLate: 0,
     streamProcessingErrors: 0,
+    schemaValidationMs: 0,
+    stateLookupMs: 0,
+    detectorEvaluationMs: 0,
+    detectorMs: {},
+    totalProcessingMs: 0,
   };
   private readonly state: BoundedVehicleStateStore;
   private readonly detectors;
@@ -38,16 +50,61 @@ export class StreamEventProcessor {
 
   async process(input: unknown): Promise<void> {
     this.metrics.streamEventsConsumed += 1;
-    let event: TelemetryEvent;
+    const event = this.parseEvent(input);
+    if (!event) return;
+    await this.processParsed(event);
+  }
+
+  async processBatch(
+    inputs: unknown[],
+    onProcessed?: (index: number) => void | Promise<void>,
+    onFailed?: (index: number) => void | Promise<void>,
+  ): Promise<void> {
+    const events: Array<{ event: TelemetryEvent; inputIndex: number }> = [];
+    const invalidInputIndexes: number[] = [];
+    for (let index = 0; index < inputs.length; index += 1) {
+      this.metrics.streamEventsConsumed += 1;
+      const event = this.parseEvent(inputs[index]);
+      if (event) events.push({ event, inputIndex: index });
+      else invalidInputIndexes.push(index);
+    }
+    await this.alerts.prefetchVehicleLookups(events.map(({ event }) => event));
+    const validEvents = new Map(events.map(({ event, inputIndex }) => [inputIndex, event]));
+    for (let index = 0; index < inputs.length; index += 1) {
+      const event = validEvents.get(index);
+      if (!event) {
+        if (invalidInputIndexes.includes(index)) await onProcessed?.(index);
+        continue;
+      }
+      try {
+        await this.processParsed(event);
+      } catch (error) {
+        await onFailed?.(index);
+        throw error;
+      }
+      await onProcessed?.(index);
+    }
+  }
+
+  private parseEvent(input: unknown): TelemetryEvent | undefined {
+    const validationStarted = performance.now();
     try {
-      event = parseTelemetryEvent(input);
+      const event = parseTelemetryEvent(input);
+      this.metrics.schemaValidationMs += performance.now() - validationStarted;
+      this.metrics.streamEventsValid += 1;
+      return event;
     } catch (error) {
+      this.metrics.schemaValidationMs += performance.now() - validationStarted;
       this.metrics.streamEventsInvalid += 1;
       this.logger.warn({ err: error }, 'invalid stream telemetry rejected');
-      return;
+      return undefined;
     }
-    this.metrics.streamEventsValid += 1;
+  }
+
+  private async processParsed(event: TelemetryEvent): Promise<void> {
+    const totalStarted = performance.now();
     const timestampMs = Date.parse(event.timestamp);
+    const stateStarted = performance.now();
     const existing = this.state.get(event.vehicleId);
     if (existing && timestampMs < existing.lastTimestampMs - this.config.maxOutOfOrderMs) {
       this.metrics.streamEventsTooLate += 1;
@@ -58,7 +115,17 @@ export class StreamEventProcessor {
       return;
     }
     const state = this.state.add(event);
-    const detections = this.detectors.flatMap((detector) => detector.evaluate(event, state));
+    this.metrics.stateLookupMs += performance.now() - stateStarted;
+    const detectorStarted = performance.now();
+    const detections = this.detectors.flatMap((detector) => {
+      const started = performance.now();
+      const result = detector.evaluate(event, state);
+      const elapsed = performance.now() - started;
+      this.metrics.detectorMs[detector.name] =
+        (this.metrics.detectorMs[detector.name] ?? 0) + elapsed;
+      return result;
+    });
+    this.metrics.detectorEvaluationMs += performance.now() - detectorStarted;
     try {
       await this.alerts.handle(event, detections);
       if (detections.length === 0) {
@@ -77,6 +144,8 @@ export class StreamEventProcessor {
           state.normalCounts.set('normal', 0);
         }
       } else state.normalCounts.set('normal', 0);
+      this.metrics.eventsProcessed += 1;
+      this.metrics.totalProcessingMs += performance.now() - totalStarted;
     } catch (error) {
       this.metrics.streamProcessingErrors += 1;
       this.logger.error({ err: error, eventId: event.eventId }, 'stream processing failed');

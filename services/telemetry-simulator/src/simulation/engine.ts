@@ -1,7 +1,11 @@
 import type { Logger } from 'pino';
 import { telemetryEventSchema, type TelemetryEvent } from '@fleetpulse/schemas';
 import type { SimulatorConfig } from '../config/index.js';
-import { advanceVehicle, generateTelemetryEvent } from '../generators/telemetry.js';
+import {
+  advanceVehicle,
+  generateTelemetryEvent,
+  type TelemetryGenerationTimings,
+} from '../generators/telemetry.js';
 import { SeededRandom } from '../models/random.js';
 import { createVehiclePopulation, type VirtualVehicle } from '../models/vehicle.js';
 import type { EventSink } from '../output/sinks.js';
@@ -16,6 +20,22 @@ export type SimulationMetrics = {
   burstEvents: number;
   elapsedMs: number;
   achievedEventsPerSecond: number;
+  cpuUserMs?: number;
+  cpuSystemMs?: number;
+  rssMb?: number;
+  profiling?: {
+    eventGenerationMs: number;
+    schemaValidationMs: number;
+    serializationMs: number;
+    kafkaSendWaitMs: number;
+    batchesSent: number;
+    successfulSends: number;
+    failedSends: number;
+    averageBatchSendLatencyMs: number;
+    p95BatchSendLatencyMs: number;
+    inFlightPeak: number;
+    queueDepthPeak: number;
+  };
 };
 
 export type SimulationRunOptions = {
@@ -38,7 +58,12 @@ export class SimulationEngine {
     private readonly logger: Logger<never, boolean>,
   ) {
     this.random = new SeededRandom(config.seed + 101);
-    this.vehicles = createVehiclePopulation(config.vehicleCount, config.seed, config.region);
+    this.vehicles = createVehiclePopulation(
+      config.vehicleCount,
+      config.seed,
+      config.region,
+      config.vehicleIndexOffset,
+    );
     logger.info(
       { vehicleCount: this.vehicles.length, region: config.region },
       'simulator population initialized',
@@ -64,8 +89,26 @@ export class SimulationEngine {
       burstEvents: 0,
       elapsedMs: 0,
       achievedEventsPerSecond: 0,
+      profiling: {
+        eventGenerationMs: 0,
+        schemaValidationMs: 0,
+        serializationMs: 0,
+        kafkaSendWaitMs: 0,
+        batchesSent: 0,
+        successfulSends: 0,
+        failedSends: 0,
+        averageBatchSendLatencyMs: 0,
+        p95BatchSendLatencyMs: 0,
+        inFlightPeak: 0,
+        queueDepthPeak: 0,
+      },
+    };
+    const generationTimings: TelemetryGenerationTimings = {
+      generationMs: 0,
+      schemaValidationMs: 0,
     };
     const startedAt = performance.now();
+    const cpuStarted = process.cpuUsage();
     let simulatedNow = Date.now();
 
     for (let index = 0; index < totalEvents; index += 1) {
@@ -80,8 +123,10 @@ export class SimulationEngine {
 
       let event: TelemetryEvent;
       try {
-        event = generateTelemetryEvent(vehicle, new Date(simulatedNow));
+        event = generateTelemetryEvent(vehicle, new Date(simulatedNow), generationTimings);
+        const validationStarted = performance.now();
         telemetryEventSchema.parse(event);
+        generationTimings.schemaValidationMs += performance.now() - validationStarted;
       } catch (error) {
         metrics.validationFailures += 1;
         this.logger.error(
@@ -105,8 +150,32 @@ export class SimulationEngine {
 
     await this.sink.close();
     metrics.elapsedMs = performance.now() - startedAt;
+    const cpuUsed = process.cpuUsage(cpuStarted);
+    metrics.cpuUserMs = cpuUsed.user / 1_000;
+    metrics.cpuSystemMs = cpuUsed.system / 1_000;
+    metrics.rssMb = process.memoryUsage().rss / (1024 * 1024);
     metrics.achievedEventsPerSecond =
       metrics.eventsGenerated / Math.max(metrics.elapsedMs / 1_000, 0.001);
+    const sinkMetrics = this.sink.getMetrics?.();
+    const sendLatencies = [...(sinkMetrics?.sendLatencyMs ?? [])].sort((a, b) => a - b);
+    const p95Index = Math.max(0, Math.ceil(sendLatencies.length * 0.95) - 1);
+    metrics.profiling = {
+      eventGenerationMs: generationTimings.generationMs,
+      schemaValidationMs:
+        generationTimings.schemaValidationMs + (sinkMetrics?.schemaValidationMs ?? 0),
+      serializationMs: sinkMetrics?.serializationMs ?? 0,
+      kafkaSendWaitMs: sinkMetrics?.kafkaSendWaitMs ?? 0,
+      batchesSent: sinkMetrics?.batchesSent ?? 0,
+      successfulSends: sinkMetrics?.successfulSends ?? 0,
+      failedSends: sinkMetrics?.failedSends ?? 0,
+      averageBatchSendLatencyMs:
+        sendLatencies.length > 0
+          ? sendLatencies.reduce((sum, value) => sum + value, 0) / sendLatencies.length
+          : 0,
+      p95BatchSendLatencyMs: sendLatencies[p95Index] ?? 0,
+      inFlightPeak: sinkMetrics?.inFlightPeak ?? 0,
+      queueDepthPeak: sinkMetrics?.queueDepthPeak ?? 0,
+    };
     this.logger.info({ ...metrics }, 'simulator stopped');
     return { metrics, vehicles: this.vehicles };
   }

@@ -130,13 +130,14 @@ export function createVehiclePopulation(
   count: number,
   seed: number,
   regionName: string,
+  indexOffset = 0,
 ): VirtualVehicle[] {
   const region = regions[regionName];
   if (!region) throw new Error(`Unknown simulator region: ${regionName}`);
   const random = new SeededRandom(seed);
   const vehicles = new Array<VirtualVehicle>(count);
   for (let index = 0; index < count; index += 1) {
-    vehicles[index] = createVehicle(index, random, region);
+    vehicles[index] = createVehicle(index + indexOffset, random, region);
   }
   return vehicles;
 }

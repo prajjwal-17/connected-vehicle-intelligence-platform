@@ -4660,23 +4660,6 @@
       "_origin": "ast"
     },
     {
-      "id": "apps_api_src_app",
-      "label": "app.ts",
-      "file_type": "code",
-      "source_file": "apps/api/src/app.ts",
-      "source_location": "L1",
-      "_origin": "ast"
-    },
-    {
-      "id": "apps_api_src_app_buildapp",
-      "label": "buildApp()",
-      "file_type": "code",
-      "source_file": "apps/api/src/app.ts",
-      "source_location": "L15",
-      "_callable": true,
-      "_origin": "ast"
-    },
-    {
       "id": "apps_api_src_repositories_domain_repository",
       "label": "domain-repository.ts",
       "file_type": "code",
@@ -5294,206 +5277,6 @@
       "_origin": "ast"
     },
     {
-      "id": "next",
-      "label": "next",
-      "file_type": "code",
-      "source_file": "next",
-      "confidence": "EXTRACTED",
-      "_origin": "ast"
-    },
-    {
-      "id": "apps_web_package",
-      "label": "web/package.json",
-      "file_type": "code",
-      "source_file": "apps/web/package.json",
-      "source_location": "L1",
-      "_origin": "ast"
-    },
-    {
-      "id": "apps_web_package_name",
-      "label": "name",
-      "file_type": "code",
-      "source_file": "apps/web/package.json",
-      "source_location": "L2",
-      "_origin": "ast"
-    },
-    {
-      "id": "apps_web_package_version",
-      "label": "version",
-      "file_type": "code",
-      "source_file": "apps/web/package.json",
-      "source_location": "L3",
-      "_origin": "ast"
-    },
-    {
-      "id": "apps_web_package_private",
-      "label": "private",
-      "file_type": "code",
-      "source_file": "apps/web/package.json",
-      "source_location": "L4",
-      "_origin": "ast"
-    },
-    {
-      "id": "apps_web_package_scripts",
-      "label": "scripts",
-      "file_type": "code",
-      "source_file": "apps/web/package.json",
-      "source_location": "L5",
-      "_origin": "ast"
-    },
-    {
-      "id": "apps_web_package_scripts_dev",
-      "label": "dev",
-      "file_type": "code",
-      "source_file": "apps/web/package.json",
-      "source_location": "L6",
-      "_origin": "ast"
-    },
-    {
-      "id": "apps_web_package_scripts_build",
-      "label": "build",
-      "file_type": "code",
-      "source_file": "apps/web/package.json",
-      "source_location": "L7",
-      "_origin": "ast"
-    },
-    {
-      "id": "apps_web_package_scripts_start",
-      "label": "start",
-      "file_type": "code",
-      "source_file": "apps/web/package.json",
-      "source_location": "L8",
-      "_origin": "ast"
-    },
-    {
-      "id": "apps_web_package_dependencies",
-      "label": "dependencies",
-      "file_type": "code",
-      "source_file": "apps/web/package.json",
-      "source_location": "L10",
-      "_origin": "ast"
-    },
-    {
-      "id": "apps_web_package_dependencies_next",
-      "label": "next",
-      "file_type": "code",
-      "source_file": "apps/web/package.json",
-      "source_location": "L11",
-      "_origin": "ast"
-    },
-    {
-      "id": "ref_next",
-      "label": "next",
-      "file_type": "concept",
-      "source_file": "apps/web/package.json",
-      "source_location": "L11",
-      "_origin": "ast"
-    },
-    {
-      "id": "apps_web_package_dependencies_react",
-      "label": "react",
-      "file_type": "code",
-      "source_file": "apps/web/package.json",
-      "source_location": "L12",
-      "_origin": "ast"
-    },
-    {
-      "id": "ref_react",
-      "label": "react",
-      "file_type": "concept",
-      "source_file": "apps/web/package.json",
-      "source_location": "L12",
-      "_origin": "ast"
-    },
-    {
-      "id": "apps_web_package_dependencies_react_dom",
-      "label": "react-dom",
-      "file_type": "code",
-      "source_file": "apps/web/package.json",
-      "source_location": "L13",
-      "_origin": "ast"
-    },
-    {
-      "id": "ref_react_dom",
-      "label": "react-dom",
-      "file_type": "concept",
-      "source_file": "apps/web/package.json",
-      "source_location": "L13",
-      "_origin": "ast"
-    },
-    {
-      "id": "apps_web_package_devdependencies",
-      "label": "devDependencies",
-      "file_type": "code",
-      "source_file": "apps/web/package.json",
-      "source_location": "L15",
-      "_origin": "ast"
-    },
-    {
-      "id": "apps_web_package_devdependencies_types_node",
-      "label": "@types/node",
-      "file_type": "code",
-      "source_file": "apps/web/package.json",
-      "source_location": "L16",
-      "_origin": "ast"
-    },
-    {
-      "id": "apps_web_package_json_ref_types_node",
-      "label": "@types/node",
-      "file_type": "concept",
-      "source_file": "apps/web/package.json",
-      "source_location": "L16",
-      "_origin": "ast"
-    },
-    {
-      "id": "apps_web_package_devdependencies_types_react",
-      "label": "@types/react",
-      "file_type": "code",
-      "source_file": "apps/web/package.json",
-      "source_location": "L17",
-      "_origin": "ast"
-    },
-    {
-      "id": "ref_types_react",
-      "label": "@types/react",
-      "file_type": "concept",
-      "source_file": "apps/web/package.json",
-      "source_location": "L17",
-      "_origin": "ast"
-    },
-    {
-      "id": "apps_web_package_devdependencies_types_react_dom",
-      "label": "@types/react-dom",
-      "file_type": "code",
-      "source_file": "apps/web/package.json",
-      "source_location": "L18",
-      "_origin": "ast"
-    },
-    {
-      "id": "ref_types_react_dom",
-      "label": "@types/react-dom",
-      "file_type": "concept",
-      "source_file": "apps/web/package.json",
-      "source_location": "L18",
-      "_origin": "ast"
-    },
-    {
-      "id": "apps_web_package_devdependencies_typescript",
-      "label": "typescript",
-      "file_type": "code",
-      "source_file": "apps/web/package.json",
-      "source_location": "L19",
-      "_origin": "ast"
-    },
-    {
-      "id": "apps_web_package_json_ref_typescript",
-      "label": "typescript",
-      "file_type": "concept",
-      "source_file": "apps/web/package.json",
-      "source_location": "L19",
-      "_origin": "ast"
-    },
-    {
       "id": "apps_web_tsconfig",
       "label": "web/tsconfig.json",
       "file_type": "code",
@@ -6006,41 +5789,6 @@
       "_origin": "ast"
     },
     {
-      "id": "packages_config_src_index",
-      "label": "config/src/index.ts",
-      "file_type": "code",
-      "source_file": "packages/config/src/index.ts",
-      "source_location": "L1",
-      "_origin": "ast"
-    },
-    {
-      "id": "packages_config_src_index_envschema",
-      "label": "envSchema",
-      "file_type": "code",
-      "source_file": "packages/config/src/index.ts",
-      "source_location": "L3",
-      "_origin": "ast"
-    },
-    {
-      "id": "packages_config_src_index_appconfig",
-      "label": "AppConfig",
-      "file_type": "code",
-      "source_file": "packages/config/src/index.ts",
-      "source_location": "L17",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast"
-    },
-    {
-      "id": "packages_config_src_index_loadconfig",
-      "label": "loadConfig()",
-      "file_type": "code",
-      "source_file": "packages/config/src/index.ts",
-      "source_location": "L19",
-      "_callable": true,
-      "_origin": "ast"
-    },
-    {
       "id": "tsconfig",
       "label": "tsconfig.json",
       "file_type": "code",
@@ -6062,6 +5810,283 @@
       "file_type": "code",
       "source_file": "tsconfig.json",
       "source_location": "L3",
+      "_origin": "ast"
+    },
+    {
+      "id": "apps_api_src_app",
+      "label": "app.ts",
+      "file_type": "code",
+      "source_file": "apps/api/src/app.ts",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "apps_api_src_app_buildapp",
+      "label": "buildApp()",
+      "file_type": "code",
+      "source_file": "apps/api/src/app.ts",
+      "source_location": "L15",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "apps_web_package",
+      "label": "web/package.json",
+      "file_type": "code",
+      "source_file": "apps/web/package.json",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "apps_web_package_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "apps/web/package.json",
+      "source_location": "L2",
+      "_origin": "ast"
+    },
+    {
+      "id": "apps_web_package_version",
+      "label": "version",
+      "file_type": "code",
+      "source_file": "apps/web/package.json",
+      "source_location": "L3",
+      "_origin": "ast"
+    },
+    {
+      "id": "apps_web_package_private",
+      "label": "private",
+      "file_type": "code",
+      "source_file": "apps/web/package.json",
+      "source_location": "L4",
+      "_origin": "ast"
+    },
+    {
+      "id": "apps_web_package_scripts",
+      "label": "scripts",
+      "file_type": "code",
+      "source_file": "apps/web/package.json",
+      "source_location": "L5",
+      "_origin": "ast"
+    },
+    {
+      "id": "apps_web_package_scripts_dev",
+      "label": "dev",
+      "file_type": "code",
+      "source_file": "apps/web/package.json",
+      "source_location": "L6",
+      "_origin": "ast"
+    },
+    {
+      "id": "apps_web_package_scripts_build",
+      "label": "build",
+      "file_type": "code",
+      "source_file": "apps/web/package.json",
+      "source_location": "L7",
+      "_origin": "ast"
+    },
+    {
+      "id": "apps_web_package_scripts_start",
+      "label": "start",
+      "file_type": "code",
+      "source_file": "apps/web/package.json",
+      "source_location": "L8",
+      "_origin": "ast"
+    },
+    {
+      "id": "apps_web_package_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "apps/web/package.json",
+      "source_location": "L10",
+      "_origin": "ast"
+    },
+    {
+      "id": "apps_web_package_dependencies_next",
+      "label": "next",
+      "file_type": "code",
+      "source_file": "apps/web/package.json",
+      "source_location": "L11",
+      "_origin": "ast"
+    },
+    {
+      "id": "ref_next",
+      "label": "next",
+      "file_type": "concept",
+      "source_file": "apps/web/package.json",
+      "source_location": "L11",
+      "_origin": "ast"
+    },
+    {
+      "id": "apps_web_package_dependencies_react",
+      "label": "react",
+      "file_type": "code",
+      "source_file": "apps/web/package.json",
+      "source_location": "L12",
+      "_origin": "ast"
+    },
+    {
+      "id": "ref_react",
+      "label": "react",
+      "file_type": "concept",
+      "source_file": "apps/web/package.json",
+      "source_location": "L12",
+      "_origin": "ast"
+    },
+    {
+      "id": "apps_web_package_dependencies_react_dom",
+      "label": "react-dom",
+      "file_type": "code",
+      "source_file": "apps/web/package.json",
+      "source_location": "L13",
+      "_origin": "ast"
+    },
+    {
+      "id": "ref_react_dom",
+      "label": "react-dom",
+      "file_type": "concept",
+      "source_file": "apps/web/package.json",
+      "source_location": "L13",
+      "_origin": "ast"
+    },
+    {
+      "id": "apps_web_package_devdependencies",
+      "label": "devDependencies",
+      "file_type": "code",
+      "source_file": "apps/web/package.json",
+      "source_location": "L15",
+      "_origin": "ast"
+    },
+    {
+      "id": "apps_web_package_devdependencies_types_node",
+      "label": "@types/node",
+      "file_type": "code",
+      "source_file": "apps/web/package.json",
+      "source_location": "L16",
+      "_origin": "ast"
+    },
+    {
+      "id": "ref_types_node",
+      "label": "@types/node",
+      "file_type": "concept",
+      "source_file": "apps/web/package.json",
+      "source_location": "L16",
+      "_origin": "ast"
+    },
+    {
+      "id": "apps_web_package_devdependencies_types_react",
+      "label": "@types/react",
+      "file_type": "code",
+      "source_file": "apps/web/package.json",
+      "source_location": "L17",
+      "_origin": "ast"
+    },
+    {
+      "id": "ref_types_react",
+      "label": "@types/react",
+      "file_type": "concept",
+      "source_file": "apps/web/package.json",
+      "source_location": "L17",
+      "_origin": "ast"
+    },
+    {
+      "id": "apps_web_package_devdependencies_types_react_dom",
+      "label": "@types/react-dom",
+      "file_type": "code",
+      "source_file": "apps/web/package.json",
+      "source_location": "L18",
+      "_origin": "ast"
+    },
+    {
+      "id": "ref_types_react_dom",
+      "label": "@types/react-dom",
+      "file_type": "concept",
+      "source_file": "apps/web/package.json",
+      "source_location": "L18",
+      "_origin": "ast"
+    },
+    {
+      "id": "apps_web_package_devdependencies_typescript",
+      "label": "typescript",
+      "file_type": "code",
+      "source_file": "apps/web/package.json",
+      "source_location": "L19",
+      "_origin": "ast"
+    },
+    {
+      "id": "ref_typescript",
+      "label": "typescript",
+      "file_type": "concept",
+      "source_file": "apps/web/package.json",
+      "source_location": "L19",
+      "_origin": "ast"
+    },
+    {
+      "id": "packages_config_src_index",
+      "label": "config/src/index.ts",
+      "file_type": "code",
+      "source_file": "packages/config/src/index.ts",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "packages_config_src_index_envschema",
+      "label": "envSchema",
+      "file_type": "code",
+      "source_file": "packages/config/src/index.ts",
+      "source_location": "L3",
+      "_origin": "ast"
+    },
+    {
+      "id": "packages_config_src_index_appconfig",
+      "label": "AppConfig",
+      "file_type": "code",
+      "source_file": "packages/config/src/index.ts",
+      "source_location": "L20",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "packages_config_src_index_loadconfig",
+      "label": "loadConfig()",
+      "file_type": "code",
+      "source_file": "packages/config/src/index.ts",
+      "source_location": "L22",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_performance_api_benchmark",
+      "label": "api-benchmark.mjs",
+      "file_type": "code",
+      "source_file": "scripts/performance/api-benchmark.mjs",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_performance_api_benchmark_requests",
+      "label": "requests",
+      "file_type": "code",
+      "source_file": "scripts/performance/api-benchmark.mjs",
+      "source_location": "L2",
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_performance_api_benchmark_samples",
+      "label": "samples",
+      "file_type": "code",
+      "source_file": "scripts/performance/api-benchmark.mjs",
+      "source_location": "L4",
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_performance_api_benchmark_percentile",
+      "label": "percentile()",
+      "file_type": "code",
+      "source_file": "scripts/performance/api-benchmark.mjs",
+      "source_location": "L18",
+      "_callable": true,
       "_origin": "ast"
     }
   ],
@@ -16786,271 +16811,6 @@
       "_origin": "ast"
     },
     {
-      "source": "apps_api_src_app",
-      "target": "ref_fastify",
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "apps/api/src/app.ts",
-      "source_location": "L1",
-      "weight": 1.0,
-      "_origin": "ast"
-    },
-    {
-      "source": "apps_api_src_app",
-      "target": "packages_config_dist_index",
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "apps/api/src/app.ts",
-      "source_location": "L2",
-      "weight": 1.0,
-      "type_only": true,
-      "_origin": "ast"
-    },
-    {
-      "source": "apps_api_src_app",
-      "target": "packages_config_dist_index_appconfig",
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "apps/api/src/app.ts",
-      "source_location": "L2",
-      "weight": 1.0,
-      "_origin": "ast"
-    },
-    {
-      "source": "apps_api_src_app",
-      "target": "packages_database_dist_client",
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "apps/api/src/app.ts",
-      "source_location": "L3",
-      "weight": 1.0,
-      "type_only": true,
-      "_origin": "ast"
-    },
-    {
-      "source": "apps_api_src_app",
-      "target": "packages_database_dist_client_databaseclient",
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "apps/api/src/app.ts",
-      "source_location": "L3",
-      "weight": 1.0,
-      "_origin": "ast"
-    },
-    {
-      "source": "apps_api_src_app",
-      "target": "ref_zod",
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "apps/api/src/app.ts",
-      "source_location": "L4",
-      "weight": 1.0,
-      "_origin": "ast"
-    },
-    {
-      "source": "apps_api_src_app",
-      "target": "packages_database_dist_client_prisma",
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "apps/api/src/app.ts",
-      "source_location": "L5",
-      "weight": 1.0,
-      "_origin": "ast"
-    },
-    {
-      "source": "apps_api_src_app",
-      "target": "apps_api_src_routes_domain",
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "apps/api/src/app.ts",
-      "source_location": "L6",
-      "weight": 1.0,
-      "_origin": "ast"
-    },
-    {
-      "source": "apps_api_src_app",
-      "target": "apps_api_src_routes_domain_registerdomainroutes",
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "apps/api/src/app.ts",
-      "source_location": "L6",
-      "weight": 1.0,
-      "_origin": "ast"
-    },
-    {
-      "source": "apps_api_src_app",
-      "target": "apps_api_src_repositories_domain_repository",
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "apps/api/src/app.ts",
-      "source_location": "L7",
-      "weight": 1.0,
-      "_origin": "ast"
-    },
-    {
-      "source": "apps_api_src_app",
-      "target": "apps_api_src_repositories_domain_repository_domainrepository",
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "apps/api/src/app.ts",
-      "source_location": "L7",
-      "weight": 1.0,
-      "_origin": "ast"
-    },
-    {
-      "source": "apps_api_src_app",
-      "target": "apps_api_src_services_domain_service",
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "apps/api/src/app.ts",
-      "source_location": "L8",
-      "weight": 1.0,
-      "_origin": "ast"
-    },
-    {
-      "source": "apps_api_src_app",
-      "target": "apps_api_src_services_domain_service_domainservice",
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "apps/api/src/app.ts",
-      "source_location": "L8",
-      "weight": 1.0,
-      "_origin": "ast"
-    },
-    {
-      "source": "apps_api_src_app",
-      "target": "apps_api_src_services_clickhouse_client",
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "apps/api/src/app.ts",
-      "source_location": "L9",
-      "weight": 1.0,
-      "_origin": "ast"
-    },
-    {
-      "source": "apps_api_src_app",
-      "target": "apps_api_src_services_clickhouse_client_clickhouseclient",
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "apps/api/src/app.ts",
-      "source_location": "L9",
-      "weight": 1.0,
-      "_origin": "ast"
-    },
-    {
-      "source": "apps_api_src_app",
-      "target": "apps_api_src_services_ml_client",
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "apps/api/src/app.ts",
-      "source_location": "L10",
-      "weight": 1.0,
-      "_origin": "ast"
-    },
-    {
-      "source": "apps_api_src_app",
-      "target": "apps_api_src_services_ml_client_mlclient",
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "apps/api/src/app.ts",
-      "source_location": "L10",
-      "weight": 1.0,
-      "_origin": "ast"
-    },
-    {
-      "source": "apps_api_src_app",
-      "target": "apps_api_src_services_product_service",
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "apps/api/src/app.ts",
-      "source_location": "L11",
-      "weight": 1.0,
-      "_origin": "ast"
-    },
-    {
-      "source": "apps_api_src_app",
-      "target": "apps_api_src_services_product_service_productservice",
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "apps/api/src/app.ts",
-      "source_location": "L11",
-      "weight": 1.0,
-      "_origin": "ast"
-    },
-    {
-      "source": "apps_api_src_app",
-      "target": "apps_api_src_agent_agent_service",
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "apps/api/src/app.ts",
-      "source_location": "L12",
-      "weight": 1.0,
-      "_origin": "ast"
-    },
-    {
-      "source": "apps_api_src_app",
-      "target": "apps_api_src_agent_agent_service_agentservice",
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "apps/api/src/app.ts",
-      "source_location": "L12",
-      "weight": 1.0,
-      "_origin": "ast"
-    },
-    {
-      "source": "apps_api_src_app",
-      "target": "apps_api_src_routes_product",
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "apps/api/src/app.ts",
-      "source_location": "L13",
-      "weight": 1.0,
-      "_origin": "ast"
-    },
-    {
-      "source": "apps_api_src_app",
-      "target": "apps_api_src_routes_product_registerproductroutes",
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "apps/api/src/app.ts",
-      "source_location": "L13",
-      "weight": 1.0,
-      "_origin": "ast"
-    },
-    {
-      "source": "apps_api_src_app",
-      "target": "apps_api_src_app_buildapp",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "apps/api/src/app.ts",
-      "source_location": "L15",
-      "weight": 1.0,
-      "_origin": "ast"
-    },
-    {
       "source": "apps_api_src_repositories_domain_repository",
       "target": "packages_database_dist_client",
       "relation": "imports_from",
@@ -18133,243 +17893,6 @@
       "_origin": "ast"
     },
     {
-      "source": "apps_web_package",
-      "target": "apps_web_package_name",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "apps/web/package.json",
-      "source_location": "L2",
-      "weight": 1.0,
-      "_origin": "ast"
-    },
-    {
-      "source": "apps_web_package",
-      "target": "apps_web_package_version",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "apps/web/package.json",
-      "source_location": "L3",
-      "weight": 1.0,
-      "_origin": "ast"
-    },
-    {
-      "source": "apps_web_package",
-      "target": "apps_web_package_private",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "apps/web/package.json",
-      "source_location": "L4",
-      "weight": 1.0,
-      "_origin": "ast"
-    },
-    {
-      "source": "apps_web_package",
-      "target": "apps_web_package_scripts",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "apps/web/package.json",
-      "source_location": "L5",
-      "weight": 1.0,
-      "_origin": "ast"
-    },
-    {
-      "source": "apps_web_package_scripts",
-      "target": "apps_web_package_scripts_dev",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "apps/web/package.json",
-      "source_location": "L6",
-      "weight": 1.0,
-      "_origin": "ast"
-    },
-    {
-      "source": "apps_web_package_scripts",
-      "target": "apps_web_package_scripts_build",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "apps/web/package.json",
-      "source_location": "L7",
-      "weight": 1.0,
-      "_origin": "ast"
-    },
-    {
-      "source": "apps_web_package_scripts",
-      "target": "apps_web_package_scripts_start",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "apps/web/package.json",
-      "source_location": "L8",
-      "weight": 1.0,
-      "_origin": "ast"
-    },
-    {
-      "source": "apps_web_package",
-      "target": "apps_web_package_dependencies",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "apps/web/package.json",
-      "source_location": "L10",
-      "weight": 1.0,
-      "_origin": "ast"
-    },
-    {
-      "source": "apps_web_package_dependencies",
-      "target": "apps_web_package_dependencies_next",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "apps/web/package.json",
-      "source_location": "L11",
-      "weight": 1.0,
-      "_origin": "ast"
-    },
-    {
-      "source": "apps_web_package",
-      "target": "ref_next",
-      "relation": "imports",
-      "confidence": "EXTRACTED",
-      "source_file": "apps/web/package.json",
-      "source_location": "L11",
-      "weight": 1.0,
-      "context": "import",
-      "_origin": "ast"
-    },
-    {
-      "source": "apps_web_package_dependencies",
-      "target": "apps_web_package_dependencies_react",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "apps/web/package.json",
-      "source_location": "L12",
-      "weight": 1.0,
-      "_origin": "ast"
-    },
-    {
-      "source": "apps_web_package",
-      "target": "ref_react",
-      "relation": "imports",
-      "confidence": "EXTRACTED",
-      "source_file": "apps/web/package.json",
-      "source_location": "L12",
-      "weight": 1.0,
-      "context": "import",
-      "_origin": "ast"
-    },
-    {
-      "source": "apps_web_package_dependencies",
-      "target": "apps_web_package_dependencies_react_dom",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "apps/web/package.json",
-      "source_location": "L13",
-      "weight": 1.0,
-      "_origin": "ast"
-    },
-    {
-      "source": "apps_web_package",
-      "target": "ref_react_dom",
-      "relation": "imports",
-      "confidence": "EXTRACTED",
-      "source_file": "apps/web/package.json",
-      "source_location": "L13",
-      "weight": 1.0,
-      "context": "import",
-      "_origin": "ast"
-    },
-    {
-      "source": "apps_web_package",
-      "target": "apps_web_package_devdependencies",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "apps/web/package.json",
-      "source_location": "L15",
-      "weight": 1.0,
-      "_origin": "ast"
-    },
-    {
-      "source": "apps_web_package_devdependencies",
-      "target": "apps_web_package_devdependencies_types_node",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "apps/web/package.json",
-      "source_location": "L16",
-      "weight": 1.0,
-      "_origin": "ast"
-    },
-    {
-      "source": "apps_web_package",
-      "target": "apps_web_package_json_ref_types_node",
-      "relation": "imports",
-      "confidence": "EXTRACTED",
-      "source_file": "apps/web/package.json",
-      "source_location": "L16",
-      "weight": 1.0,
-      "context": "import",
-      "_origin": "ast"
-    },
-    {
-      "source": "apps_web_package_devdependencies",
-      "target": "apps_web_package_devdependencies_types_react",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "apps/web/package.json",
-      "source_location": "L17",
-      "weight": 1.0,
-      "_origin": "ast"
-    },
-    {
-      "source": "apps_web_package",
-      "target": "ref_types_react",
-      "relation": "imports",
-      "confidence": "EXTRACTED",
-      "source_file": "apps/web/package.json",
-      "source_location": "L17",
-      "weight": 1.0,
-      "context": "import",
-      "_origin": "ast"
-    },
-    {
-      "source": "apps_web_package_devdependencies",
-      "target": "apps_web_package_devdependencies_types_react_dom",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "apps/web/package.json",
-      "source_location": "L18",
-      "weight": 1.0,
-      "_origin": "ast"
-    },
-    {
-      "source": "apps_web_package",
-      "target": "ref_types_react_dom",
-      "relation": "imports",
-      "confidence": "EXTRACTED",
-      "source_file": "apps/web/package.json",
-      "source_location": "L18",
-      "weight": 1.0,
-      "context": "import",
-      "_origin": "ast"
-    },
-    {
-      "source": "apps_web_package_devdependencies",
-      "target": "apps_web_package_devdependencies_typescript",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "apps/web/package.json",
-      "source_location": "L19",
-      "weight": 1.0,
-      "_origin": "ast"
-    },
-    {
-      "source": "apps_web_package",
-      "target": "apps_web_package_json_ref_typescript",
-      "relation": "imports",
-      "confidence": "EXTRACTED",
-      "source_file": "apps/web/package.json",
-      "source_location": "L19",
-      "weight": 1.0,
-      "context": "import",
-      "_origin": "ast"
-    },
-    {
       "source": "apps_web_tsconfig",
       "target": "apps_web_tsconfig_compileroptions",
       "relation": "contains",
@@ -19022,47 +18545,6 @@
       "_origin": "ast"
     },
     {
-      "source": "packages_config_src_index",
-      "target": "ref_zod",
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "packages/config/src/index.ts",
-      "source_location": "L1",
-      "weight": 1.0,
-      "_origin": "ast"
-    },
-    {
-      "source": "packages_config_src_index",
-      "target": "packages_config_src_index_envschema",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "packages/config/src/index.ts",
-      "source_location": "L3",
-      "weight": 1.0,
-      "_origin": "ast"
-    },
-    {
-      "source": "packages_config_src_index",
-      "target": "packages_config_src_index_appconfig",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "packages/config/src/index.ts",
-      "source_location": "L17",
-      "weight": 1.0,
-      "_origin": "ast"
-    },
-    {
-      "source": "packages_config_src_index",
-      "target": "packages_config_src_index_loadconfig",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "packages/config/src/index.ts",
-      "source_location": "L19",
-      "weight": 1.0,
-      "_origin": "ast"
-    },
-    {
       "source": "tsconfig",
       "target": "tsconfig_files",
       "relation": "contains",
@@ -19079,28 +18561,6 @@
       "confidence": "EXTRACTED",
       "source_file": "tsconfig.json",
       "source_location": "L3",
-      "weight": 1.0,
-      "_origin": "ast"
-    },
-    {
-      "source": "apps_api_src_app_buildapp",
-      "target": "apps_api_src_routes_domain_registerdomainroutes",
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "apps/api/src/app.ts",
-      "source_location": "L60",
-      "weight": 1.0,
-      "_origin": "ast"
-    },
-    {
-      "source": "apps_api_src_app_buildapp",
-      "target": "apps_api_src_routes_product_registerproductroutes",
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "apps/api/src/app.ts",
-      "source_location": "L71",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -19168,78 +18628,6 @@
       "confidence_score": 1.0,
       "source_file": "apps/api/src/agent/agent-service.ts",
       "source_location": "L13",
-      "weight": 1.0,
-      "_origin": "ast"
-    },
-    {
-      "source": "apps_api_src_app_buildapp",
-      "target": "apps_api_src_services_domain_service_domainservice",
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "apps/api/src/app.ts",
-      "source_location": "L59",
-      "weight": 1.0,
-      "_origin": "ast"
-    },
-    {
-      "source": "apps_api_src_app_buildapp",
-      "target": "apps_api_src_repositories_domain_repository_domainrepository",
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "apps/api/src/app.ts",
-      "source_location": "L59",
-      "weight": 1.0,
-      "_origin": "ast"
-    },
-    {
-      "source": "apps_api_src_app_buildapp",
-      "target": "apps_api_src_services_product_service_productservice",
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "apps/api/src/app.ts",
-      "source_location": "L61",
-      "weight": 1.0,
-      "_origin": "ast"
-    },
-    {
-      "source": "apps_api_src_app_buildapp",
-      "target": "apps_api_src_services_clickhouse_client_clickhouseclient",
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "apps/api/src/app.ts",
-      "source_location": "L63",
-      "weight": 1.0,
-      "_origin": "ast"
-    },
-    {
-      "source": "apps_api_src_app_buildapp",
-      "target": "apps_api_src_services_ml_client_mlclient",
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "apps/api/src/app.ts",
-      "source_location": "L69",
-      "weight": 1.0,
-      "_origin": "ast"
-    },
-    {
-      "source": "apps_api_src_app_buildapp",
-      "target": "apps_api_src_agent_agent_service_agentservice",
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "apps/api/src/app.ts",
-      "source_location": "L71",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -19674,37 +19062,683 @@
       "source_location": "L56",
       "weight": 1.0,
       "_origin": "ast"
+    },
+    {
+      "source": "apps_api_src_app",
+      "target": "ref_fastify",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/api/src/app.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "apps_api_src_app",
+      "target": "packages_config_dist_index",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/api/src/app.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "type_only": true,
+      "_origin": "ast"
+    },
+    {
+      "source": "apps_api_src_app",
+      "target": "packages_config_dist_index_appconfig",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/api/src/app.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "apps_api_src_app",
+      "target": "packages_database_dist_client",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/api/src/app.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "type_only": true,
+      "_origin": "ast"
+    },
+    {
+      "source": "apps_api_src_app",
+      "target": "packages_database_dist_client_databaseclient",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/api/src/app.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "apps_api_src_app",
+      "target": "ref_zod",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/api/src/app.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "apps_api_src_app",
+      "target": "packages_database_dist_client_prisma",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/api/src/app.ts",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "apps_api_src_app",
+      "target": "apps_api_src_routes_domain",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/api/src/app.ts",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "apps_api_src_app",
+      "target": "apps_api_src_routes_domain_registerdomainroutes",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/api/src/app.ts",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "apps_api_src_app",
+      "target": "apps_api_src_repositories_domain_repository",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/api/src/app.ts",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "apps_api_src_app",
+      "target": "apps_api_src_repositories_domain_repository_domainrepository",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/api/src/app.ts",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "apps_api_src_app",
+      "target": "apps_api_src_services_domain_service",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/api/src/app.ts",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "apps_api_src_app",
+      "target": "apps_api_src_services_domain_service_domainservice",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/api/src/app.ts",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "apps_api_src_app",
+      "target": "apps_api_src_services_clickhouse_client",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/api/src/app.ts",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "apps_api_src_app",
+      "target": "apps_api_src_services_clickhouse_client_clickhouseclient",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/api/src/app.ts",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "apps_api_src_app",
+      "target": "apps_api_src_services_ml_client",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/api/src/app.ts",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "apps_api_src_app",
+      "target": "apps_api_src_services_ml_client_mlclient",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/api/src/app.ts",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "apps_api_src_app",
+      "target": "apps_api_src_services_product_service",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/api/src/app.ts",
+      "source_location": "L11",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "apps_api_src_app",
+      "target": "apps_api_src_services_product_service_productservice",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/api/src/app.ts",
+      "source_location": "L11",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "apps_api_src_app",
+      "target": "apps_api_src_agent_agent_service",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/api/src/app.ts",
+      "source_location": "L12",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "apps_api_src_app",
+      "target": "apps_api_src_agent_agent_service_agentservice",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/api/src/app.ts",
+      "source_location": "L12",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "apps_api_src_app",
+      "target": "apps_api_src_routes_product",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/api/src/app.ts",
+      "source_location": "L13",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "apps_api_src_app",
+      "target": "apps_api_src_routes_product_registerproductroutes",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/api/src/app.ts",
+      "source_location": "L13",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "apps_api_src_app",
+      "target": "apps_api_src_app_buildapp",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/api/src/app.ts",
+      "source_location": "L15",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "apps_web_package",
+      "target": "apps_web_package_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/web/package.json",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "apps_web_package",
+      "target": "apps_web_package_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/web/package.json",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "apps_web_package",
+      "target": "apps_web_package_private",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/web/package.json",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "apps_web_package",
+      "target": "apps_web_package_scripts",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/web/package.json",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "apps_web_package_scripts",
+      "target": "apps_web_package_scripts_dev",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/web/package.json",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "apps_web_package_scripts",
+      "target": "apps_web_package_scripts_build",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/web/package.json",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "apps_web_package_scripts",
+      "target": "apps_web_package_scripts_start",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/web/package.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "apps_web_package",
+      "target": "apps_web_package_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/web/package.json",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "apps_web_package_dependencies",
+      "target": "apps_web_package_dependencies_next",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/web/package.json",
+      "source_location": "L11",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "apps_web_package",
+      "target": "ref_next",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/web/package.json",
+      "source_location": "L11",
+      "weight": 1.0,
+      "context": "import",
+      "_origin": "ast"
+    },
+    {
+      "source": "apps_web_package_dependencies",
+      "target": "apps_web_package_dependencies_react",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/web/package.json",
+      "source_location": "L12",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "apps_web_package",
+      "target": "ref_react",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/web/package.json",
+      "source_location": "L12",
+      "weight": 1.0,
+      "context": "import",
+      "_origin": "ast"
+    },
+    {
+      "source": "apps_web_package_dependencies",
+      "target": "apps_web_package_dependencies_react_dom",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/web/package.json",
+      "source_location": "L13",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "apps_web_package",
+      "target": "ref_react_dom",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/web/package.json",
+      "source_location": "L13",
+      "weight": 1.0,
+      "context": "import",
+      "_origin": "ast"
+    },
+    {
+      "source": "apps_web_package",
+      "target": "apps_web_package_devdependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/web/package.json",
+      "source_location": "L15",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "apps_web_package_devdependencies",
+      "target": "apps_web_package_devdependencies_types_node",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/web/package.json",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "apps_web_package",
+      "target": "ref_types_node",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/web/package.json",
+      "source_location": "L16",
+      "weight": 1.0,
+      "context": "import",
+      "_origin": "ast"
+    },
+    {
+      "source": "apps_web_package_devdependencies",
+      "target": "apps_web_package_devdependencies_types_react",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/web/package.json",
+      "source_location": "L17",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "apps_web_package",
+      "target": "ref_types_react",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/web/package.json",
+      "source_location": "L17",
+      "weight": 1.0,
+      "context": "import",
+      "_origin": "ast"
+    },
+    {
+      "source": "apps_web_package_devdependencies",
+      "target": "apps_web_package_devdependencies_types_react_dom",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/web/package.json",
+      "source_location": "L18",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "apps_web_package",
+      "target": "ref_types_react_dom",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/web/package.json",
+      "source_location": "L18",
+      "weight": 1.0,
+      "context": "import",
+      "_origin": "ast"
+    },
+    {
+      "source": "apps_web_package_devdependencies",
+      "target": "apps_web_package_devdependencies_typescript",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/web/package.json",
+      "source_location": "L19",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "apps_web_package",
+      "target": "ref_typescript",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/web/package.json",
+      "source_location": "L19",
+      "weight": 1.0,
+      "context": "import",
+      "_origin": "ast"
+    },
+    {
+      "source": "packages_config_src_index",
+      "target": "ref_zod",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "packages/config/src/index.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "packages_config_src_index",
+      "target": "packages_config_src_index_envschema",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "packages/config/src/index.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "packages_config_src_index",
+      "target": "packages_config_src_index_appconfig",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "packages/config/src/index.ts",
+      "source_location": "L20",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "packages_config_src_index",
+      "target": "packages_config_src_index_loadconfig",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "packages/config/src/index.ts",
+      "source_location": "L22",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "apps_api_src_app_buildapp",
+      "target": "apps_api_src_routes_domain_registerdomainroutes",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/api/src/app.ts",
+      "source_location": "L141",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "apps_api_src_app_buildapp",
+      "target": "apps_api_src_routes_product_registerproductroutes",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/api/src/app.ts",
+      "source_location": "L152",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "apps_api_src_app_buildapp",
+      "target": "apps_api_src_services_domain_service_domainservice",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "apps/api/src/app.ts",
+      "source_location": "L140",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "apps_api_src_app_buildapp",
+      "target": "apps_api_src_repositories_domain_repository_domainrepository",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "apps/api/src/app.ts",
+      "source_location": "L140",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "apps_api_src_app_buildapp",
+      "target": "apps_api_src_services_product_service_productservice",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "apps/api/src/app.ts",
+      "source_location": "L142",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "apps_api_src_app_buildapp",
+      "target": "apps_api_src_services_clickhouse_client_clickhouseclient",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "apps/api/src/app.ts",
+      "source_location": "L144",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "apps_api_src_app_buildapp",
+      "target": "apps_api_src_services_ml_client_mlclient",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "apps/api/src/app.ts",
+      "source_location": "L150",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "apps_api_src_app_buildapp",
+      "target": "apps_api_src_agent_agent_service_agentservice",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "apps/api/src/app.ts",
+      "source_location": "L152",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_performance_api_benchmark",
+      "target": "scripts_performance_api_benchmark_requests",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/performance/api-benchmark.mjs",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_performance_api_benchmark",
+      "target": "scripts_performance_api_benchmark_samples",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/performance/api-benchmark.mjs",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_performance_api_benchmark",
+      "target": "scripts_performance_api_benchmark_percentile",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/performance/api-benchmark.mjs",
+      "source_location": "L18",
+      "weight": 1.0,
+      "_origin": "ast"
     }
   ],
   "hyperedges": [],
   "input_tokens": 0,
   "output_tokens": 0,
   "extracted_sources": [
-    "C:\\Users\\prajj\\Desktop\\motorq\\apps\\api\\src\\agent\\agent-service.ts",
-    "C:\\Users\\prajj\\Desktop\\motorq\\apps\\api\\src\\agent\\tools.ts",
-    "C:\\Users\\prajj\\Desktop\\motorq\\apps\\api\\src\\app.ts",
-    "C:\\Users\\prajj\\Desktop\\motorq\\apps\\api\\src\\repositories\\domain-repository.ts",
-    "C:\\Users\\prajj\\Desktop\\motorq\\apps\\api\\src\\routes\\domain.ts",
-    "C:\\Users\\prajj\\Desktop\\motorq\\apps\\api\\src\\routes\\product.ts",
-    "C:\\Users\\prajj\\Desktop\\motorq\\apps\\api\\src\\schemas\\domain.ts",
-    "C:\\Users\\prajj\\Desktop\\motorq\\apps\\api\\src\\services\\clickhouse-client.ts",
-    "C:\\Users\\prajj\\Desktop\\motorq\\apps\\api\\src\\services\\domain-service.ts",
-    "C:\\Users\\prajj\\Desktop\\motorq\\apps\\api\\src\\services\\ml-client.ts",
-    "C:\\Users\\prajj\\Desktop\\motorq\\apps\\api\\src\\services\\product-service.ts",
-    "C:\\Users\\prajj\\Desktop\\motorq\\apps\\web\\app\\alerts\\page.tsx",
-    "C:\\Users\\prajj\\Desktop\\motorq\\apps\\web\\app\\analytics\\page.tsx",
-    "C:\\Users\\prajj\\Desktop\\motorq\\apps\\web\\app\\layout.tsx",
-    "C:\\Users\\prajj\\Desktop\\motorq\\apps\\web\\app\\page.tsx",
-    "C:\\Users\\prajj\\Desktop\\motorq\\apps\\web\\app\\vehicles\\[id]\\page.tsx",
-    "C:\\Users\\prajj\\Desktop\\motorq\\apps\\web\\app\\vehicles\\page.tsx",
-    "C:\\Users\\prajj\\Desktop\\motorq\\apps\\web\\next-env.d.ts",
-    "C:\\Users\\prajj\\Desktop\\motorq\\apps\\web\\next.config.mjs",
-    "C:\\Users\\prajj\\Desktop\\motorq\\apps\\web\\package.json",
-    "C:\\Users\\prajj\\Desktop\\motorq\\apps\\web\\tsconfig.json",
-    "C:\\Users\\prajj\\Desktop\\motorq\\eslint.config.mjs",
-    "C:\\Users\\prajj\\Desktop\\motorq\\package.json",
-    "C:\\Users\\prajj\\Desktop\\motorq\\packages\\config\\src\\index.ts",
+    "C:\\Users\\prajj\\Desktop\\motorq\\infrastructure\\terraform\\main.tf",
+    "C:\\Users\\prajj\\Desktop\\motorq\\infrastructure\\terraform\\variables.tf",
+    "C:\\Users\\prajj\\Desktop\\motorq\\infrastructure\\terraform\\versions.tf",
     "C:\\Users\\prajj\\Desktop\\motorq\\packages\\database\\prisma\\migrations\\20261001130000_init\\migration.sql",
-    "C:\\Users\\prajj\\Desktop\\motorq\\tsconfig.json"
+    "C:\\Users\\prajj\\Desktop\\motorq\\scripts\\performance\\api-benchmark.mjs"
   ]
 }

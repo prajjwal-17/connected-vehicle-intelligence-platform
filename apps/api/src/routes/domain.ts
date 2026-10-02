@@ -7,21 +7,23 @@ import {
   maintenanceListQuerySchema,
   vehicleListQuerySchema,
 } from '../schemas/domain.js';
+import { tenantIdFromRequest } from '../utils/tenant.js';
 
 export function registerDomainRoutes(app: FastifyInstance, service: DomainService) {
   app.get('/api/v1/fleets', async (request) => {
     const query = fleetListQuerySchema.parse(request.query);
-    return service.listFleets(query.cursor, query.limit);
+    return service.listFleets(tenantIdFromRequest(request), query.cursor, query.limit);
   });
 
   app.get('/api/v1/fleets/:id', async (request) => {
     const { id } = idParamsSchema.parse(request.params);
-    return { data: await service.getFleet(id) };
+    return { data: await service.getFleet(id, tenantIdFromRequest(request)) };
   });
 
   app.get('/api/v1/vehicles', async (request) => {
     const query = vehicleListQuerySchema.parse(request.query);
     return service.listVehicles(
+      tenantIdFromRequest(request),
       query.fleetId,
       query.powertrain,
       query.status,
@@ -33,12 +35,13 @@ export function registerDomainRoutes(app: FastifyInstance, service: DomainServic
 
   app.get('/api/v1/vehicles/:id', async (request) => {
     const { id } = idParamsSchema.parse(request.params);
-    return { data: await service.getVehicle(id) };
+    return { data: await service.getVehicle(id, tenantIdFromRequest(request)) };
   });
 
   app.get('/api/v1/alerts', async (request) => {
     const query = alertListQuerySchema.parse(request.query);
     return service.listAlerts(
+      tenantIdFromRequest(request),
       query.vehicleId,
       query.status,
       query.severity,
@@ -50,6 +53,11 @@ export function registerDomainRoutes(app: FastifyInstance, service: DomainServic
 
   app.get('/api/v1/maintenance', async (request) => {
     const query = maintenanceListQuerySchema.parse(request.query);
-    return service.listMaintenance(query.vehicleId, query.cursor, query.limit);
+    return service.listMaintenance(
+      tenantIdFromRequest(request),
+      query.vehicleId,
+      query.cursor,
+      query.limit,
+    );
   });
 }

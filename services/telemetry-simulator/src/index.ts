@@ -15,6 +15,8 @@ import {
 
 type CliOptions = {
   vehicles?: number;
+  vehicleIndexOffset?: number;
+  maxEvents?: number;
   duration?: number;
   rate?: number;
   output?: string;
@@ -31,6 +33,8 @@ function parseCli(argv: string[]): CliOptions {
     const argument = argv[index];
     const value = argv[index + 1];
     if (argument === '--vehicles') options.vehicles = Number(value);
+    if (argument === '--vehicle-index-offset') options.vehicleIndexOffset = Number(value);
+    if (argument === '--max-events') options.maxEvents = Number(value);
     if (argument === '--duration') options.duration = Number(value);
     if (argument === '--rate') options.rate = Number(value);
     if (argument === '--output') options.output = value;
@@ -47,6 +51,7 @@ function applyCli(config: SimulatorConfig, options: CliOptions): SimulatorConfig
   return {
     ...config,
     vehicleCount: options.vehicles ?? config.vehicleCount,
+    vehicleIndexOffset: options.vehicleIndexOffset ?? config.vehicleIndexOffset,
     durationSeconds: options.duration ?? config.durationSeconds,
     eventsPerSecond: options.rate ?? config.eventsPerSecond,
     burstEnabled: options.burst ?? config.burstEnabled,
@@ -80,8 +85,31 @@ async function createSink(
 }
 
 async function main() {
-  const config = applyCli(loadSimulatorConfig(), parseCli(process.argv.slice(2)));
+  const options = parseCli(process.argv.slice(2));
+  const config = applyCli(loadSimulatorConfig(), options);
   const logger = pino({ level: config.logLevel, base: { service: 'telemetry-simulator' } });
+  let previousCpu = process.cpuUsage();
+  let previousSampleAt = performance.now();
+  const profileTimer =
+    process.env.PRODUCER_PROFILE === '1'
+      ? setInterval(() => {
+          const now = performance.now();
+          const cpu = process.cpuUsage(previousCpu);
+          const elapsedMs = now - previousSampleAt;
+          previousCpu = process.cpuUsage();
+          previousSampleAt = now;
+          logger.info(
+            {
+              workerId: process.env.BENCHMARK_WORKER_ID ?? process.pid,
+              cpuUtilizationPercent: ((cpu.user + cpu.system) / 1_000 / elapsedMs) * 100,
+              cpuUserMs: cpu.user / 1_000,
+              cpuSystemMs: cpu.system / 1_000,
+              rssMb: process.memoryUsage().rss / (1024 * 1024),
+            },
+            'producer profile sample',
+          );
+        }, 1_000)
+      : undefined;
   logger.info(
     {
       vehicleCount: config.vehicleCount,
@@ -97,7 +125,11 @@ async function main() {
 
   const sink = await createSink(config, logger);
   const engine = new SimulationEngine(config, sink, logger);
-  await engine.run();
+  try {
+    await engine.run({ maxEvents: options.maxEvents });
+  } finally {
+    if (profileTimer) clearInterval(profileTimer);
+  }
 }
 
 if (process.argv[1] && import.meta.url === pathToFileURL(resolve(process.argv[1])).href) {

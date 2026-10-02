@@ -15,14 +15,17 @@ type VehicleIdInput = { vehicleId: string };
 
 export function createTools(domain: DomainService, product: ProductService) {
   return {
-    getFleetOverview: () => product.overview(),
-    getVehicle: (input: VehicleIdInput) => domain.getVehicle(input.vehicleId),
-    getVehicleAlerts: (input: VehicleIdInput) =>
-      domain.listAlerts(input.vehicleId, undefined, undefined, undefined, undefined, 20),
-    getOpenAlerts: () => domain.listAlerts(undefined, 'OPEN', undefined, undefined, undefined, 20),
-    getMaintenanceRisk: (input: VehicleIdInput) => product.maintenanceRisk(input.vehicleId),
-    getFleetAnalytics: () => product.fleetAnalytics(),
-    getVehicleTelemetrySummary: (input: VehicleIdInput) =>
-      product.telemetrySummary(input.vehicleId),
+    getFleetOverview: (tenantId?: string) => product.overview(tenantId),
+    getVehicle: (input: VehicleIdInput, tenantId?: string) =>
+      domain.getVehicle(input.vehicleId, tenantId),
+    getVehicleAlerts: (input: VehicleIdInput, tenantId?: string) =>
+      domain.listAlerts(tenantId, input.vehicleId, undefined, undefined, undefined, undefined, 20),
+    getOpenAlerts: (tenantId?: string) =>
+      domain.listAlerts(tenantId, undefined, 'OPEN', undefined, undefined, undefined, 20),
+    getMaintenanceRisk: (input: VehicleIdInput, tenantId?: string) =>
+      product.maintenanceRisk(input.vehicleId, tenantId),
+    getFleetAnalytics: (tenantId?: string) => product.fleetAnalytics(tenantId),
+    getVehicleTelemetrySummary: (input: VehicleIdInput, tenantId?: string) =>
+      product.telemetrySummary(input.vehicleId, tenantId),
   };
 }

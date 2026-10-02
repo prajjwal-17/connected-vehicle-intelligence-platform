@@ -2,10 +2,12 @@ import { mkdir } from 'node:fs/promises';
 import { createWriteStream, type WriteStream } from 'node:fs';
 import { dirname } from 'node:path';
 import type { TelemetryEvent } from '@fleetpulse/schemas';
+import type { KafkaMetrics } from '@fleetpulse/ingestion';
 
 export interface EventSink {
   write(event: TelemetryEvent): Promise<void>;
   close(): Promise<void>;
+  getMetrics?(): KafkaMetrics | undefined;
 }
 
 export class StdoutEventSink implements EventSink {
@@ -110,6 +112,10 @@ export class BoundedEventSink implements EventSink {
     this.closed = true;
     await this.drain();
     await this.downstream.close();
+  }
+
+  getMetrics(): KafkaMetrics | undefined {
+    return this.downstream.getMetrics?.();
   }
 }
 
